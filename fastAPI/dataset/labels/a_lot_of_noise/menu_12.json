@@ -1,0 +1,37 @@
+{
+  "categories": [
+    {
+      "name": "ĐỒ UỐNG ĐÓNG CHAI",
+      "items": [
+        { "name": "Coca Cola", "descriptions": [{ "size": null, "price": 17000, "optional": null, "description": null }] },
+        { "name": "Fanta", "descriptions": [{ "size": null, "price": 17000, "optional": null, "description": null }] },
+        { "name": "Sprite", "descriptions": [{ "size": null, "price": 17000, "optional": null, "description": null }] },
+        { "name": "Cam Sprite", "descriptions": [{ "size": null, "price": 17000, "optional": null, "description": null }] },
+        { "name": "Soda", "descriptions": [{ "size": null, "price": 17000, "optional": null, "description": null }] },
+        { "name": "Thums Up", "descriptions": [{ "size": null, "price": 17000, "optional": null, "description": null }] },
+        { "name": "Trà 3 Màu", "descriptions": [{ "size": null, "price": 15000, "optional": null, "description": null }] },
+        { "name": "Nước suối chai", "descriptions": [{ "size": null, "price": 10000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "BIA",
+      "items": [
+        { "name": "Bia chai Sài Gòn", "descriptions": [{ "size": null, "price": 30000, "optional": null, "description": null }] },
+        { "name": "Bia chai Tiger", "descriptions": [{ "size": null, "price": 30000, "optional": null, "description": null }] },
+        { "name": "Bia Sài Gòn", "descriptions": [{ "size": null, "price": 20000, "optional": null, "description": null }] },
+        { "name": "Bia Hà Nội", "descriptions": [{ "size": null, "price": 20000, "optional": null, "description": null }] },
+        { "name": "Bia 333", "descriptions": [{ "size": null, "price": 20000, "optional": null, "description": null }] },
+        { "name": "Bia Trúc Bạch", "descriptions": [{ "size": null, "price": 25000, "optional": null, "description": null }] },
+        { "name": "Bia Tiger", "descriptions": [{ "size": null, "price": 20000, "optional": null, "description": null }] },
+        { "name": "Bia Heineken", "descriptions": [{ "size": null, "price": 25000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "RƯỢU",
+      "items": [
+        { "name": "Rượu Ba Kích", "descriptions": [{ "size": null, "price": 100000, "optional": null, "description": null }] },
+        { "name": "Rượu Mơ", "descriptions": [{ "size": null, "price": 100000, "optional": null, "description": null }] }
+      ]
+    }
+  ]
+}

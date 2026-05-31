@@ -1,0 +1,48 @@
+{
+  "categories": [
+    {
+      "name": "CÀ PHÊ - Coffee",
+      "items": [
+        {
+          "name": "Cà Phê Đen Đá",
+          "descriptions": [
+            { "size": "Vừa", "price": 15000, "optional": null, "description": "Black Coffee" },
+            { "size": "Lớn", "price": 20000, "optional": null, "description": "Black Coffee" }
+          ]
+        },
+        {
+          "name": "Cà Phê Sữa Đá",
+          "descriptions": [
+            { "size": "Vừa", "price": 18000, "optional": null, "description": "Coffee & Condensed Milk" },
+            { "size": "Lớn", "price": 25000, "optional": null, "description": "Coffee & Condensed Milk" }
+          ]
+        },
+        {
+          "name": "Bạc Sỉu",
+          "descriptions": [
+            { "size": "Vừa", "price": 18000, "optional": null, "description": "Coffee, fresh milk & condensed milk" },
+            { "size": "Lớn", "price": 25000, "optional": null, "description": "Coffee, fresh milk & condensed milk" }
+          ]
+        },
+        {
+          "name": "Espresso / Americano",
+          "descriptions": [
+            { "size": null, "price": 20000, "optional": null, "description": "Hot / Iced" }
+          ]
+        },
+        {
+          "name": "Cappuccino / Latte",
+          "descriptions": [
+            { "size": null, "price": 25000, "optional": null, "description": "Hot / Iced" }
+          ]
+        },
+        {
+          "name": "Cà Phê Muối",
+          "descriptions": [
+            { "size": null, "price": 25000, "optional": null, "description": "Coffee, condensed milk, foam milk" }
+          ]
+        }
+      ]
+    }
+  ]
+}

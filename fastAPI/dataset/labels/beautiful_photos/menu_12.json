@@ -1,0 +1,234 @@
+{
+  "categories": [
+    {
+      "name": "ĐỒ NƯỚNG",
+      "items": [
+        {
+          "name": "Nầm tươi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 109000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Ba chỉ nướng tiêu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Dải nướng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Má đào nướng giềng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nọng heo ướp đặc biệt",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 89000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Lòng nướng mật ong",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Xúc xích phomai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bò Kobe",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 149000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Dẻ sườn rút xương hảo hạng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 159000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bò cuốn nấm kim châm",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Ba chỉ bò Mỹ ướp sốt tỏi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 95000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KHAI VỊ",
+      "items": [
+        {
+          "name": "Sốt phomai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 28000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sốt trứng muối",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 28000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Chân gà sả ớt",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 79000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Gà rán Karaage",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 89000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh mì bơ đường",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 18000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khoai tây lắc phomai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 60000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khoai tây chiên",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khoai lang kén",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nem chua rán",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 69000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

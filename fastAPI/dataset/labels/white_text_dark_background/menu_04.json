@@ -1,0 +1,184 @@
+{
+  "categories": [
+    {
+      "name": "BÁNH BURRITO",
+      "items": [
+        {
+          "name": "TIỆM BÁNH GÀ CHIÊN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 104000,
+              "optional": null,
+              "description": "Ức gà nướng với đậu đen, cơm Mexico, phô mai Tito, kem chua sốt salsa & sốt bơ tươi"
+            }
+          ]
+        },
+        {
+          "name": "THE BIG EASY",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 104000,
+              "optional": null,
+              "description": "Ức gà nướng với cơm Mexico, phô mai Tito, rau diếp cắt nhỏ, sốt ranch & sốt salsa"
+            }
+          ]
+        },
+        {
+          "name": "THE SPICOLI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 104000,
+              "optional": null,
+              "description": "Ức gà xé chấm sốt ớt hun khói với đậu đen, cơm Mexico, rau diếp cắt nhỏ, phô mai Tito, kem chua & sốt salsa"
+            }
+          ]
+        },
+        {
+          "name": "SAN QUENTIN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 104000,
+              "optional": null,
+              "description": "Cá hồi nướng với gạo lứt, sốt dừa hun khói, rau diếp cắt nhỏ, sốt salsa & bơ cắt lát"
+            }
+          ]
+        },
+        {
+          "name": "THE BENNO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 104000,
+              "optional": null,
+              "description": "Đậu đen với gạo Mexico, phô mai Tito & sốt salsa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BÁNH NATCHO & KHOAI TÂY CHIÊN",
+      "items": [
+        {
+          "name": "ORIGINAL",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 110000,
+              "optional": null,
+              "description": "Sốt queso, phô mai Tito tan chảy, đậu đen, kem chua, sốt salsa & sốt bơ tươi"
+            }
+          ]
+        },
+        {
+          "name": "GÀ HUN KHÓI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 150000,
+              "optional": null,
+              "description": "Ức gà xé chấm sốt ớt đỏ hun khói, sốt queso, phô mai Tito tan chảy, đậu đen, kem chua, sốt salsa & sốt bơ tươi"
+            }
+          ]
+        },
+        {
+          "name": "GÀ FUNKY",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 110000,
+              "optional": null,
+              "description": "Ức gà nướng, sốt queso, phô mai Tito tan chảy, đậu đen, kem chua, sốt salsa & sốt bơ tươi"
+            }
+          ]
+        },
+        {
+          "name": "THỊT BÒ NƯỚNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 150000,
+              "optional": null,
+              "description": "Sườn bò ướp và nướng, sốt queso, phô mai Tito tan chảy, đậu đen, kem chua, sốt salsa & sốt bơ tươi"
+            }
+          ]
+        },
+        {
+          "name": "MÓN ƯA THÍCH",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 170000,
+              "optional": null,
+              "description": "Bò xay, sốt queso, phô mai Tito tan chảy, đậu đen, kem chua, sốt salsa & sốt bơ tươi"
+            }
+          ]
+        },
+        {
+          "name": "THỊT LỢN XÉ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 150000,
+              "optional": null,
+              "description": "Thịt lợn hầm dứa/ớt habanero, sốt queso, phô mai Tito tan chảy, đậu đen & sốt salsa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MÓN TRÁNG MIỆNG & NƯỚC UỐNG",
+      "items": [
+        {
+          "name": "NƯỚC CÓ GA",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "NƯỚC ĐÓNG CHAI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "SODA MEXICO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ ĐÁ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.*
+!.env.example
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# FastAPI runtime / generated artifacts
+fastAPI/debug_crop/
+fastAPI/output_vietocr.jpg
+fastAPI/output3.jpg
+fastAPI/*.tmp
+fastAPI/*.temp
+
+# Node / Vite
+front/node_modules/
+front/dist/
+
+# Java / Spring Boot / Maven
+back/demo/target/
+back/demo/.mvn/wrapper/maven-wrapper.jar
+*.class
+
+# Test / coverage
+coverage/
+htmlcov/
+

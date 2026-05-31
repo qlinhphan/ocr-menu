@@ -1,0 +1,142 @@
+{
+  "categories": [
+    {
+      "name": "Phở Cuốn",
+      "items": [
+        {
+          "name": "Phở cuốn bò",
+          "descriptions": [
+            {
+              "size": "min",
+              "price": 45000,
+              "optional": null,
+              "description": "Giá thấp nhất theo set"
+            },
+            {
+              "size": "max",
+              "price": 90000,
+              "optional": null,
+              "description": "Giá cao nhất theo set"
+            }
+          ]
+        },
+        {
+          "name": "Phở cuốn trứng",
+          "descriptions": [
+            {
+              "size": "min",
+              "price": 25000,
+              "optional": null,
+              "description": "Giá thấp nhất theo set"
+            },
+            {
+              "size": "max",
+              "price": 50000,
+              "optional": null,
+              "description": "Giá cao nhất theo set"
+            }
+          ]
+        },
+        {
+          "name": "Phở cuốn bò trứng",
+          "descriptions": [
+            {
+              "size": "min",
+              "price": 55000,
+              "optional": null,
+              "description": "Giá thấp nhất theo set"
+            },
+            {
+              "size": "max",
+              "price": 110000,
+              "optional": null,
+              "description": "Giá cao nhất theo set"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phở Chiên & Xào",
+      "items": [
+        {
+          "name": "Phở chiên phồng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 80000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở chiên trứng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 80000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở rán giòn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 80000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở chiên lăn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 100000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở xào bò",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 75000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mỳ xào bò",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 75000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở trộn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 60000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

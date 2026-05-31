@@ -1,0 +1,185 @@
+{
+  "categories": [
+    {
+      "name": "Menu",
+      "items": [
+        {
+          "name": "Phở/ Miến/ Mỳ Gà - Ngan",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở Gà Đùi/Cánh",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở lòng mề",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở tràng trứng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở đặc biệt",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 60000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở trộn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cháo ngan/gà",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cháo trai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Óc đốt",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 60000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trứng trần",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 5000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trứng vịt lộn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 8000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Gà ri hấp",
+          "descriptions": [
+            {
+              "size": "con",
+              "price": 320000,
+              "optional": null,
+              "description": "/con"
+            }
+          ]
+        },
+        {
+          "name": "Gà đông tảo",
+          "descriptions": [
+            {
+              "size": "con",
+              "price": 460000,
+              "optional": null,
+              "description": "/con"
+            }
+          ]
+        },
+        {
+          "name": "Ngan chặt",
+          "descriptions": [
+            {
+              "size": "con",
+              "price": 360000,
+              "optional": null,
+              "description": "/con"
+            }
+          ]
+        },
+        {
+          "name": "Ngan cháy tỏi",
+          "descriptions": [
+            {
+              "size": "suất",
+              "price": 150000,
+              "optional": null,
+              "description": "/suất"
+            }
+          ]
+        },
+        {
+          "name": "Ngan chiên riềng",
+          "descriptions": [
+            {
+              "size": "suất",
+              "price": 150000,
+              "optional": null,
+              "description": "/suất"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

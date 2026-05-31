@@ -1,0 +1,168 @@
+{
+  "categories": [
+    {
+      "name": "MÓN MỚI",
+      "items": [
+        {
+          "name": "CƠM CHIÊN DƯA BÒ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "PHỞ CUỐN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 70000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "PHỞ XÀO QUẢNG ĐÔNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "GÀ ĐEN HẦM SÂM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 120000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BÍT TẾT HÒE NHAI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 95000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BÍT TẾT BÒ MỸ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 150000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NƯỚC UỐNG",
+      "items": [
+        {
+          "name": "TRÀ ĐÁ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 5000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "NƯỚC SUỐI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "SỮA ĐẬU NÀNH",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "COCA/PEPSI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "NƯỚC CHANH LEO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "DỪA XIÊM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BIA HÀ NỘI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BIA SÀI GÒN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

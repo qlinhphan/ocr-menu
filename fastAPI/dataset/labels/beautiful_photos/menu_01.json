@@ -1,0 +1,640 @@
+{
+  "categories": [
+    {
+      "name": "Snacks & Soup",
+      "items": [
+        {
+          "name": "Phô mai que",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 8000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cá viên chiên",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Hồ lô chiên",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khoai tây chiên",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khoai tây lắc phô mai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khoai lang lắc phô mai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khoai lang chiên (ăn kèm mật ong)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh xếp Hàn Quốc",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Xúc xích chiên",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sủi cảo chiên",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nem chua rán",
+          "descriptions": [
+            {
+              "size": "nhỏ",
+              "price": 30000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "lớn",
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mỳ Ý bò băm sốt cà",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Canh kim chi (kèm cơm)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Canh rong biển (kèm cơm)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Canh rong biển chén",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "items": [
+        {
+          "name": "Cơm trộn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cơm trộn cá ngừ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cơm chiên kimchi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cơm gà cay Sriracha",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kimpap & Chicken",
+      "items": [
+        {
+          "name": "Cơm cuộn thanh cua và phô mai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 39000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cơm cuộn cá ngừ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 39000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cơm cuộn xúc xích",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 33000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cơm cuộn thanh cua",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 33000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cơm cuộn thịt heo",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 33000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cơm cuộn chiên",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Gà cay sốt phô mai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Gà cay tẩm vừng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Gà sốt mật ong",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Noodles & Tokbokki",
+      "items": [
+        {
+          "name": "Mỳ tương đen",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mỳ mực",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mỳ cay",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 38000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bạch tuộc xào cay (kèm mỳ hoặc cơm)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 65000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bạch tuộc xào cay phô mai (kèm mỳ hoặc cơm)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 75000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Miến trộn Hàn Quốc",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Miến trộn kiểu Thái",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Lẩu bò kim chi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 120000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Lẩu xiên sốt cay Hàn Quốc",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Lẩu bánh gạo (nấu sẵn)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh gạo cay truyền thống",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh gạo chiên",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh gạo lắc phô mai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh xèo kiểu Hàn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Ba chỉ nướng tỏi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Drinks",
+      "items": [
+        {
+          "name": "Trà sữa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": "truyền thống/việt quốc/bạc hà/nho/đào/dâu/táo/socola",
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà sữa thái xanh",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà sữa đặc biệt",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 22000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Topping",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 3000,
+              "optional": "flan/hạt thủy tinh/thạch trái cây/phô mai",
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà trái cây",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 18000,
+              "optional": "trà đào/trà vải/trà táo/trà chanh dây",
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mojito",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": "đào/dâu/táo/bạc hà/việt quốc",
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Ca cao ngũ cốc",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 18000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nước ép trái cây",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": "ổi/thơm/cà rốt/cà chua/me",
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Coca/ 7Up/ Pepsi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bò húc",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nước suối",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Rượu soju",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 70000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

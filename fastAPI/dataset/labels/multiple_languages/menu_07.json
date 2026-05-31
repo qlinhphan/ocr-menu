@@ -1,0 +1,260 @@
+{
+  "categories": [
+    {
+      "name": "BÚN CHẢ QUE TRE",
+      "items": [
+        {
+          "name": "Xương sông",
+          "descriptions": [
+            {
+              "size": "Vừa",
+              "price": 75000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "Lớn",
+              "price": 90000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Lẫn xương sông",
+          "descriptions": [
+            {
+              "size": "Vừa",
+              "price": 70000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "Lớn",
+              "price": 90000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Lẫn đầy đủ",
+          "descriptions": [
+            {
+              "size": "Vừa",
+              "price": 65000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "Lớn",
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Lẫn thường",
+          "descriptions": [
+            {
+              "size": "Vừa",
+              "price": 65000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "Lớn",
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Miếng",
+          "descriptions": [
+            {
+              "size": "Vừa",
+              "price": 65000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "Lớn",
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Băm đầy đủ",
+          "descriptions": [
+            {
+              "size": "Vừa",
+              "price": 65000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "Lớn",
+              "price": 80000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Băm",
+          "descriptions": [
+            {
+              "size": "Vừa",
+              "price": 65000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "Lớn",
+              "price": 75000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MÓN ĂN KÈM",
+      "items": [
+        {
+          "name": "Bún nem hải sản (2-3 cái)",
+          "descriptions": [
+            {
+              "size": "2 cái",
+              "price": 65000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "3 cái",
+              "price": 90000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nem hải sản (1 cái)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh tôm (1 cái)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ĐỒ UỐNG",
+      "items": [
+        {
+          "name": "Bia HN/SG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Chanh leo/tươi",
+          "descriptions": [
+            {
+              "size": "Chanh leo",
+              "price": 30000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "Chanh tươi",
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà bí đao",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sữa đậu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Coca",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nước suối",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 5000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

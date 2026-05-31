@@ -1,0 +1,113 @@
+{
+  "categories": [
+    {
+      "name": "MÓN CANH",
+      "items": [
+        {
+          "name": "CANH CUA MÙNG TƠI (KÈM CÀ MUỐI) *",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 99000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CANH NGAO CHUA *",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 89000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CANH CHUA THỊT BĂM *",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 89000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CANH BẦU NẤU TÔM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 89000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CANH DƯA TÓP MỠ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 99000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MÓN RAU",
+      "items": [
+        {
+          "name": "RAU MUỐNG XÀO TỎI *",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 69000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "RAU MÙNG TƠI XÀO TỎI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 69000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "RAU CẢI SỐT NẤM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 79000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BẮP CẢI LUỘC CHẤM TRỨNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 69000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "categories": [
+    {
+      "name": "CHÁO",
+      "items": [
+        {
+          "name": "Cháo Trắng",
+          "descriptions": [{ "size": null, "price": 30000, "optional": null, "description": null }]
+        },
+        {
+          "name": "Cháo Sườn",
+          "descriptions": [{ "size": null, "price": 57000, "optional": null, "description": null }]
+        },
+        {
+          "name": "Cháo Sườn, Ngô",
+          "descriptions": [{ "size": null, "price": 62000, "optional": null, "description": null }]
+        },
+        {
+          "name": "Cháo Sườn, Gan",
+          "descriptions": [{ "size": null, "price": 65000, "optional": null, "description": null }]
+        },
+        {
+          "name": "Cháo Sườn, Gà",
+          "descriptions": [{ "size": null, "price": 67000, "optional": null, "description": null }]
+        },
+        {
+          "name": "Cháo Sườn, Gan, Ngô",
+          "descriptions": [{ "size": null, "price": 70000, "optional": null, "description": null }]
+        },
+        {
+          "name": "Cháo Sườn, Gà, Ngô",
+          "descriptions": [{ "size": null, "price": 72000, "optional": null, "description": null }]
+        },
+        {
+          "name": "Cháo Sườn, Bò",
+          "descriptions": [{ "size": null, "price": 75000, "optional": null, "description": null }]
+        },
+        {
+          "name": "Cháo Sườn, Bò, Ngô",
+          "descriptions": [{ "size": null, "price": 80000, "optional": null, "description": null }]
+        },
+        {
+          "name": "Cháo Sườn, Bò, Gan, Ngô",
+          "descriptions": [{ "size": null, "price": 85000, "optional": null, "description": null }]
+        },
+        {
+          "name": "Cháo Sườn, Bò, Gà, Ngô",
+          "descriptions": [{ "size": null, "price": 90000, "optional": null, "description": null }]
+        },
+        {
+          "name": "Cháo Đặc Biệt",
+          "descriptions": [{ "size": null, "price": 95000, "optional": null, "description": null }]
+        }
+      ]
+    },
+    {
+      "name": "ĐỒ ĂN KÈM",
+      "items": [
+        { "name": "Quẩy", "descriptions": [{ "size": null, "price": 12000, "optional": null, "description": null }] },
+        { "name": "Trứng Gà", "descriptions": [{ "size": null, "price": 10000, "optional": null, "description": null }] },
+        { "name": "Trứng Bắc Thảo", "descriptions": [{ "size": null, "price": 23000, "optional": null, "description": null }] },
+        { "name": "Gan Xào (S)", "descriptions": [{ "size": "S", "price": 35000, "optional": null, "description": null }] },
+        { "name": "Gan Xào (M)", "descriptions": [{ "size": "M", "price": 65000, "optional": null, "description": null }] },
+        { "name": "Gan Xào (L)", "descriptions": [{ "size": "L", "price": 80000, "optional": null, "description": null }] },
+        { "name": "Sườn Xào", "descriptions": [{ "size": null, "price": 85000, "optional": null, "description": null }] },
+        { "name": "Bò Xào", "descriptions": [{ "size": null, "price": 90000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "TRÁNG MIỆNG",
+      "items": [
+        { "name": "Dĩa hoa quả (S)", "descriptions": [{ "size": "S", "price": 15000, "optional": null, "description": null }] },
+        { "name": "Dĩa hoa quả (M)", "descriptions": [{ "size": "M", "price": 23000, "optional": null, "description": null }] },
+        { "name": "Dĩa hoa quả (L)", "descriptions": [{ "size": "L", "price": 30000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "SET NHÓM",
+      "items": [
+        { "name": "Set Nhỏ", "descriptions": [{ "size": null, "price": 89000, "optional": null, "description": "1 cháo sườn (XS), 1 gan xào (XS), 1 nước tự chọn (XS), 1 đĩa hoa quả (XS)" }] },
+        { "name": "Set 1 Người", "descriptions": [{ "size": null, "price": 135000, "optional": null, "description": "1 cháo sườn, 1 gan xào (S), 1 nước tự chọn, 1 đĩa hoa quả (S)" }] },
+        { "name": "Set 3 Người", "descriptions": [{ "size": null, "price": 350000, "optional": null, "description": "2 cháo sườn, 1 cháo sườn (XS), 1 gan xào (L), 1 bình nước tự chọn, 1 đĩa hoa quả (L)" }] },
+        { "name": "Set 4 Người", "descriptions": [{ "size": null, "price": 395000, "optional": null, "description": "3 cháo sườn, 2 gan xào (M), 1 bình nước tự chọn, 1 đĩa hoa quả (L)" }] }
+      ]
+    },
+    {
+      "name": "DIMSUM",
+      "items": [
+        {
+          "name": "Bánh tiểu long",
+          "descriptions": [
+            { "size": "Lẻ", "price": 17000, "optional": null, "description": null },
+            { "size": "Suất", "price": 45000, "optional": null, "description": null }
+          ]
+        },
+        {
+          "name": "Bánh bao xíu mại trứng",
+          "descriptions": [
+            { "size": "Lẻ", "price": 18000, "optional": null, "description": null },
+            { "size": "Suất", "price": 50000, "optional": null, "description": null }
+          ]
+        },
+        {
+          "name": "Bánh bao kim sa",
+          "descriptions": [
+            { "size": "Lẻ", "price": 20000, "optional": null, "description": null },
+            { "size": "Suất", "price": 55000, "optional": null, "description": null }
+          ]
+        },
+        { "name": "Há cảo tôm", "descriptions": [{ "size": "Suất", "price": 45000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "TRÀ SỮA TRÂN CHÂU",
+      "items": [
+        { "name": "Trà Sữa Truyền Thống", "descriptions": [{ "size": "M", "price": 40000, "optional": null, "description": null }, { "size": "L", "price": 45000, "optional": null, "description": null }] },
+        { "name": "Trà Sữa Cacao", "descriptions": [{ "size": "M", "price": 43000, "optional": null, "description": null }, { "size": "L", "price": 48000, "optional": null, "description": null }] },
+        { "name": "Trà Sữa Socola", "descriptions": [{ "size": "M", "price": 45000, "optional": null, "description": null }, { "size": "L", "price": 50000, "optional": null, "description": null }] },
+        { "name": "Trà Sữa Bạc Hà", "descriptions": [{ "size": "M", "price": 45000, "optional": null, "description": null }, { "size": "L", "price": 50000, "optional": null, "description": null }] },
+        { "name": "Trà Sữa Việt Quất", "descriptions": [{ "size": "M", "price": 48000, "optional": null, "description": null }, { "size": "L", "price": 52000, "optional": null, "description": null }] },
+        { "name": "Trà Sữa Hạnh Nhân", "descriptions": [{ "size": "M", "price": 48000, "optional": null, "description": null }, { "size": "L", "price": 52000, "optional": null, "description": null }] },
+        { "name": "Trà Sữa Hạt Sen", "descriptions": [{ "size": "M", "price": 48000, "optional": null, "description": null }, { "size": "L", "price": 52000, "optional": null, "description": null }] },
+        { "name": "Trà Sữa Đậu Đỏ", "descriptions": [{ "size": "M", "price": 48000, "optional": null, "description": null }, { "size": "L", "price": 52000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "TRÀ",
+      "items": [
+        { "name": "Trà Đen Mật Ong", "descriptions": [{ "size": "M", "price": 30000, "optional": null, "description": null }, { "size": "L", "price": 35000, "optional": null, "description": null }] },
+        { "name": "Trà Bạc Hà", "descriptions": [{ "size": "M", "price": 30000, "optional": null, "description": null }, { "size": "L", "price": 35000, "optional": null, "description": null }] },
+        { "name": "Trà Chanh", "descriptions": [{ "size": "M", "price": 30000, "optional": null, "description": null }, { "size": "L", "price": 35000, "optional": null, "description": null }] },
+        { "name": "Trà Quất", "descriptions": [{ "size": "M", "price": 30000, "optional": null, "description": null }, { "size": "L", "price": 35000, "optional": null, "description": null }] },
+        { "name": "Trà Đào", "descriptions": [{ "size": "M", "price": 48000, "optional": null, "description": null }, { "size": "L", "price": 52000, "optional": null, "description": null }] },
+        { "name": "Trà Đào (biến thể)", "descriptions": [{ "size": "M", "price": 48000, "optional": null, "description": null }, { "size": "L", "price": 52000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "NƯỚC ÉP",
+      "items": [
+        { "name": "Chanh", "descriptions": [{ "size": "M", "price": 40000, "optional": null, "description": null }, { "size": "L", "price": 45000, "optional": null, "description": null }] },
+        { "name": "Dưa Hấu", "descriptions": [{ "size": "M", "price": 45000, "optional": null, "description": null }, { "size": "L", "price": 50000, "optional": null, "description": null }] },
+        { "name": "Ổi", "descriptions": [{ "size": "M", "price": 45000, "optional": null, "description": null }, { "size": "L", "price": 52000, "optional": null, "description": null }] },
+        { "name": "Táo", "descriptions": [{ "size": "M", "price": 48000, "optional": null, "description": null }, { "size": "L", "price": 52000, "optional": null, "description": null }] },
+        { "name": "Dứa", "descriptions": [{ "size": "M", "price": 48000, "optional": null, "description": null }, { "size": "L", "price": 52000, "optional": null, "description": null }] },
+        { "name": "Cam", "descriptions": [{ "size": "M", "price": 48000, "optional": null, "description": null }, { "size": "L", "price": 52000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "BIA - NƯỚC NGỌT",
+      "items": [
+        { "name": "Nước Suối", "descriptions": [{ "size": null, "price": 10000, "optional": null, "description": null }] },
+        { "name": "Coca Cola", "descriptions": [{ "size": null, "price": 15000, "optional": null, "description": null }] },
+        { "name": "Pepsi", "descriptions": [{ "size": null, "price": 15000, "optional": null, "description": null }] },
+        { "name": "Bia Hà Nội", "descriptions": [{ "size": null, "price": 18000, "optional": null, "description": null }] },
+        { "name": "Bia Sài Gòn", "descriptions": [{ "size": null, "price": 20000, "optional": null, "description": null }] },
+        { "name": "Bia Tiger Bạc", "descriptions": [{ "size": null, "price": 29000, "optional": null, "description": null }] }
+      ]
+    }
+  ]
+}

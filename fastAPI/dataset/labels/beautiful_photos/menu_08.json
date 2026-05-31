@@ -1,0 +1,196 @@
+{
+  "categories": [
+    {
+      "name": "Menu",
+      "items": [
+        {
+          "name": "THẬP CẨM",
+          "descriptions": [
+            {
+              "size": "ly",
+              "price": 30000,
+              "optional": null,
+              "description": "Nhân đậu xanh, đậu đen, hạt sen, thạch, dừa tươi, kèm 1 bánh chay"
+            }
+          ]
+        },
+        {
+          "name": "SEN DỪA",
+          "descriptions": [
+            {
+              "size": "ly",
+              "price": 20000,
+              "optional": null,
+              "description": "Hạt sen, nước sen, dừa tươi"
+            }
+          ]
+        },
+        {
+          "name": "ĐỖ XANH SEN",
+          "descriptions": [
+            {
+              "size": "ly",
+              "price": 20000,
+              "optional": null,
+              "description": "Chè đậu xanh, hạt sen"
+            }
+          ]
+        },
+        {
+          "name": "ĐỖ ĐEN SEN",
+          "descriptions": [
+            {
+              "size": "ly",
+              "price": 20000,
+              "optional": null,
+              "description": "Chè đậu đen, hạt sen"
+            }
+          ]
+        },
+        {
+          "name": "ĐỖ XANH ĐEN",
+          "descriptions": [
+            {
+              "size": "ly",
+              "price": 20000,
+              "optional": null,
+              "description": "Chè đậu xanh, đậu đen, thạch, dừa tươi"
+            }
+          ]
+        },
+        {
+          "name": "ĐỖ XANH",
+          "descriptions": [
+            {
+              "size": "ly",
+              "price": 15000,
+              "optional": null,
+              "description": "Chè đậu xanh xay nhuyễn, thạch"
+            }
+          ]
+        },
+        {
+          "name": "ĐỖ ĐEN",
+          "descriptions": [
+            {
+              "size": "ly",
+              "price": 15000,
+              "optional": null,
+              "description": "Chè đậu đen, thạch"
+            }
+          ]
+        },
+        {
+          "name": "XÔI CHÈ",
+          "descriptions": [
+            {
+              "size": "bát",
+              "price": 15000,
+              "optional": null,
+              "description": "Xôi vò ăn kèm chè đậu xanh hoặc chè bột báng"
+            }
+          ]
+        },
+        {
+          "name": "BÁNH TRÔI",
+          "descriptions": [
+            {
+              "size": "đĩa",
+              "price": 20000,
+              "optional": null,
+              "description": "Bánh trôi nhân đường phèn, rắc vừng trắng"
+            }
+          ]
+        },
+        {
+          "name": "BÁNH CHAY",
+          "descriptions": [
+            {
+              "size": "bát",
+              "price": 25000,
+              "optional": null,
+              "description": "Bánh chay nhân đậu xanh, chè bột báng, rắc vừng"
+            }
+          ]
+        },
+        {
+          "name": "BÁNH 9 TẦNG MÂY",
+          "descriptions": [
+            {
+              "size": "miếng",
+              "price": 5000,
+              "optional": null,
+              "description": "Bánh bột năng hấp nhiều màu"
+            }
+          ]
+        },
+        {
+          "name": "CỐM XÀO",
+          "descriptions": [
+            {
+              "size": "đĩa",
+              "price": 25000,
+              "optional": null,
+              "description": "Cốm xào đường, dai thơm"
+            }
+          ]
+        },
+        {
+          "name": "CHÈ KHO",
+          "descriptions": [
+            {
+              "size": "đĩa",
+              "price": 30000,
+              "optional": null,
+              "description": "Đậu xanh xào đường, ngọt đặc"
+            }
+          ]
+        },
+        {
+          "name": "XÔI VÒ",
+          "descriptions": [
+            {
+              "size": "kg",
+              "price": 70000,
+              "optional": null,
+              "description": "Xôi nếp vò đậu xanh, tơi mềm"
+            }
+          ]
+        },
+        {
+          "name": "XÔI VÒ GẤC",
+          "descriptions": [
+            {
+              "size": "kg",
+              "price": 100000,
+              "optional": "Chỉ có vào ngày 1 và 15 âm lịch",
+              "description": "Xôi gấc vò đậu xanh, tơi mềm"
+            }
+          ]
+        },
+        {
+          "name": "CHÈ ĐỖ ĐEN ĐẶC",
+          "descriptions": [
+            {
+              "size": "bát",
+              "price": 15000,
+              "optional": "Chỉ có vào mùa đông",
+              "description": "Chè đậu đen nấu đặc, ăn nóng"
+            }
+          ]
+        },
+        {
+          "name": "BÁNH TRÔI TÀU",
+          "descriptions": [
+            {
+              "size": "bát",
+              "price": 20000,
+              "optional": "Chỉ có vào mùa đông",
+              "description": "Bánh trôi nhân đậu xanh, mè đen, nước gừng nóng"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

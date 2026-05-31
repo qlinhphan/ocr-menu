@@ -1,0 +1,88 @@
+{
+  "categories": [
+    {
+      "name": "ĐỒ ĂN",
+      "items": [
+        {
+          "name": "Bún đậu chay",
+          "descriptions": [
+            { "size": "Nhỏ", "price": 25000, "optional": null, "description": null },
+            { "size": "Vừa", "price": 30000, "optional": null, "description": null },
+            { "size": "Lớn", "price": 35000, "optional": null, "description": null }
+          ]
+        },
+        {
+          "name": "Mẹt đầy đủ",
+          "descriptions": [
+            { "size": null, "price": 40000, "optional": null, "description": "Đậu + nem + chả cốm + dồi sụn + thịt bắp luộc" }
+          ]
+        },
+        {
+          "name": "Bún giả cầy",
+          "descriptions": [
+            { "size": null, "price": 45000, "optional": null, "description": null }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ĐỒ THÊM",
+      "items": [
+        {
+          "name": "Bún / Nem",
+          "descriptions": [
+            { "size": "Bún", "price": 5000, "optional": null, "description": null },
+            { "size": "Nem", "price": 8000, "optional": null, "description": null }
+          ]
+        },
+        {
+          "name": "Đậu",
+          "descriptions": [
+            { "size": "Nhỏ", "price": 10000, "optional": null, "description": null },
+            { "size": "Lớn", "price": 20000, "optional": null, "description": null }
+          ]
+        },
+        {
+          "name": "Chả cốm",
+          "descriptions": [
+            { "size": "Nhỏ", "price": 10000, "optional": null, "description": null },
+            { "size": "Lớn", "price": 20000, "optional": null, "description": null }
+          ]
+        },
+        {
+          "name": "Dồi sụn",
+          "descriptions": [
+            { "size": "Nhỏ", "price": 10000, "optional": null, "description": null },
+            { "size": "Lớn", "price": 20000, "optional": null, "description": null }
+          ]
+        },
+        {
+          "name": "Thịt luộc",
+          "descriptions": [
+            { "size": "Nhỏ", "price": 10000, "optional": null, "description": null },
+            { "size": "Lớn", "price": 20000, "optional": null, "description": null }
+          ]
+        },
+        { "name": "Dưa leo", "descriptions": [{ "size": null, "price": 10000, "optional": "1 đĩa", "description": null }] }
+      ]
+    },
+    {
+      "name": "ĐỒ UỐNG",
+      "items": [
+        { "name": "Trà đá", "descriptions": [{ "size": null, "price": 5000, "optional": null, "description": null }] },
+        { "name": "Trà chanh / tắc", "descriptions": [{ "size": null, "price": 15000, "optional": null, "description": null }] },
+        { "name": "Bia Sài Gòn", "descriptions": [{ "size": null, "price": 17000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "NƯỚC GIẢI KHÁT",
+      "items": [
+        { "name": "String dâu/vàng", "descriptions": [{ "size": null, "price": 15000, "optional": null, "description": null }] },
+        { "name": "7Up / Mirinda", "descriptions": [{ "size": null, "price": 15000, "optional": null, "description": null }] },
+        { "name": "Twister cam ép", "descriptions": [{ "size": null, "price": 15000, "optional": null, "description": null }] },
+        { "name": "Trà Oolong Tea+", "descriptions": [{ "size": null, "price": 10000, "optional": null, "description": null }] },
+        { "name": "Nước suối Aquafina", "descriptions": [{ "size": null, "price": 10000, "optional": null, "description": null }] }
+      ]
+    }
+  ]
+}

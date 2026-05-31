@@ -1,0 +1,331 @@
+{
+  "categories": [
+    {
+      "name": "COFFEE",
+      "items": [
+        {
+          "name": "CÀ PHÊ ĐEN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Black Coffee"
+            }
+          ]
+        },
+        {
+          "name": "CÀ PHÊ NÂU",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "Coffee with condensed milk"
+            }
+          ]
+        },
+        {
+          "name": "CÀ PHÊ MUỐI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": "Salted Coffee"
+            }
+          ]
+        },
+        {
+          "name": "VANI LATTE COFFEE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 59000,
+              "optional": null,
+              "description": "Coffee, Milk, Vani Cream"
+            }
+          ]
+        },
+        {
+          "name": "CARAMEL MACHIATO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 59000,
+              "optional": null,
+              "description": "Coffee, Milk, Caramel Sauce"
+            }
+          ]
+        },
+        {
+          "name": "AFFOGATO COFFEE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": "Coffee, Vani Cream"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TIRA CREAM LATTE",
+      "items": [
+        {
+          "name": "TIRA CREAM – COFFEE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 59000,
+              "optional": null,
+              "description": "Tira cream, milk, coffee"
+            }
+          ]
+        },
+        {
+          "name": "TIRA CREAM – MATCHA",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 59000,
+              "optional": null,
+              "description": "Tira cream, milk, matcha sauce"
+            }
+          ]
+        },
+        {
+          "name": "TIRA CREAM – CHOCO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 59000,
+              "optional": null,
+              "description": "Tira cream, milk, chocolate sauce"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TRÀ ĐẶC BIỆT",
+      "items": [
+        {
+          "name": "XOÀI QUẢ MỌNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Green tea, Mango, Berry, Berry jelly"
+            }
+          ]
+        },
+        {
+          "name": "TRÀ XANH DỨA QUẤT",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Green tea, Pineapple, Kumquat, Peach jelly"
+            }
+          ]
+        },
+        {
+          "name": "VẢI DÂU RỪNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Green tea, Lychee, Berry, Berry jelly"
+            }
+          ]
+        },
+        {
+          "name": "LỤC TRÀ VẢI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Green tea, Lychee"
+            }
+          ]
+        },
+        {
+          "name": "SEN VÀNG KEM MẶN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Black tea, Lotus seeds, Salted cream"
+            }
+          ]
+        },
+        {
+          "name": "ĐÀO KEM MẶN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Black tea, Peach, Salted cream, Peach jelly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TRÀ SỮA",
+      "items": [
+        {
+          "name": "TRÀ SỮA ASSAM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Black milk tea, Peach jelly"
+            }
+          ]
+        },
+        {
+          "name": "TRÀ SỮA ASSAM KEM MẶN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Black milk tea, Peach jelly, Salted cream"
+            }
+          ]
+        },
+        {
+          "name": "TRÀ SỮA ASSAM KEM TIRA",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Black milk tea, Peach jelly, Tira cream"
+            }
+          ]
+        },
+        {
+          "name": "TRÀ SỮA Ô LONG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Oolong milk tea, Peach jelly"
+            }
+          ]
+        },
+        {
+          "name": "TRÀ SỮA Ô LONG XOÀI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Mango, Oolong milk tea, Peach jelly"
+            }
+          ]
+        },
+        {
+          "name": "TRÀ SỮA Ô LONG ĐÀO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Peach, Oolong milk tea, Peach jelly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HOT DRINK",
+      "items": [
+        {
+          "name": "MATCHA KEM MUỐI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Matcha sauce, Hot milk, Salted cream"
+            }
+          ]
+        },
+        {
+          "name": "ASSAM KEM MUỐI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Assam black tea, Hot milk, Salted cream"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FOOD",
+      "items": [
+        {
+          "name": "HEO KHÔ CHÁY TỎI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "GÀ KHÔ LÁ CHANH",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "HƯỚNG DƯƠNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BÁNH SỪNG BÒ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

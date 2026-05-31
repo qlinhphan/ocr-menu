@@ -1,0 +1,68 @@
+{
+  "categories": [
+    {
+      "name": "Kimbap",
+      "items": [
+        { "name": "Kimbap Hải Sản", "descriptions": [{ "size": null, "price": 42000, "optional": null, "description": null }] },
+        { "name": "Kimbap Cá Ngừ", "descriptions": [{ "size": null, "price": 48000, "optional": null, "description": null }] },
+        { "name": "Kimbap Bò", "descriptions": [{ "size": null, "price": 48000, "optional": null, "description": null }] },
+        { "name": "Kimbap Mini", "descriptions": [{ "size": null, "price": 40000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "Món Cơm",
+      "items": [
+        { "name": "Cơm Trứng Cuộn", "descriptions": [{ "size": null, "price": 60000, "optional": null, "description": null }] },
+        { "name": "Cơm Chiên Hải Sản", "descriptions": [{ "size": null, "price": 65000, "optional": null, "description": null }] },
+        { "name": "Cơm Chiên Bulgogi", "descriptions": [{ "size": null, "price": 65000, "optional": null, "description": null }] },
+        { "name": "Cơm Thịt Heo Xào Cay Trứng", "descriptions": [{ "size": null, "price": 68000, "optional": null, "description": null }] },
+        { "name": "Bibimbap Xào Bò", "descriptions": [{ "size": null, "price": 68000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "Mì & Miến",
+      "items": [
+        { "name": "Mì Hải Sản", "descriptions": [{ "size": null, "price": 65000, "optional": null, "description": null }] },
+        { "name": "Mì Cay", "descriptions": [{ "size": null, "price": 90000, "optional": null, "description": null }] },
+        { "name": "Mì Tương Đen", "descriptions": [{ "size": null, "price": 70000, "optional": null, "description": null }] },
+        { "name": "Mì Bulgogi", "descriptions": [{ "size": null, "price": 55000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "Món Canh",
+      "items": [
+        { "name": "Canh Hải Sản", "descriptions": [{ "size": null, "price": 75000, "optional": null, "description": null }] },
+        { "name": "Canh Kimchi", "descriptions": [{ "size": null, "price": 75000, "optional": null, "description": null }] },
+        { "name": "Canh Kimchi Tuna", "descriptions": [{ "size": null, "price": 75000, "optional": null, "description": null }] },
+        { "name": "Canh Đậu Hũ", "descriptions": [{ "size": null, "price": 75000, "optional": null, "description": null }] },
+        { "name": "Canh Tương Đậu", "descriptions": [{ "size": null, "price": 75000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "Món Gà",
+      "items": [
+        { "name": "Gà Rán", "descriptions": [{ "size": null, "price": 78000, "optional": null, "description": null }] },
+        { "name": "Gà Sốt Cay Ngọt", "descriptions": [{ "size": null, "price": 75000, "optional": null, "description": null }] },
+        { "name": "Gà Sốt Mật Ong", "descriptions": [{ "size": null, "price": 75000, "optional": null, "description": null }] },
+        { "name": "Gà Không Xương Sốt Ngọt", "descriptions": [{ "size": null, "price": 70000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "Tonkatsu",
+      "items": [
+        { "name": "Thịt Heo Chiên Xù", "descriptions": [{ "size": null, "price": 72000, "optional": null, "description": null }] },
+        { "name": "Thịt Heo Chiên Xù Phô Mai", "descriptions": [{ "size": null, "price": 75000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "Side",
+      "items": [
+        { "name": "Xiên Tôm", "descriptions": [{ "size": null, "price": 5000, "optional": null, "description": null }] },
+        { "name": "Rong Biển Cuộn", "descriptions": [{ "size": null, "price": 17000, "optional": null, "description": null }] },
+        { "name": "Mandu", "descriptions": [{ "size": null, "price": 10000, "optional": null, "description": null }] },
+        { "name": "Chả Cá", "descriptions": [{ "size": null, "price": 8000, "optional": null, "description": null }] },
+        { "name": "Khoai Tây Chiên", "descriptions": [{ "size": null, "price": 25000, "optional": null, "description": null }] }
+      ]
+    }
+  ]
+}

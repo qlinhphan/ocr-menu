@@ -1,0 +1,222 @@
+{
+  "categories": [
+    {
+      "name": "BBQ",
+      "items": [
+        {
+          "name": "Thai Style Grilled Beef",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 295000,
+              "optional": null,
+              "description": "Thịt bò nướng mềm với hương vị Thái"
+            }
+          ]
+        },
+        {
+          "name": "Prawns",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 375000,
+              "optional": null,
+              "description": "Tôm nướng than hồng"
+            }
+          ]
+        },
+        {
+          "name": "Duck",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 295000,
+              "optional": null,
+              "description": "Vịt quay da giòn sốt Á"
+            }
+          ]
+        },
+        {
+          "name": "Char Siu Pork",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 225000,
+              "optional": null,
+              "description": "Thịt heo nướng mềm sốt Char Siu"
+            }
+          ]
+        },
+        {
+          "name": "Seafood Platter",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 850000,
+              "optional": null,
+              "description": "Đa dạng hải sản kèm nước chấm đặc biệt"
+            }
+          ]
+        },
+        {
+          "name": "Meat Platter",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 700000,
+              "optional": null,
+              "description": "Thịt nướng kết hợp Việt, Hàn, Thái"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SPECIALS",
+      "items": [
+        {
+          "name": "Chả Cá Hà Nội",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 195000,
+              "optional": null,
+              "description": "Đặc sản nổi tiếng Hà Nội"
+            }
+          ]
+        },
+        {
+          "name": "Sizzling Bún Chả",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 210000,
+              "optional": null,
+              "description": "Thịt nướng kèm bún, rau thơm và nước chấm"
+            }
+          ]
+        },
+        {
+          "name": "Cantonese Steamed Tilapia",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 285000,
+              "optional": null,
+              "description": "Cá hấp gừng, hành và xì dầu kiểu Quảng Đông"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CLAY POTS",
+      "items": [
+        {
+          "name": "Caramelized Pork Belly",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 275000,
+              "optional": null,
+              "description": "Ba chỉ kho nồi đất sốt caramel ngọt mặn"
+            }
+          ]
+        },
+        {
+          "name": "Caramelized Fish",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 290000,
+              "optional": null,
+              "description": "Cá kho nồi đất sốt caramel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NOODLES & RICE",
+      "items": [
+        {
+          "name": "Pad Thai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 195000,
+              "optional": null,
+              "description": "Phở xào kiểu Thái với tôm, đậu phụ, giá và đậu phộng"
+            }
+          ]
+        },
+        {
+          "name": "Lo Mien",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 225000,
+              "optional": null,
+              "description": "Mì xào rau, chọn hải sản, gà hoặc bò"
+            }
+          ]
+        },
+        {
+          "name": "Asian Veggies & Noodles",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 155000,
+              "optional": null,
+              "description": "Mì xào rau củ sốt Á"
+            }
+          ]
+        },
+        {
+          "name": "Beef Chow Fun",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 195000,
+              "optional": null,
+              "description": "Bánh phở xào bò và giá kiểu Trung Hoa"
+            }
+          ]
+        },
+        {
+          "name": "Pork or Chicken Fried Rice",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 185000,
+              "optional": null,
+              "description": "Cơm chiên trứng, rau, chọn heo hoặc gà"
+            }
+          ]
+        },
+        {
+          "name": "Seafood Fried Rice",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 195000,
+              "optional": null,
+              "description": "Cơm chiên trứng, hải sản và rau"
+            }
+          ]
+        },
+        {
+          "name": "Steamed Rice",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

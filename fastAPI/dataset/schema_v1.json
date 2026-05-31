@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Menu Schema v1",
+  "type": "object",
+
+  "properties": {
+    "categories": {
+      "type": "array",
+
+      "items": {
+        "type": "object",
+
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Category name"
+          },
+
+          "items": {
+            "type": "array",
+
+            "items": {
+              "type": "object",
+
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Item name"
+                },
+
+                "descriptions": {
+                  "type": "array",
+
+                  "items": {
+                    "type": "object",
+
+                    "properties": {
+                      "size": {
+                        "type": ["string", "null"],
+                        "description": "Size (S,M,L...)"
+                      },
+
+                      "price": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "description": "Price in VND"
+                      },
+
+                      "optional": {
+                        "type": ["string", "null"],
+                        "description": "Optional choices"
+                      },
+
+                      "description": {
+                        "type": ["string", "null"],
+                        "description": "Description of item"
+                      }
+                    },
+
+                    "required": [
+                      "price"
+                    ],
+
+                    "additionalProperties": false
+                  }
+                }
+              },
+
+              "required": [
+                "name",
+                "descriptions"
+              ],
+
+              "additionalProperties": false
+            }
+          }
+        },
+
+        "required": [
+          "name",
+          "items"
+        ],
+
+        "additionalProperties": false
+      }
+    }
+  },
+
+  "required": [
+    "categories"
+  ],
+
+  "additionalProperties": false
+}

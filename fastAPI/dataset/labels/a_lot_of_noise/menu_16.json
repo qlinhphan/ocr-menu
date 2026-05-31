@@ -1,0 +1,87 @@
+{
+  "categories": [
+    {
+      "name": "COMBO TIẾT KIỆM",
+      "items": [
+        {
+          "name": "Combo đặc biệt + nem + bánh tôm",
+          "descriptions": [
+            { "size": null, "price": 145000, "optional": null, "description": null }
+          ]
+        },
+        {
+          "name": "Đặc biệt + nem + bánh tôm",
+          "descriptions": [
+            { "size": null, "price": 115000, "optional": null, "description": null }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GỌI MÓN",
+      "items": [
+        {
+          "name": "Bún chả",
+          "descriptions": [
+            { "size": "75K", "price": 75000, "optional": null, "description": "Kebab rice noodles" },
+            { "size": "90K", "price": 90000, "optional": null, "description": "Kebab rice noodles" }
+          ]
+        },
+        {
+          "name": "Bún chả trộn",
+          "descriptions": [
+            { "size": null, "price": 90000, "optional": null, "description": "Mixed kebab rice noodles" }
+          ]
+        },
+        {
+          "name": "Bún bò trộn",
+          "descriptions": [
+            { "size": null, "price": 90000, "optional": null, "description": "Mixed beef rice noodles" }
+          ]
+        },
+        {
+          "name": "Bún nem",
+          "descriptions": [
+            { "size": null, "price": 110000, "optional": null, "description": "Spring rolls rice noodles" }
+          ]
+        },
+        {
+          "name": "Bánh cuốn",
+          "descriptions": [
+            { "size": null, "price": 75000, "optional": null, "description": "Stuffed pancake" }
+          ]
+        },
+        {
+          "name": "Đùi gà hầm sâm",
+          "descriptions": [
+            { "size": null, "price": 100000, "optional": null, "description": "Ginseng-braised chicken thigh" }
+          ]
+        },
+        {
+          "name": "Bánh tôm / suất",
+          "descriptions": [
+            { "size": null, "price": 105000, "optional": null, "description": "Shrimp fritter / portion" }
+          ]
+        },
+        {
+          "name": "Nem hải sản",
+          "descriptions": [
+            { "size": null, "price": 35000, "optional": null, "description": "Seafood spring rolls" }
+          ]
+        },
+        {
+          "name": "Bánh tôm / cái",
+          "descriptions": [
+            { "size": null, "price": 35000, "optional": null, "description": "Shrimp fritter / piece" }
+          ]
+        },
+        {
+          "name": "Khoai tây chiên",
+          "descriptions": [
+            { "size": null, "price": 50000, "optional": null, "description": "French fries" }
+          ]
+        }
+      ]
+    }
+  ]
+}

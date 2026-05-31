@@ -1,0 +1,142 @@
+{
+  "categories": [
+    {
+      "name": "Menu",
+      "items": [
+        {
+          "name": "Bún chả",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh giò đầy đủ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": "Bánh giò nhân thịt, mộc nhĩ, hành; kèm dưa chuột muối và giò"
+            }
+          ]
+        },
+        {
+          "name": "Bánh giò không",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 17000,
+              "optional": null,
+              "description": "Bánh giò nhân thịt, mộc nhĩ, hành; không kèm giò"
+            }
+          ]
+        },
+        {
+          "name": "Sữa đậu nành",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sữa ngô",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà đá",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 4000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bia 333",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Coca-Cola, Twister, 7Up",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 12000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sting vàng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà thái, trà chanh, trà quất",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bò húc/Red Bull",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

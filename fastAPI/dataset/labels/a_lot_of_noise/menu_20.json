@@ -1,0 +1,81 @@
+{
+  "categories": [
+    {
+      "name": "ĐÁ XAY",
+      "items": [
+        { "name": "Xoài dừa đá xay", "descriptions": [{ "size": null, "price": 35000, "optional": null, "description": null }] },
+        { "name": "Sầu riêng xoài đá xay", "descriptions": [{ "size": null, "price": 38000, "optional": null, "description": null }] },
+        { "name": "Dưa hấu cốt dừa đá xay", "descriptions": [{ "size": null, "price": 35000, "optional": null, "description": null }] },
+        { "name": "Việt quất dừa xay phủ kem", "descriptions": [{ "size": null, "price": 35000, "optional": null, "description": null }] },
+        { "name": "Dâu tây đá xay phủ kem", "descriptions": [{ "size": null, "price": 35000, "optional": null, "description": null }] },
+        { "name": "Đào dâu tây cốt dừa", "descriptions": [{ "size": null, "price": 35000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "TRÀ HOA QUẢ",
+      "items": [
+        { "name": "Trà ổi hồng hạt chia", "descriptions": [{ "size": null, "price": 25000, "optional": null, "description": null }] },
+        { "name": "Trà đào cam sả", "descriptions": [{ "size": null, "price": 28000, "optional": null, "description": null }] },
+        { "name": "Trà đào nhài", "descriptions": [{ "size": null, "price": 25000, "optional": null, "description": null }] },
+        { "name": "Trà an yên", "descriptions": [{ "size": null, "price": 30000, "optional": null, "description": null }] },
+        { "name": "Dưa hấu nha đam", "descriptions": [{ "size": null, "price": 28000, "optional": null, "description": null }] },
+        { "name": "Thạch dừa sữa", "descriptions": [{ "size": null, "price": 35000, "optional": null, "description": null }] },
+        { "name": "Chanh leo cam đào", "descriptions": [{ "size": null, "price": 28000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "CAFE",
+      "items": [
+        { "name": "Cafe đen SG", "descriptions": [{ "size": null, "price": 25000, "optional": null, "description": null }] },
+        { "name": "Cafe nâu SG", "descriptions": [{ "size": null, "price": 25000, "optional": null, "description": null }] },
+        { "name": "Bạc xỉu", "descriptions": [{ "size": null, "price": 28000, "optional": null, "description": null }] },
+        { "name": "Cafe cốt dừa", "descriptions": [{ "size": null, "price": 35000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "TRÀ SỮA",
+      "items": [
+        { "name": "Sữa tươi trân châu đường đen", "descriptions": [{ "size": null, "price": 35000, "optional": null, "description": null }] },
+        { "name": "Matcha trân châu đường đen", "descriptions": [{ "size": null, "price": 35000, "optional": null, "description": null }] },
+        { "name": "Khoai môn chấn trâu đường đen", "descriptions": [{ "size": null, "price": 25000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "SPECIAL",
+      "items": [
+        { "name": "Trà mận nhiệt đới", "descriptions": [{ "size": null, "price": 25000, "optional": null, "description": null }] },
+        { "name": "Trà sen vàng machiato", "descriptions": [{ "size": null, "price": 35000, "optional": null, "description": null }] },
+        { "name": "Đậu xanh rau má sữa dừa", "descriptions": [{ "size": null, "price": 28000, "optional": null, "description": null }] },
+        { "name": "Rau má sữa dừa", "descriptions": [{ "size": null, "price": 28000, "optional": null, "description": null }] },
+        { "name": "Soda 7 màu", "descriptions": [{ "size": null, "price": 25000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "GÌ CŨNG ĐƯỢC",
+      "items": [
+        { "name": "Nước cam", "descriptions": [{ "size": null, "price": 30000, "optional": null, "description": null }] },
+        { "name": "Nước ép dưa hấu", "descriptions": [{ "size": null, "price": 28000, "optional": null, "description": null }] },
+        { "name": "Chanh leo", "descriptions": [{ "size": null, "price": 25000, "optional": null, "description": null }] },
+        { "name": "Trà chanh nha đam / con cỏ", "descriptions": [{ "size": null, "price": 15000, "optional": null, "description": null }] },
+        { "name": "Trà kim quất nha đam", "descriptions": [{ "size": null, "price": 15000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "ĐỒ ĂN NHẸ",
+      "items": [
+        { "name": "Hướng dương", "descriptions": [{ "size": null, "price": 10000, "optional": "10-15k", "description": null }] },
+        { "name": "Heo khô cháy tỏi", "descriptions": [{ "size": null, "price": 25000, "optional": null, "description": null }] },
+        { "name": "Khô gà lá chanh", "descriptions": [{ "size": null, "price": 25000, "optional": null, "description": null }] },
+        { "name": "Bánh ngọt", "descriptions": [{ "size": null, "price": 0, "optional": "xem set", "description": "Bông bé, mì hoa cúc, ..."}] }
+      ]
+    },
+    {
+      "name": "TOPPING",
+      "items": [
+        { "name": "Nha đam", "descriptions": [{ "size": null, "price": 5000, "optional": null, "description": null }] },
+        { "name": "Trân châu trắng", "descriptions": [{ "size": null, "price": 5000, "optional": null, "description": null }] },
+        { "name": "Trân châu đường đen", "descriptions": [{ "size": null, "price": 7000, "optional": null, "description": null }] }
+      ]
+    }
+  ]
+}

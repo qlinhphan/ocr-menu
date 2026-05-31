@@ -1,0 +1,426 @@
+{
+  "categories": [
+    {
+      "name": "Cafe Phin",
+      "items": [
+        {
+          "name": "Phê Nâu",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 30000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "L",
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phê Đen",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 30000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "L",
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phê Xỉu",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 35000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "L",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phê Muối",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 35000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "L",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phê Latte Caramel",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "L",
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cafe Máy",
+      "items": [
+        {
+          "name": "Espresso",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cappuccino",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Americano",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cafe Latte",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ColdBrew",
+      "items": [
+        {
+          "name": "Lychee (Vải)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Peach (Mơ Má Đào)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Xí Muội",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Matcha",
+      "items": [
+        {
+          "name": "Latte (Matcha)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Coldwhisk (Matcha)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Oreo (Oreo Chesse)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Coconut (Kem matcha)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trà Trái Cây",
+      "items": [
+        {
+          "name": "Trà Đào Cam Sả",
+          "descriptions": [
+            {
+              "size": "XL",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Vải",
+          "descriptions": [
+            {
+              "size": "XL",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Ổi Hồng",
+          "descriptions": [
+            {
+              "size": "XL",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Xoài Hoàng Kim",
+          "descriptions": [
+            {
+              "size": "XL",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trà Sữa",
+      "items": [
+        {
+          "name": "Kem Dẻo Phomai",
+          "descriptions": [
+            {
+              "size": "XL",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Olong Nhài",
+          "descriptions": [
+            {
+              "size": "XL",
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Olong Kem Trứng",
+          "descriptions": [
+            {
+              "size": "XL",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Hồng Trà Sữa",
+          "descriptions": [
+            {
+              "size": "XL",
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sinh tố_Nước Ép",
+      "items": [
+        {
+          "name": "Bơ Già Dừa Non (Sữa dừa & Bơ)",
+          "descriptions": [
+            {
+              "size": "L",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sinh Tố Bơ",
+          "descriptions": [
+            {
+              "size": "L",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sinh Tố Xoài",
+          "descriptions": [
+            {
+              "size": "L",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Ép Cam",
+          "descriptions": [
+            {
+              "size": "L",
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Ép Dưa Hấu",
+          "descriptions": [
+            {
+              "size": "L",
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cacao",
+      "items": [
+        {
+          "name": "Croissant (Cacao, Kem trứng)",
+          "descriptions": [
+            {
+              "size": "L",
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cacao Mint (Bạc Hà)",
+          "descriptions": [
+            {
+              "size": "L",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cacao Latte",
+          "descriptions": [
+            {
+              "size": "L",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

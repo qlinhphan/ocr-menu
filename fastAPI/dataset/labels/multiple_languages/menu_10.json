@@ -1,0 +1,348 @@
+{
+  "categories": [
+    {
+      "name": "GÀ QUAY KIỂU ĐỨC",
+      "items": [
+        {
+          "name": "Gà quay kiểu Đức",
+          "descriptions": [
+            {
+              "size": "Nửa con",
+              "price": 250000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "Một phần tư",
+              "price": 135000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "XÚC XÍCH",
+      "items": [
+        {
+          "name": "Xúc xích",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 180000,
+              "optional": null,
+              "description": "4 cây xúc xích Đức nướng 2 vị | 2 Nürnberg & 2 Paprika style"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BÒ NƯỚNG",
+      "items": [
+        {
+          "name": "Bò nướng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 300000,
+              "optional": null,
+              "description": "2 miếng bò nướng gỗ sồi | 2 slices of smoked brisket"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HEO QUAY",
+      "items": [
+        {
+          "name": "Heo quay",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 135000,
+              "optional": null,
+              "description": "2 miếng heo quay giòn bì | 2 slices of Porchetta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SALAD & MÓN KÈM",
+      "items": [
+        {
+          "name": "Salad rau xanh Đà Lạt sốt mayo",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 80000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Salad gà quay kiểu Đức sốt mayo",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh mỳ heo quay kiểu Đức",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 80000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khoai tây nướng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 90000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bắp cải trộn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 70000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Salad nui sắc màu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 70000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mixed plate đồ ăn kèm",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 150000,
+              "optional": null,
+              "description": "Khoai nghiền, khoai bi, bắp cải, salad nui, salad khoai tây"
+            }
+          ]
+        },
+        {
+          "name": "Salad rau xanh Đà Lạt sốt giấm gừng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 80000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Salad gà quay kiểu Đức sốt giấm gừng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh mỳ gà quay kiểu Đức",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 80000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khoai tây chiên giòn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 80000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Salad khoai tây sốt mayo",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 70000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khoai tây bi nướng lá thơm",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 90000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khoai tây nghiền",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 70000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ĐỒ UỐNG",
+      "items": [
+        {
+          "name": "Nước khoáng La Vie / Aquafina",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Soda Yakult thanh long",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Soda bạc hà",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Soda Yakult xoài",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Soda chanh đào",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bia Heineken lon cao",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bia Tiger",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà hoa quả nhiệt đới",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà dâu tằm",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà ổi hồng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

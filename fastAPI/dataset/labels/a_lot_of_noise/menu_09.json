@@ -1,0 +1,103 @@
+{
+  "categories": [
+    {
+      "name": "MÓN CHÍNH",
+      "items": [
+        {
+          "name": "Tô ngon miệng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 42000,
+              "optional": null,
+              "description": "Giò tai, mọc giòn, đậu chiên"
+            }
+          ]
+        },
+        {
+          "name": "Tô đầy đủ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 58000,
+              "optional": null,
+              "description": "Giò tai, mọc giòn, đậu chiên, bò tái lăn"
+            }
+          ]
+        },
+        {
+          "name": "Tô đặc biệt",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 66000,
+              "optional": null,
+              "description": "Giò tai, mọc giòn, đậu chiên, bò tái lăn, trứng vịt lộn"
+            }
+          ]
+        },
+        {
+          "name": "Lẩu riêu cua mọc giòn tươi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 160000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ĐỒ NHÚNG LẨU",
+      "items": [
+        { "name": "Mọc giòn tươi", "descriptions": [{ "size": null, "price": 73000, "optional": "1 dĩa", "description": null }] },
+        { "name": "Sụn heo chín", "descriptions": [{ "size": null, "price": 94000, "optional": "1 dĩa", "description": null }] },
+        { "name": "Thăn diềm bò", "descriptions": [{ "size": null, "price": 125000, "optional": "1 dĩa", "description": null }] },
+        { "name": "Lõi bò", "descriptions": [{ "size": null, "price": 125000, "optional": "1 dĩa", "description": null }] },
+        { "name": "Bắp bò", "descriptions": [{ "size": null, "price": 156000, "optional": "1 dĩa", "description": null }] },
+        { "name": "U bò", "descriptions": [{ "size": null, "price": 156000, "optional": "1 dĩa", "description": null }] },
+        { "name": "Gầu giòn", "descriptions": [{ "size": null, "price": 156000, "optional": "1 dĩa", "description": null }] },
+        { "name": "Bún tươi", "descriptions": [{ "size": null, "price": 16000, "optional": "1 dĩa", "description": null }] },
+        { "name": "Rau lẩu", "descriptions": [{ "size": null, "price": 32000, "optional": "1 dĩa", "description": null }] }
+      ]
+    },
+    {
+      "name": "ĂN KÈM",
+      "items": [
+        { "name": "Bún riêu tóp mỡ", "descriptions": [{ "size": null, "price": 21000, "optional": null, "description": null }] },
+        { "name": "Đậu chiên", "descriptions": [{ "size": null, "price": 6000, "optional": "1 phần", "description": null }] },
+        { "name": "Giò tai", "descriptions": [{ "size": null, "price": 8000, "optional": "1 cái", "description": null }] },
+        { "name": "Mọc giòn", "descriptions": [{ "size": null, "price": 9000, "optional": "1 viên", "description": null }] },
+        { "name": "Trứng vịt lộn", "descriptions": [{ "size": null, "price": 9000, "optional": "1 quả", "description": null }] },
+        { "name": "Bò tái lăn", "descriptions": [{ "size": null, "price": 16000, "optional": "1 phần", "description": null }] },
+        { "name": "Tóp mỡ thêm", "descriptions": [{ "size": null, "price": 16000, "optional": "1 phần", "description": null }] },
+        { "name": "Riêu cua thêm", "descriptions": [{ "size": null, "price": 11000, "optional": "1 phần", "description": null }] }
+      ]
+    },
+    {
+      "name": "ĐỒ ĂN NHẸ",
+      "items": [
+        { "name": "Nem ốc", "descriptions": [{ "size": null, "price": 9000, "optional": "1 cái", "description": null }] },
+        { "name": "Chả ốc", "descriptions": [{ "size": null, "price": 11000, "optional": "1 cái", "description": null }] }
+      ]
+    },
+    {
+      "name": "ĐỒ UỐNG",
+      "items": [
+        { "name": "Trà đá", "descriptions": [{ "size": null, "price": 5000, "optional": "1 cốc", "description": null }] },
+        { "name": "Sữa đậu", "descriptions": [{ "size": null, "price": 10000, "optional": "1 cốc", "description": null }] },
+        { "name": "Nước mơ", "descriptions": [{ "size": null, "price": 15000, "optional": "1 cốc", "description": null }] },
+        { "name": "Nước sấu", "descriptions": [{ "size": null, "price": 15000, "optional": "1 cốc", "description": null }] },
+        { "name": "Bò húc", "descriptions": [{ "size": null, "price": 18000, "optional": "1 lon", "description": null }] },
+        { "name": "Coca / 7 Up / Twister", "descriptions": [{ "size": null, "price": 15000, "optional": "1 lon", "description": null }] },
+        { "name": "Nước khoáng", "descriptions": [{ "size": null, "price": 12000, "optional": "1 chai", "description": null }] },
+        { "name": "Bia Tiger", "descriptions": [{ "size": null, "price": 25000, "optional": "1 lon", "description": null }] },
+        { "name": "Bia Hà Nội", "descriptions": [{ "size": null, "price": 22000, "optional": "1 lon", "description": null }] },
+        { "name": "Bia 333", "descriptions": [{ "size": null, "price": 22000, "optional": "1 lon", "description": null }] },
+        { "name": "Rượu nếp", "descriptions": [{ "size": null, "price": 65000, "optional": "500 ml/chai", "description": null }] }
+      ]
+    }
+  ]
+}

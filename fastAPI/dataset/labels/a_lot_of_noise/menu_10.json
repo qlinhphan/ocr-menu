@@ -1,0 +1,118 @@
+{
+  "categories": [
+    {
+      "name": "BURGER",
+      "items": [
+        { "name": "Burger Gà Phi Lê", "descriptions": [{ "size": null, "price": 49000, "optional": "Thêm phô mai +9000", "description": null }] },
+        { "name": "Burger Tôm", "descriptions": [{ "size": null, "price": 52000, "optional": null, "description": null }] },
+        { "name": "Burger Cá", "descriptions": [{ "size": null, "price": 49000, "optional": null, "description": null }] },
+        { "name": "Combo Burger A", "descriptions": [{ "size": null, "price": 69000, "optional": null, "description": "Burger gà phi lê + 1 khoai tây chiên (S) + 1 thức uống" }] },
+        { "name": "Combo Burger B", "descriptions": [{ "size": null, "price": 95000, "optional": null, "description": "Burger tôm + 1 gà viên + 1 thức uống" }] }
+      ]
+    },
+    {
+      "name": "CƠM",
+      "items": [
+        { "name": "Cơm BBQ gà không xương", "descriptions": [{ "size": null, "price": 45000, "optional": null, "description": null }] },
+        { "name": "Cơm BBQ gà viên", "descriptions": [{ "size": null, "price": 45000, "optional": null, "description": null }] },
+        { "name": "Cơm BBQ gà giòn", "descriptions": [{ "size": null, "price": 49000, "optional": null, "description": null }] },
+        { "name": "Cơm gà tắm nước mắm", "descriptions": [{ "size": null, "price": 52000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "MÌ Ý PHÔ MAI",
+      "items": [
+        { "name": "Mì Ý phô mai", "descriptions": [{ "size": null, "price": 45000, "optional": null, "description": null }] },
+        { "name": "Mì Ý phô mai gà viên", "descriptions": [{ "size": null, "price": 55000, "optional": null, "description": null }] },
+        { "name": "Mì Ý phô mai gà không xương", "descriptions": [{ "size": null, "price": 69000, "optional": null, "description": null }] },
+        { "name": "Mì Ý phô mai donut tôm", "descriptions": [{ "size": null, "price": 69000, "optional": null, "description": null }] },
+        { "name": "Combo Mì Ý S1", "descriptions": [{ "size": null, "price": 82000, "optional": null, "description": null }] },
+        { "name": "Combo Mì Ý S2", "descriptions": [{ "size": null, "price": 145000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "GÀ GIÒN",
+      "items": [
+        { "name": "Gà giòn 1 miếng", "descriptions": [{ "size": "1 miếng", "price": 38000, "optional": null, "description": null }] },
+        { "name": "Gà giòn 3 miếng", "descriptions": [{ "size": "3 miếng", "price": 109000, "optional": null, "description": null }] },
+        { "name": "Gà giòn 6 miếng", "descriptions": [{ "size": "6 miếng", "price": 215000, "optional": null, "description": null }] },
+        { "name": "Gà giòn 9 miếng", "descriptions": [{ "size": "9 miếng", "price": 319000, "optional": null, "description": null }] },
+        { "name": "Combo gà giòn 1 miếng", "descriptions": [{ "size": null, "price": 65000, "optional": null, "description": null }] },
+        { "name": "Combo gà giòn 2 miếng", "descriptions": [{ "size": null, "price": 95000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "GÀ TẮM NƯỚC MẮM",
+      "items": [
+        { "name": "Gà tắm nước mắm 1 miếng", "descriptions": [{ "size": "1 miếng", "price": 47000, "optional": null, "description": null }] },
+        { "name": "Combo gà tắm nước mắm D1", "descriptions": [{ "size": null, "price": 110000, "optional": null, "description": null }] },
+        { "name": "Combo gà tắm nước mắm D2", "descriptions": [{ "size": null, "price": 185000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "GÀ KHÔNG XƯƠNG",
+      "items": [
+        { "name": "Gà không xương 3 miếng", "descriptions": [{ "size": "3 miếng", "price": 59000, "optional": null, "description": null }] },
+        { "name": "Gà không xương 5 miếng", "descriptions": [{ "size": "5 miếng", "price": 85000, "optional": null, "description": null }] },
+        { "name": "Combo gà không xương", "descriptions": [{ "size": null, "price": 66000, "optional": null, "description": null }, { "size": "5 miếng", "price": 95000, "optional": null, "description": null }] },
+        { "name": "Gà hải sản", "descriptions": [{ "size": null, "price": 69000, "optional": null, "description": null }] },
+        { "name": "Combo gà hải sản", "descriptions": [{ "size": null, "price": 75000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "MÓN ĂN KÈM",
+      "items": [
+        {
+          "name": "Khoai tây chiên",
+          "descriptions": [
+            { "size": "M", "price": 25000, "optional": null, "description": null },
+            { "size": "L", "price": 29000, "optional": null, "description": null },
+            { "size": "XL", "price": 43000, "optional": null, "description": null }
+          ]
+        },
+        {
+          "name": "Phô mai que",
+          "descriptions": [
+            { "size": "3 thanh", "price": 39000, "optional": null, "description": null },
+            { "size": "6 thanh", "price": 63000, "optional": null, "description": null }
+          ]
+        },
+        {
+          "name": "Gà popcorn",
+          "descriptions": [
+            { "size": "M", "price": 25000, "optional": null, "description": null },
+            { "size": "L", "price": 29000, "optional": null, "description": null }
+          ]
+        },
+        {
+          "name": "Snack cá",
+          "descriptions": [
+            { "size": "2 miếng", "price": 19000, "optional": null, "description": null },
+            { "size": "4 miếng", "price": 35000, "optional": null, "description": null }
+          ]
+        },
+        { "name": "Donut tôm", "descriptions": [{ "size": null, "price": 29000, "optional": null, "description": null }] },
+        {
+          "name": "Salad sốt chanh dây",
+          "descriptions": [
+            { "size": "M", "price": 25000, "optional": null, "description": null },
+            { "size": "L", "price": 39000, "optional": null, "description": null }
+          ]
+        },
+        { "name": "Cơm trắng", "descriptions": [{ "size": null, "price": 10000, "optional": null, "description": null }] }
+      ]
+    },
+    {
+      "name": "THỨC UỐNG",
+      "items": [
+        {
+          "name": "Nước ngọt",
+          "descriptions": [
+            { "size": "M", "price": 17000, "optional": null, "description": null },
+            { "size": "L", "price": 22000, "optional": null, "description": null }
+          ]
+        }
+      ]
+    }
+  ]
+}
