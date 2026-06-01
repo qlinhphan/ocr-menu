@@ -557,6 +557,68 @@ input {
   margin-top: 16px;
 }
 
+.save-toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 20;
+  min-width: min(360px, calc(100vw - 32px));
+  max-width: 420px;
+  padding: 16px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(108, 171, 76, 0.28);
+  background:
+    radial-gradient(circle at top right, rgba(193, 242, 165, 0.7), transparent 38%),
+    linear-gradient(145deg, rgba(251, 255, 246, 0.98), rgba(236, 255, 228, 0.96));
+  box-shadow:
+    0 22px 46px rgba(74, 128, 49, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  animation: saveToastIn 0.35s ease-out;
+}
+
+.save-toast strong {
+  display: block;
+  margin-top: 8px;
+  color: #24501b;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.02rem;
+}
+
+.save-toast-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(108, 171, 76, 0.14);
+  color: #3e7c2b;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.save-toast-badge::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #8ddd63 0%, #56a337 100%);
+  box-shadow: 0 0 0 6px rgba(108, 171, 76, 0.16);
+}
+
+@keyframes saveToastIn {
+  from {
+    opacity: 0;
+    transform: translate3d(18px, -16px, 0) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
 .celebration-layer {
   position: fixed;
   inset: 0;
@@ -1054,6 +1116,13 @@ input {
 }
 
 @media (max-width: 640px) {
+  .save-toast {
+    top: 16px;
+    right: 9px;
+    left: 9px;
+    min-width: 0;
+  }
+
   .page-shell {
     width: min(100% - 18px, 100%);
   }

@@ -4,12 +4,13 @@ import {
   cloneDeep,
   createId,
   defaultCategory,
-  defaultDescription,
   defaultItem,
   normalizeMenuData,
   sampleMenuData,
   writeHistory,
 } from "../../lib/ocr-store";
+
+const CREATE_MENU_API_URL = "http://localhost:8081/create-menu";
 
 function FieldBlock({ label, hint, children }) {
   return (
@@ -38,17 +39,67 @@ function resolveOcrImageUrl(pathImg) {
   return imageUrl.toString();
 }
 
+function buildObjectSavePayload(menuData) {
+  if (!menuData?.categories?.length) {
+    return [];
+  }
+
+  return menuData.categories.flatMap((category) =>
+    (category.items || []).flatMap((item) =>
+      (item.descriptions || []).map((description) => ({
+        name_cate: category.name ?? "",
+        name_menu: item.name ?? "",
+        description_item: description.description ?? "",
+        optional_item: description.optional ?? null,
+        price_item: Number(description.price ?? 0) || 0,
+        size_item: description.size ?? "",
+      }))
+    )
+  );
+}
+
+function countMenuItems(menuData) {
+  return (menuData?.categories || []).reduce((total, category) => total + (category.items?.length || 0), 0);
+}
+
+async function postSingleObjectSave(payloadItem, index) {
+  const response = await fetch(CREATE_MENU_API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payloadItem),
+  });
+
+  if (!response.ok) {
+    let errorMessage = `Khong luu duoc object thu ${index + 1}`;
+
+    try {
+      const errorPayload = await response.json();
+      errorMessage = errorPayload?.message || errorPayload?.detail || errorMessage;
+    } catch {
+      const errorText = await response.text();
+      errorMessage = errorText || errorMessage;
+    }
+
+    throw new Error(errorMessage);
+  }
+}
+
 function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
   const fileInputRef = useRef(null);
   const celebrationTimerRef = useRef(null);
+  const saveToastTimerRef = useRef(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [originalImageUrl, setOriginalImageUrl] = useState("");
   const [ocrImageUrl, setOcrImageUrl] = useState("");
   const [menuData, setMenuData] = useState(null);
   const [uploadStatus, setUploadStatus] = useState("Chưa có ảnh nào được chọn.");
   const [saveStatus, setSaveStatus] = useState("");
+  const [saveToast, setSaveToast] = useState({ visible: false, itemCount: 0 });
   const [showDetail, setShowDetail] = useState(false);
   const [isExtracting, setIsExtracting] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
 
   useEffect(() => {
@@ -60,8 +111,24 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
       if (celebrationTimerRef.current) {
         clearTimeout(celebrationTimerRef.current);
       }
+
+      if (saveToastTimerRef.current) {
+        clearTimeout(saveToastTimerRef.current);
+      }
     };
   }, [originalImageUrl]);
+
+  function showSaveToast(itemCount) {
+    setSaveToast({ visible: true, itemCount });
+
+    if (saveToastTimerRef.current) {
+      clearTimeout(saveToastTimerRef.current);
+    }
+
+    saveToastTimerRef.current = setTimeout(() => {
+      setSaveToast((current) => ({ ...current, visible: false }));
+    }, 3600);
+  }
 
   function updateMenuData(updater) {
     startTransition(() => {
@@ -150,9 +217,32 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
     }
   }
 
-  function saveHistory() {
+  async function saveHistory() {
+    if (isSaving) {
+      return;
+    }
+
     if (!menuData) {
       setSaveStatus("chưa có dữ liệu để lưu.");
+      return;
+    }
+
+    const payload = buildObjectSavePayload(menuData);
+
+    if (!payload.length) {
+      setSaveStatus("Khong co du lieu hop le de gui.");
+      return;
+    }
+
+    setIsSaving(true);
+
+    try {
+      for (let index = 0; index < payload.length; index += 1) {
+        await postSingleObjectSave(payload[index], index);
+      }
+    } catch (error) {
+      setIsSaving(false);
+      setSaveStatus(error instanceof Error ? `Lưu thất bại: ${error.message}` : "Lưu thất bại.");
       return;
     }
 
@@ -162,14 +252,18 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
       imageUrl: ocrImageUrl || originalImageUrl,
       createdAt: new Date().toLocaleString("vi-VN"),
       title: firstCategory?.name || "OCR Menu",
-      summary: `${menuData.categories?.length || 0} nhom mon duoc luu`,
+      summary: `${payload.length} Dữ liệu đã được lưu`,
       data: menuData,
     };
 
     const nextHistory = [nextEntry, ...historyEntries].slice(0, 12);
+    const savedItemCount = countMenuItems(menuData);
     writeHistory(nextHistory);
     setHistoryEntries(nextHistory);
-    setSaveStatus("Da luu ket qua OCR vao lich su.");
+    showSaveToast(savedItemCount);
+    setSaveStatus(`Đã lưu ${payload.length} món ăn nhaaa.`);
+    setSaveStatus(`Đã lưu ${savedItemCount} món ăn thành công.`);
+    setIsSaving(false);
   }
 
   function addCategory() {
@@ -196,18 +290,6 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
     });
   }
 
-  function addDescription(categoryIndex, itemIndex) {
-    updateMenuData((draft) => {
-      draft.categories[categoryIndex].items[itemIndex].descriptions.push(defaultDescription());
-    });
-  }
-
-  function removeDescription(categoryIndex, itemIndex, descriptionIndex) {
-    updateMenuData((draft) => {
-      draft.categories[categoryIndex].items[itemIndex].descriptions.splice(descriptionIndex, 1);
-    });
-  }
-
   function updateCategoryName(categoryIndex, value) {
     updateMenuData((draft) => {
       draft.categories[categoryIndex].name = value;
@@ -228,6 +310,13 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
 
   return (
     <>
+      {saveToast.visible ? (
+        <div className="save-toast" role="status" aria-live="polite">
+          <div className="save-toast-badge">Thành công</div>
+          <strong>Đã lưu {saveToast.itemCount} món ăn thành công</strong>
+        </div>
+      ) : null}
+
       {showCelebration ? (
         <div className="celebration-layer" aria-hidden="true">
           <span className="spark-trail spark-trail-one" />
@@ -342,32 +431,32 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
               {menuData.categories.map((category, categoryIndex) => (
                 <article key={category.id ?? categoryIndex} className="category-card">
                   <div className="category-top">
-                    <FieldBlock label="Ten nhom mon" hint="Vi du: Mon chinh, Do uong, Trang mieng.">
+                    <FieldBlock label="Tên nhóm món" hint="Vi du: Mon chinh, Do uong, Trang mieng.">
                       <input
                         className="category-name-input"
                         value={category.name ?? ""}
                         onChange={(event) => updateCategoryName(categoryIndex, event.target.value)}
-                        placeholder="Ten nhom mon"
+                        placeholder="Tên nhóm món"
                       />
                     </FieldBlock>
                     <button className="danger-button" type="button" onClick={() => removeCategory(categoryIndex)}>
-                      Bo nhom
+                      Bỏ nhóm
                     </button>
                   </div>
 
                   {category.items.map((item, itemIndex) => (
                     <div key={item.id ?? itemIndex} className="item-card">
                       <div className="item-top">
-                        <FieldBlock label="Ten mon" hint="Nhap ten mon OCR nhan dien duoc hoac ten da chinh sua.">
+                        <FieldBlock label="Tên món" hint="Nhập tên món OCR nhận diện được hoặc tên đã chỉnh sửa.">
                           <input
                             className="item-name-input"
                             value={item.name ?? ""}
                             onChange={(event) => updateItemName(categoryIndex, itemIndex, event.target.value)}
-                            placeholder="Ten mon"
+                            placeholder="Tên món"
                           />
                         </FieldBlock>
                         <button className="danger-button" type="button" onClick={() => removeItem(categoryIndex, itemIndex)}>
-                          Bo mon
+                          Bỏ món
                         </button>
                       </div>
 
@@ -375,7 +464,7 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
                         {item.descriptions.map((description, descriptionIndex) => (
                           <div key={description.id ?? descriptionIndex} className="description-card">
                             <div className="description-grid">
-                              <FieldBlock label="Kich co / size" hint="Vi du: S, M, L, ly vua, phan nho.">
+                              <FieldBlock label="Kích cỡ / Size" hint="Ví dụ: S, M, L, ly vừa, phần nhỏ.">
                                 <input
                                   value={description.size ?? ""}
                                   onChange={(event) =>
@@ -384,7 +473,7 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
                                   placeholder="size"
                                 />
                               </FieldBlock>
-                              <FieldBlock label="Gia" hint="Nhap gia tri so, vi du 45000.">
+                              <FieldBlock label="Giá" hint="Nhập giá sản phẩm, ví dụ 45000">
                                 <input
                                   type="number"
                                   value={description.price ?? 0}
@@ -400,7 +489,7 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
                                   placeholder="price"
                                 />
                               </FieldBlock>
-                              <FieldBlock label="Tuy chon them" hint="Ghi chu nhu nong, da, topping, muc do cay.">
+                              <FieldBlock label="Tùy chọn thêm" hint="Ghi chú như nóng, đá, topping, mức độ cay.">
                                 <input
                                   value={description.optional ?? ""}
                                   onChange={(event) =>
@@ -415,7 +504,7 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
                                   placeholder="optional"
                                 />
                               </FieldBlock>
-                              <FieldBlock label="Mo ta" hint="Mo ta ngan gon de lam ro thong tin cua dong gia nay.">
+                              <FieldBlock label="Mô tả" hint="Mô tả ngắn gọn để làm rõ thông tin của dòng giá này.">
                                 <input
                                   value={description.description ?? ""}
                                   onChange={(event) =>
@@ -431,28 +520,15 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
                                 />
                               </FieldBlock>
                             </div>
-                            <button
-                              className="danger-button slim-button"
-                              type="button"
-                              onClick={() => removeDescription(categoryIndex, itemIndex, descriptionIndex)}
-                            >
-                              Bo dong
-                            </button>
                           </div>
                         ))}
-                      </div>
-
-                      <div className="item-actions">
-                        <button className="tiny-button" type="button" onClick={() => addDescription(categoryIndex, itemIndex)}>
-                          Them mo ta gia
-                        </button>
                       </div>
                     </div>
                   ))}
 
                   <div className="item-actions">
                     <button className="tiny-button" type="button" onClick={() => addItem(categoryIndex)}>
-                      Them mon
+                      Thêm món
                     </button>
                   </div>
                 </article>
@@ -460,8 +536,8 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
             </div>
 
             <div className="save-row">
-              <button className="primary-button" type="button" onClick={saveHistory}>
-                Luu vao lich su
+              <button className="primary-button" type="button" onClick={saveHistory} disabled={isSaving}>
+                Lưu
               </button>
               <p className="status-text">{saveStatus}</p>
             </div>
@@ -475,7 +551,7 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
             <div className="modal-header">
               <h3>Chi tiet JSON OCR</h3>
               <button className="modal-close" type="button" onClick={() => setShowDetail(false)}>
-                Dong
+                Đóng
               </button>
             </div>
             <pre className="modal-json">{JSON.stringify(menuData, null, 2)}</pre>

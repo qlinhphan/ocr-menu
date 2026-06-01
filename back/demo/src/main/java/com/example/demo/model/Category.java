@@ -30,11 +30,6 @@ public class Category {
     @Column(nullable = false, length = 255)
     private String name;
 
-    @OneToMany(
-        mappedBy = "category",
-        cascade = CascadeType.ALL,
-        orphanRemoval = true,
-        fetch = FetchType.LAZY
-    )
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<MenuItem> items = new ArrayList<>();
 }
