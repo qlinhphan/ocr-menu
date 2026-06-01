@@ -43,7 +43,7 @@ function App() {
           <div className="brand-mark">DVX</div>
           <div>
             <p className="brand-title">Menu OCR Studio</p>
-            <p className="brand-subtitle">Tach chuc nang OCR va lich su ro rang trong frontend</p>
+            <p className="brand-subtitle">Nhận diện và ảnh nhanh chóng, giúp tiếp kiệm thời gian</p>
           </div>
         </div>
 
@@ -60,7 +60,7 @@ function App() {
             className={`nav-tab ${activePage === "history" ? "nav-tab-active" : ""}`}
             onClick={() => setActivePage("history")}
           >
-            Lich su
+            Lịch sử
           </button>
         </nav>
       </header>
@@ -69,34 +69,33 @@ function App() {
         <section className="hero scroll-grow">
           <div>
             <p className="eyebrow">Frontend OCR</p>
-            <h1>OCR va lich su da duoc tach thanh hai trang rieng.</h1>
+            <h1>Đọc hiểu ảnh nhanh chóng & xem lại dễ dàng.</h1>
             <p className="hero-text">
-              Trang OCR dung de upload anh, detect, chinh sua ket qua va luu. Trang lich su chi tap trung vao viec xem
-              lai cac lan OCR da luu.
+              Hệ thống được xử dụng cho việc thêm menu món ăn. Thay vì phải nhập tay thì giờ đây có thể chụp ảnh sau đó hệ thống tự động điền cho bạn
             </p>
 
             <div className="hero-actions">
               <button className="primary-button" type="button" onClick={() => setActivePage("ocr")}>
-                Mo OCR
+                Mở OCR
               </button>
               <button className="ghost-button" type="button" onClick={() => setActivePage("history")}>
-                Mo lich su
+                Mở lịch sử
               </button>
             </div>
           </div>
 
           <div className="hero-stat-panel">
             <article className="stat-card">
-              <span>Trang hien tai</span>
+              <span>Trang hiện tại</span>
               <strong>{activePage === "ocr" ? "OCR workspace" : "OCR history"}</strong>
             </article>
             <article className="stat-card">
-              <span>So ban ghi da luu</span>
-              <strong>{historyEntries.length} muc lich su</strong>
+              <span>Số bản đã lưu</span>
+              <strong>{historyEntries.length} Mục lịch sử</strong>
             </article>
             <article className="stat-card">
-              <span>Cach to chuc</span>
-              <strong>`ocr-page.jsx` va `history-page.jsx` dang chua giao dien chinh</strong>
+              <span>Hiệu năng</span>
+              <strong>Nhanh chóng, ổn định, thân thiện và mạnh mẽ</strong>
             </article>
           </div>
         </section>

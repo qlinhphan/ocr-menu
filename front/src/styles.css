@@ -411,6 +411,14 @@ input {
   line-height: 1.6;
 }
 
+.primary-button:disabled,
+.ghost-button:disabled,
+.detail-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
+}
+
 .preview-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -443,6 +451,49 @@ input {
   border-radius: var(--radius-md);
   border: 1px solid rgba(214, 127, 84, 0.18);
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(255, 245, 237, 0.9));
+}
+
+.extracting-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  gap: 14px;
+  padding: 24px;
+  text-align: center;
+  background:
+    radial-gradient(circle at center, rgba(255, 248, 240, 0.92), rgba(255, 244, 233, 0.78)),
+    rgba(255, 251, 247, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.extracting-spinner {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 6px solid rgba(232, 116, 59, 0.18);
+  border-top-color: var(--accent);
+  border-right-color: #ffbb74;
+  box-shadow: 0 0 0 12px rgba(232, 116, 59, 0.08);
+  animation: extractingSpin 0.85s linear infinite;
+}
+
+.extracting-copy {
+  display: grid;
+  gap: 6px;
+}
+
+.extracting-copy strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.extracting-copy span {
+  color: var(--muted);
+  max-width: 28ch;
+  line-height: 1.5;
 }
 
 .image-frame img {
@@ -496,8 +547,253 @@ input {
   }
 }
 
+@keyframes extractingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .detail-button {
   margin-top: 16px;
+}
+
+.celebration-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.spark-trail,
+.firework {
+  position: absolute;
+  top: 50%;
+  right: -12vw;
+  transform: translateY(-50%);
+}
+
+.spark-trail {
+  width: 26vw;
+  height: 4px;
+  border-radius: 999px;
+  opacity: 0;
+  filter: blur(1px);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 214, 120, 0.95), rgba(232, 116, 59, 0.2));
+  animation: sparkTrailMove 2.4s ease-out forwards;
+}
+
+.spark-trail-one {
+  margin-top: -78px;
+}
+
+.spark-trail-two {
+  margin-top: 66px;
+  animation-delay: 0.45s;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(151, 222, 116, 0.95), rgba(108, 171, 76, 0.15));
+}
+
+.firework {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.firework::before,
+.firework::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.firework-one {
+  margin-top: -88px;
+  background: radial-gradient(circle, rgba(255, 245, 222, 1) 0 24%, rgba(255, 173, 67, 0.95) 25% 52%, rgba(232, 116, 59, 0) 53%);
+  box-shadow:
+    0 0 0 0 rgba(255, 173, 67, 0.55),
+    0 0 60px rgba(255, 173, 67, 0.55);
+  animation: fireworkBurstOne 3.8s cubic-bezier(0.15, 0.8, 0.2, 1) forwards;
+}
+
+.firework-two {
+  margin-top: -4px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0 22%, rgba(232, 116, 59, 0.98) 23% 56%, rgba(232, 116, 59, 0) 57%);
+  box-shadow:
+    0 0 0 0 rgba(232, 116, 59, 0.55),
+    0 0 70px rgba(232, 116, 59, 0.45);
+  animation: fireworkBurstTwo 4.2s cubic-bezier(0.15, 0.8, 0.2, 1) 0.35s forwards;
+}
+
+.firework-three {
+  margin-top: 82px;
+  background: radial-gradient(circle, rgba(244, 255, 233, 1) 0 22%, rgba(108, 171, 76, 0.98) 23% 54%, rgba(108, 171, 76, 0) 55%);
+  box-shadow:
+    0 0 0 0 rgba(108, 171, 76, 0.48),
+    0 0 70px rgba(108, 171, 76, 0.38);
+  animation: fireworkBurstThree 4.5s cubic-bezier(0.15, 0.8, 0.2, 1) 0.65s forwards;
+}
+
+.firework::before {
+  background:
+    linear-gradient(90deg, transparent 46%, currentColor 46% 54%, transparent 54%),
+    linear-gradient(transparent 46%, currentColor 46% 54%, transparent 54%);
+  transform: scale(0);
+  opacity: 0.95;
+}
+
+.firework::after {
+  background:
+    linear-gradient(45deg, transparent 46%, currentColor 46% 54%, transparent 54%),
+    linear-gradient(-45deg, transparent 46%, currentColor 46% 54%, transparent 54%);
+  transform: scale(0);
+  opacity: 0.95;
+}
+
+.firework-one,
+.firework-one::before,
+.firework-one::after {
+  color: #ffb54a;
+}
+
+.firework-two,
+.firework-two::before,
+.firework-two::after {
+  color: #f17942;
+}
+
+.firework-three,
+.firework-three::before,
+.firework-three::after {
+  color: #7bc457;
+}
+
+@keyframes sparkTrailMove {
+  0% {
+    opacity: 0;
+    transform: translate(0, -50%) scaleX(0.2);
+  }
+
+  16% {
+    opacity: 1;
+  }
+
+  56% {
+    opacity: 0.95;
+    transform: translate(-46vw, -50%) scaleX(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-62vw, -50%) scaleX(1);
+  }
+}
+
+@keyframes fireworkBurstOne {
+  0% {
+    opacity: 0;
+    transform: translate(0, -50%) scale(0.2);
+  }
+
+  24% {
+    opacity: 1;
+    transform: translate(-20vw, -50%) scale(0.28);
+  }
+
+  52% {
+    opacity: 1;
+    transform: translate(-40vw, -50%) scale(3.9);
+  }
+
+  78% {
+    opacity: 0.85;
+    transform: translate(-40vw, -50%) scale(4.7);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-40vw, -50%) scale(5.2);
+  }
+}
+
+@keyframes fireworkBurstTwo {
+  0% {
+    opacity: 0;
+    transform: translate(0, -50%) scale(0.2);
+  }
+
+  24% {
+    opacity: 1;
+    transform: translate(-24vw, -50%) scale(0.3);
+  }
+
+  54% {
+    opacity: 1;
+    transform: translate(-48vw, -50%) scale(4.6);
+  }
+
+  80% {
+    opacity: 0.82;
+    transform: translate(-48vw, -50%) scale(5.4);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-48vw, -50%) scale(6);
+  }
+}
+
+@keyframes fireworkBurstThree {
+  0% {
+    opacity: 0;
+    transform: translate(0, -50%) scale(0.2);
+  }
+
+  26% {
+    opacity: 1;
+    transform: translate(-22vw, -50%) scale(0.3);
+  }
+
+  56% {
+    opacity: 1;
+    transform: translate(-43vw, -50%) scale(4.2);
+  }
+
+  82% {
+    opacity: 0.8;
+    transform: translate(-43vw, -50%) scale(5);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-43vw, -50%) scale(5.6);
+  }
+}
+
+.firework-one::before,
+.firework-one::after,
+.firework-two::before,
+.firework-two::after,
+.firework-three::before,
+.firework-three::after {
+  animation: fireworkRays 2.1s ease-out 1.8s forwards;
+}
+
+@keyframes fireworkRays {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) rotate(0deg);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.8) rotate(18deg);
+  }
 }
 
 .editor-panel {

@@ -4,8 +4,37 @@ from vietocr.tool.config import Cfg
 
 import cv2
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 import os
+import sys
+
+
+def safe_log(message):
+    try:
+        print(message)
+    except UnicodeEncodeError:
+        fallback = message.encode("utf-8", errors="replace").decode("utf-8")
+        try:
+            sys.stdout.buffer.write((fallback + "\n").encode("utf-8", errors="replace"))
+        except Exception:
+            print(fallback.encode(sys.stdout.encoding or "ascii", errors="replace").decode(sys.stdout.encoding or "ascii"))
+
+
+def load_unicode_font(size=20):
+    font_candidates = [
+        "C:/Windows/Fonts/arial.ttf",
+        "C:/Windows/Fonts/tahoma.ttf",
+        "C:/Windows/Fonts/segoeui.ttf",
+    ]
+
+    for font_path in font_candidates:
+        if os.path.exists(font_path):
+            try:
+                return ImageFont.truetype(font_path, size=size)
+            except OSError:
+                continue
+
+    return ImageFont.load_default()
 
 
 # =========================
@@ -50,7 +79,7 @@ def four_point_transform(image, box):
 # =========================
 # OCR
 # =========================
-def OCR(img_path):
+def OCR(img_path, output_image_path=None):
 
     detector = PaddleOCR(
         use_angle_cls=True,
@@ -66,8 +95,13 @@ def OCR(img_path):
     result = detector.ocr(img_path)
 
     img = cv2.imread(img_path)
+    cv2.imwrite("start.jpg", img)
 
     draw_img = img.copy()
+    rgb_draw_img = cv2.cvtColor(draw_img, cv2.COLOR_BGR2RGB)
+    pil_draw_img = Image.fromarray(rgb_draw_img)
+    text_draw = ImageDraw.Draw(pil_draw_img)
+    debug_font = load_unicode_font(size=20)
 
     final_result = []
 
@@ -124,27 +158,33 @@ def OCR(img_path):
             2
         )
 
+        text_draw.line(
+            [tuple(point) for point in pts] + [tuple(pts[0])],
+            fill=(0, 255, 0),
+            width=2
+        )
+
         x = int(box[0][0])
         y = int(box[0][1])
 
-        cv2.putText(
-            draw_img,
+        text_draw.text(
+            (x, max(0, y - 24)),
             text,
-            (x, max(20, y - 5)),
-            cv2.FONT_HERSHEY_SIMPLEX,
-            0.5,
-            (0, 0, 255),
-            1
+            font=debug_font,
+            fill=(255, 0, 0)
         )
 
-        print(f"[{idx}] {text}")
+        safe_log(f"[{idx}] {text}")
 
-    cv2.imwrite(
-        "output_vietocr.jpg",
-        draw_img
-    )
+    draw_img = cv2.cvtColor(np.array(pil_draw_img), cv2.COLOR_RGB2BGR)
 
-    print("\nSaved: output_vietocr.jpg")
+    if output_image_path:
+        output_dir = os.path.dirname(output_image_path)
+        if output_dir:
+            os.makedirs(output_dir, exist_ok=True)
+        cv2.imwrite(output_image_path, draw_img)
+
+    safe_log("\nSaved: output_vietocr.jpg")
 
     return final_result
 

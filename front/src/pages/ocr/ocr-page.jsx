@@ -21,20 +21,44 @@ function FieldBlock({ label, hint, children }) {
   );
 }
 
+function resolveOcrImageUrl(pathImg) {
+  if (!pathImg) {
+    return "";
+  }
+
+  if (typeof pathImg === "string" && /^https?:\/\//i.test(pathImg)) {
+    const absoluteImageUrl = new URL(pathImg);
+    absoluteImageUrl.searchParams.set("t", Date.now().toString());
+    return absoluteImageUrl.toString();
+  }
+
+  const normalizedPath = pathImg.startsWith("/") ? pathImg : `/${pathImg}`;
+  const imageUrl = new URL(normalizedPath, window.location.origin);
+  imageUrl.searchParams.set("t", Date.now().toString());
+  return imageUrl.toString();
+}
+
 function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
   const fileInputRef = useRef(null);
+  const celebrationTimerRef = useRef(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [originalImageUrl, setOriginalImageUrl] = useState("");
   const [ocrImageUrl, setOcrImageUrl] = useState("");
   const [menuData, setMenuData] = useState(null);
-  const [uploadStatus, setUploadStatus] = useState("Chua co anh nao duoc chon.");
+  const [uploadStatus, setUploadStatus] = useState("Chưa có ảnh nào được chọn.");
   const [saveStatus, setSaveStatus] = useState("");
   const [showDetail, setShowDetail] = useState(false);
+  const [isExtracting, setIsExtracting] = useState(false);
+  const [showCelebration, setShowCelebration] = useState(false);
 
   useEffect(() => {
     return () => {
       if (originalImageUrl) {
         URL.revokeObjectURL(originalImageUrl);
+      }
+
+      if (celebrationTimerRef.current) {
+        clearTimeout(celebrationTimerRef.current);
       }
     };
   }, [originalImageUrl]);
@@ -62,16 +86,22 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
     setMenuData(null);
     setShowDetail(false);
     setSaveStatus("");
-    setUploadStatus(`Da chon anh: ${file.name}`);
+    setUploadStatus(`Đã chọn ảnh: ${file.name}`);
   }
 
   async function handleDetect() {
-    if (!selectedFile) {
-      setUploadStatus("Hay chon anh menu truoc khi detect OCR.");
+    if (isExtracting) {
       return;
     }
 
-    setUploadStatus("Dang gui anh den OCR service...");
+    if (!selectedFile) {
+      setUploadStatus("Hãy chọn ảnh trước");
+      return;
+    }
+
+    setIsExtracting(true);
+    setShowCelebration(false);
+    setUploadStatus("Đang đọc ảnh...");
 
     const formData = new FormData();
     formData.append("file", selectedFile);
@@ -83,30 +113,53 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
       });
 
       if (!response.ok) {
-        throw new Error("OCR API tra ve loi");
+        let errorMessage = "API Lỗi";
+
+        try {
+          const errorPayload = await response.json();
+          errorMessage = errorPayload?.detail || errorMessage;
+        } catch {
+          const errorText = await response.text();
+          errorMessage = errorText || errorMessage;
+        }
+
+        throw new Error(errorMessage);
       }
 
       const result = await response.json();
-      setOcrImageUrl(originalImageUrl);
+      const nextOcrImageUrl = resolveOcrImageUrl(result.path_img);
+
+      setOcrImageUrl(nextOcrImageUrl);
       setMenuData(normalizeMenuData(result));
-      setUploadStatus("OCR thanh cong. Ban co the xem va chinh sua ket qua ben duoi.");
-    } catch {
-      setOcrImageUrl(originalImageUrl);
-      setMenuData(normalizeMenuData(sampleMenuData));
-      setUploadStatus("Khong goi duoc API. Giao dien da nap du lieu mau de ban tiep tuc thao tac.");
+      setUploadStatus("Hoàn tất, bạn có thể xem và chỉnh kết quả bên dưới.");
+      setShowCelebration(true);
+
+      if (celebrationTimerRef.current) {
+        clearTimeout(celebrationTimerRef.current);
+      }
+
+      celebrationTimerRef.current = setTimeout(() => {
+        setShowCelebration(false);
+      }, 5000);
+    } catch (error) {
+      setOcrImageUrl("");
+      setMenuData(null);
+      setUploadStatus(error instanceof Error ? `OCR thất bại: ${error.message}` : "OCR thất bại.");
+    } finally {
+      setIsExtracting(false);
     }
   }
 
   function saveHistory() {
     if (!menuData) {
-      setSaveStatus("Chua co du lieu de luu.");
+      setSaveStatus("chưa có dữ liệu để lưu.");
       return;
     }
 
     const firstCategory = menuData.categories?.[0];
     const nextEntry = {
       id: createId(),
-      imageUrl: originalImageUrl,
+      imageUrl: ocrImageUrl || originalImageUrl,
       createdAt: new Date().toLocaleString("vi-VN"),
       title: firstCategory?.name || "OCR Menu",
       summary: `${menuData.categories?.length || 0} nhom mon duoc luu`,
@@ -175,14 +228,24 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
 
   return (
     <>
+      {showCelebration ? (
+        <div className="celebration-layer" aria-hidden="true">
+          <span className="spark-trail spark-trail-one" />
+          <span className="spark-trail spark-trail-two" />
+          <span className="firework firework-one" />
+          <span className="firework firework-two" />
+          <span className="firework firework-three" />
+        </div>
+      ) : null}
+
       <section className="panel scroll-grow">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">Chuc nang 1</p>
-            <h2>Upload anh menu de detect OCR</h2>
+            <p className="eyebrow">Chức năng OCR</p>
+            <h2>Click để upload ảnh</h2>
           </div>
           <button className="ghost-button" type="button" onClick={() => setMenuData(normalizeMenuData(sampleMenuData))}>
-            Nap du lieu mau
+            Khu vực OCR
           </button>
         </div>
 
@@ -205,49 +268,58 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
                 accept="image/*"
                 onChange={(event) => handleChooseFile(event.target.files?.[0])}
               />
-              <span className="dropzone-badge">Keo tha hoac bam de chon anh</span>
-              <strong>Anh menu goc</strong>
-              <p>Ho tro PNG, JPG, JPEG. Sau khi chon, anh se hien ngay ben phai.</p>
+              <span className="dropzone-badge">Bấm để chọn ảnh</span>
+              <strong>Ảnh gốc</strong>
+              <p>Hỗ trợ PNG, JPG, JPEG. Kết quả sẽ hiển thị ngay khi thao tác thành công</p>
             </button>
 
-            <button className="primary-button full-width" type="button" onClick={handleDetect}>
-              Detect OCR
+            <button className="primary-button full-width" type="button" onClick={handleDetect} disabled={isExtracting}>
+              {isExtracting ? "Đang đọc ảnh..." : "Đọc ảnh"}
             </button>
             <p className="status-text">{uploadStatus}</p>
 
-            <div className="mini-action-row">
+            {/* <div className="mini-action-row">
               <button className="ghost-button full-width" type="button" onClick={onOpenHistory}>
                 Mo trang lich su
               </button>
-            </div>
+            </div> */}
           </div>
 
           <div className="preview-grid">
             <article className="image-stage">
               <div className="stage-header">
                 <span className="stage-dot" />
-                <h3>Anh ban dau</h3>
+                <h3>Ảnh ban đầu</h3>
               </div>
               <div className={`image-frame ${originalImageUrl ? "has-image" : ""}`}>
                 {originalImageUrl ? <img src={originalImageUrl} alt="Anh menu goc" /> : null}
-                {!originalImageUrl ? <div className="empty-state">Anh goc se hien thi o day</div> : null}
+                {!originalImageUrl ? <div className="empty-state">Ảnh gốc sẽ hiện ở đây</div> : null}
               </div>
             </article>
 
             <article className={`image-stage ocr-stage ${ocrImageUrl ? "active" : ""}`}>
               <div className="stage-header">
                 <span className="stage-dot success" />
-                <h3>Anh da OCR</h3>
+                <h3>Kết quả</h3>
               </div>
               <div className={`image-frame ${ocrImageUrl ? "has-image" : ""}`}>
-                {ocrImageUrl ? <img src={ocrImageUrl} alt="Anh da OCR" /> : null}
+                {ocrImageUrl ? <img src={ocrImageUrl} alt="Ảnh đã OCR" /> : null}
                 <div className="scan-overlay" />
-                {!ocrImageUrl ? <div className="empty-state">Anh OCR se hien thi o day sau khi detect</div> : null}
+                {isExtracting ? (
+                  <div className="extracting-overlay">
+                    <div className="extracting-spinner" />
+                    <div className="extracting-copy">
+                      <strong>Đang xử lý...</strong>
+                      <span>Hệ thống đang trích xuất thông tin từ ảnh của bạn</span>
+                    </div>
+                  </div>
+                ) : null}
+                {!ocrImageUrl ? <div className="empty-state">Ảnh kết quả sẽ hiện ở đây</div> : null}
               </div>
 
               {menuData ? (
                 <button className="detail-button" type="button" onClick={() => setShowDetail(true)}>
-                  Xem chi tiet JSON
+                  Xem chi tiết JSON
                 </button>
               ) : null}
             </article>
@@ -258,11 +330,11 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
           <div className="editor-panel">
             <div className="editor-header">
               <div>
-                <p className="eyebrow">Ket qua OCR</p>
-                <h3>Thong tin menu sau OCR</h3>
+                <p className="eyebrow">Kết quả</p>
+                <h3>Thông tin trích xuất</h3>
               </div>
               <button className="ghost-button" type="button" onClick={addCategory}>
-                Them nhom
+                Thêm nhóm
               </button>
             </div>
 

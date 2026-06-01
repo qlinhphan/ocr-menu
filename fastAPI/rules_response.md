@@ -1,56 +1,54 @@
 {
   "categories": [
     {
-      "name": "Phở Cuốn",
+      "name": "Đồ ăn",
       "items": [
         {
-          "name": "Phở cuốn bò",
+          "name": "Tên món ăn 1",
           "descriptions": [
             {
-              "size": "min",
+              "size": null,
               "price": 45000,
               "optional": null,
-              "description": "Giá thấp nhất theo set"
-            },
-            {
-              "size": "max",
-              "price": 90000,
-              "optional": null,
-              "description": "Giá cao nhất theo set"
+              "description": "Mô tả hoặc ghi chú của món"
             }
           ]
         },
         {
-          "name": "Phở cuốn trứng",
+          "name": "Tên món ăn 2",
           "descriptions": [
             {
-              "size": "min",
-              "price": 25000,
+              "size": "L",
+              "price": 65000,
               "optional": null,
-              "description": "Giá thấp nhất theo set"
-            },
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "Tên đồ uống 1",
+          "descriptions": [
             {
-              "size": "max",
-              "price": 50000,
-              "optional": null,
-              "description": "Giá cao nhất theo set"
+              "size": "M",
+              "price": 30000,
+              "optional": "Ít đá",
+              "description": null
             }
           ]
         },
         {
-          "name": "Phở cuốn bò trứng",
+          "name": "Tên đồ uống 2",
           "descriptions": [
             {
-              "size": "min",
-              "price": 55000,
-              "optional": null,
-              "description": "Giá thấp nhất theo set"
-            },
-            {
-              "size": "max",
-              "price": 110000,
-              "optional": null,
-              "description": "Giá cao nhất theo set"
+              "size": "L",
+              "price": 40000,
+              "optional": "Không đường",
+              "description": "Có thể có topping hoặc tuỳ chọn riêng"
             }
           ]
         }
