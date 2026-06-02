@@ -26,6 +26,145 @@ function useScrollGrow(pageKey) {
   }, [pageKey]);
 }
 
+const assistantQuickActions = [
+  "Hướng dẫn OCR ảnh",
+  "Cách sửa món sau khi trích xuất",
+  "Lưu menu như thế nào",
+];
+
+function buildAssistantReply(input) {
+  const normalizedInput = input.trim().toLowerCase();
+
+  if (!normalizedInput) {
+    return "Mình đang ở đây để hỗ trợ OCR menu, chỉnh dữ liệu món và lưu kết quả. Bạn cứ hỏi ngắn gọn là được.";
+  }
+
+  if (normalizedInput.includes("ocr") || normalizedInput.includes("ảnh") || normalizedInput.includes("trích")) {
+    return "Bạn chỉ cần chọn ảnh, bấm 'Đọc ảnh', rồi kiểm tra lại tên nhóm, tên món và từng dòng giá trước khi lưu.";
+  }
+
+  if (normalizedInput.includes("sửa") || normalizedInput.includes("mô tả") || normalizedInput.includes("giá")) {
+    return "Sau khi OCR xong, bạn có thể sửa trực tiếp từng ô tên món, size, giá, tùy chọn thêm và mô tả ngay trong form kết quả.";
+  }
+
+  if (normalizedInput.includes("lưu")) {
+    return "Khi dữ liệu đã ổn, bấm nút lưu ở cuối form. Hệ thống sẽ lưu theo số món hiện đang có trên màn hình.";
+  }
+
+  if (normalizedInput.includes("lịch sử") || normalizedInput.includes("history")) {
+    return "Trang lịch sử sẽ giữ lại các lần OCR đã lưu để bạn mở lại và xem nhanh dữ liệu cũ.";
+  }
+
+  return "Mình có thể hỗ trợ bạn ở các bước OCR ảnh, chỉnh dữ liệu món, kiểm tra mô tả hoặc lưu menu. Bạn muốn làm bước nào?";
+}
+
+function AssistantWidget() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [draftMessage, setDraftMessage] = useState("");
+  const [messages, setMessages] = useState([
+    {
+      id: 1,
+      role: "assistant",
+      content: "Mình là trợ lý AI của Menu OCR Studio. Bạn có thể hỏi cách OCR, sửa dữ liệu món hoặc lưu kết quả.",
+    },
+  ]);
+
+  function sendMessage(rawMessage) {
+    const content = rawMessage.trim();
+
+    if (!content) {
+      return;
+    }
+
+    setMessages((current) => [
+      ...current,
+      { id: Date.now(), role: "user", content },
+      { id: Date.now() + 1, role: "assistant", content: buildAssistantReply(content) },
+    ]);
+    setDraftMessage("");
+    setIsOpen(true);
+  }
+
+  return (
+    <>
+      <button
+        type="button"
+        className={`ai-fab ${isOpen ? "ai-fab-hidden" : ""}`}
+        onClick={() => setIsOpen(true)}
+        aria-label="Mở trợ lý AI"
+      >
+        <span className="ai-fab-ring" />
+        <span className="ai-fab-core">AI</span>
+      </button>
+
+      {isOpen ? (
+        <section className={`ai-panel ${isExpanded ? "ai-panel-expanded" : ""}`} aria-label="Trợ lý AI">
+          <div className="ai-panel-header">
+            <div>
+              <p className="ai-panel-eyebrow">Trợ lý AI</p>
+              <strong>Hỗ trợ nhanh cho người dùng</strong>
+            </div>
+
+            <div className="ai-panel-actions">
+              <button type="button" className="ai-panel-icon" onClick={() => setIsExpanded((current) => !current)}>
+                {isExpanded ? "Thu nhỏ" : "Phóng to"}
+              </button>
+              <button
+                type="button"
+                className="ai-panel-icon"
+                onClick={() => {
+                  setIsExpanded(false);
+                  setIsOpen(false);
+                }}
+              >
+                Đóng
+              </button>
+            </div>
+          </div>
+
+          <div className="ai-quick-actions">
+            {assistantQuickActions.map((action) => (
+              <button key={action} type="button" className="ai-chip" onClick={() => sendMessage(action)}>
+                {action}
+              </button>
+            ))}
+          </div>
+
+          <div className="ai-thread">
+            {messages.map((message) => (
+              <article
+                key={message.id}
+                className={`ai-message ${message.role === "user" ? "ai-message-user" : "ai-message-assistant"}`}
+              >
+                <span className="ai-message-role">{message.role === "user" ? "Bạn" : "AI"}</span>
+                <p>{message.content}</p>
+              </article>
+            ))}
+          </div>
+
+          <form
+            className="ai-composer"
+            onSubmit={(event) => {
+              event.preventDefault();
+              sendMessage(draftMessage);
+            }}
+          >
+            <input
+              value={draftMessage}
+              onChange={(event) => setDraftMessage(event.target.value)}
+              placeholder="Hỏi về OCR, chỉnh món hoặc lưu dữ liệu..."
+            />
+            <button type="submit" className="primary-button">
+              Gửi
+            </button>
+          </form>
+        </section>
+      ) : null}
+    </>
+  );
+}
+
 function App() {
   const [activePage, setActivePage] = useState("ocr");
   const [historyEntries, setHistoryEntries] = useState(() => readHistory());
@@ -114,6 +253,8 @@ function App() {
           />
         )}
       </main>
+
+      <AssistantWidget />
     </div>
   );
 }

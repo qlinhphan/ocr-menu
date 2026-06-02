@@ -57,7 +57,11 @@ export function cloneDeep(data) {
 }
 
 export function createId() {
-  return Date.now() + Math.floor(Math.random() * 1000);
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+
+  return `${Date.now()}-${Math.floor(Math.random() * 1000000)}`;
 }
 
 function normalizeDescriptionEntry(rawDescription) {
@@ -118,7 +122,17 @@ function normalizeObjectSaveCollection(rawCollection) {
 
   rawCollection.forEach((entry) => {
     const categoryKey = `${entry?.cate_id ?? ""}::${entry?.name_cate ?? ""}`;
-    const itemKey = `${entry?.menu_item_id ?? ""}::${entry?.name_menu ?? ""}`;
+    const hasMenuItemId = entry?.menu_item_id !== undefined && entry?.menu_item_id !== null;
+    const itemKey = hasMenuItemId
+      ? `${entry.menu_item_id}`
+      : [
+          entry?.name_menu ?? "",
+          entry?.size_item ?? "",
+          entry?.price_item ?? "",
+          entry?.optional_item ?? "",
+          entry?.description_item ?? "",
+          createId(),
+        ].join("::");
 
     if (!groupedCategories.has(categoryKey)) {
       groupedCategories.set(categoryKey, {

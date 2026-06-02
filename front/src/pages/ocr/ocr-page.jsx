@@ -195,10 +195,12 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
 
       const result = await response.json();
       const nextOcrImageUrl = resolveOcrImageUrl(result.path_img);
+      const normalizedMenuData = normalizeMenuData(result);
+      const extractedItemCount = countMenuItems(normalizedMenuData);
 
       setOcrImageUrl(nextOcrImageUrl);
-      setMenuData(normalizeMenuData(result));
-      setUploadStatus("Hoàn tất, bạn có thể xem và chỉnh kết quả bên dưới.");
+      setMenuData(normalizedMenuData);
+      setUploadStatus(`Hoàn tất, đã trích xuất ${extractedItemCount} món. Bạn có thể xem và chỉnh kết quả bên dưới.`);
       setShowCelebration(true);
 
       if (celebrationTimerRef.current) {
@@ -537,7 +539,7 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
 
             <div className="save-row">
               <button className="primary-button" type="button" onClick={saveHistory} disabled={isSaving}>
-                Lưu
+                {isSaving ? "Đang lưu..." : `Lưu ${countMenuItems(menuData)} món`}
               </button>
               <p className="status-text">{saveStatus}</p>
             </div>

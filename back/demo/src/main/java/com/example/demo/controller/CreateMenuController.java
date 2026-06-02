@@ -3,7 +3,7 @@ package com.example.demo.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.dto.ObjectSave;
-import com.example.demo.model.service.CreateMenuService;
+import com.example.demo.service.CreateMenuService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

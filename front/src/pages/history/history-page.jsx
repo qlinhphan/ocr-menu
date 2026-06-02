@@ -15,15 +15,15 @@ function HistoryPage({ historyEntries, setHistoryEntries, onBackToOcr }) {
       <section className="panel scroll-grow">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">Chuc nang 2</p>
-            <h2>Xem lich su OCR</h2>
+            <p className="eyebrow">Lịch sử</p>
+            <h2>Lịch sử tạo menu</h2>
           </div>
           <div className="action-cluster">
             <button className="ghost-button" type="button" onClick={onBackToOcr}>
-              Quay lai OCR
+              Quay lại trích xuất
             </button>
             <button className="ghost-button" type="button" onClick={clearHistory}>
-              Xoa lich su
+              Xóa lịch sử
             </button>
           </div>
         </div>
