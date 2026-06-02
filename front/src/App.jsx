@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import HistoryPage from "./pages/history/history-page";
 import OcrPage from "./pages/ocr/ocr-page";
-import { readHistory } from "./lib/ocr-store";
 
 function useScrollGrow(pageKey) {
   useEffect(() => {
@@ -39,23 +38,23 @@ function buildAssistantReply(input) {
     return "Mình đang ở đây để hỗ trợ OCR menu, chỉnh dữ liệu món và lưu kết quả. Bạn cứ hỏi ngắn gọn là được.";
   }
 
-  if (normalizedInput.includes("ocr") || normalizedInput.includes("ảnh") || normalizedInput.includes("trích")) {
+  if (normalizedInput.includes("ocr") || normalizedInput.includes("ảnh") || normalizedInput.includes("anh") || normalizedInput.includes("trích")) {
     return "Bạn chỉ cần chọn ảnh, bấm 'Đọc ảnh', rồi kiểm tra lại tên nhóm, tên món và từng dòng giá trước khi lưu.";
   }
 
-  if (normalizedInput.includes("sửa") || normalizedInput.includes("mô tả") || normalizedInput.includes("giá")) {
+  if (normalizedInput.includes("sửa") || normalizedInput.includes("sua") || normalizedInput.includes("mô tả") || normalizedInput.includes("mo ta") || normalizedInput.includes("giá") || normalizedInput.includes("gia")) {
     return "Sau khi OCR xong, bạn có thể sửa trực tiếp từng ô tên món, size, giá, tùy chọn thêm và mô tả ngay trong form kết quả.";
   }
 
-  if (normalizedInput.includes("lưu")) {
+  if (normalizedInput.includes("lưu") || normalizedInput.includes("luu")) {
     return "Khi dữ liệu đã ổn, bấm nút lưu ở cuối form. Hệ thống sẽ lưu theo số món hiện đang có trên màn hình.";
   }
 
-  if (normalizedInput.includes("lịch sử") || normalizedInput.includes("history")) {
-    return "Trang lịch sử sẽ giữ lại các lần OCR đã lưu để bạn mở lại và xem nhanh dữ liệu cũ.";
+  if (normalizedInput.includes("lịch sử") || normalizedInput.includes("lich su")) {
+    return "Bạn có thể mở tab Lịch sử để xem lại các phiên OCR đã lưu và kiểm tra nhanh dữ liệu chi tiết.";
   }
 
-  return "Mình có thể hỗ trợ bạn ở các bước OCR ảnh, chỉnh dữ liệu món, kiểm tra mô tả hoặc lưu menu. Bạn muốn làm bước nào?";
+  return "Mình có thể hỗ trợ bạn ở các bước OCR ảnh, chỉnh dữ liệu món, kiểm tra mô tả hoặc xem lịch sử. Bạn muốn làm bước nào?";
 }
 
 function AssistantWidget() {
@@ -66,7 +65,7 @@ function AssistantWidget() {
     {
       id: 1,
       role: "assistant",
-      content: "Mình là trợ lý AI của Menu OCR Studio. Bạn có thể hỏi cách OCR, sửa dữ liệu món hoặc lưu kết quả.",
+      content: "Mình là trợ lý AI của Menu OCR Studio. Bạn có thể hỏi cách OCR, sửa dữ liệu món, lưu kết quả hoặc xem lịch sử.",
     },
   ]);
 
@@ -153,7 +152,7 @@ function AssistantWidget() {
             <input
               value={draftMessage}
               onChange={(event) => setDraftMessage(event.target.value)}
-              placeholder="Hỏi về OCR, chỉnh món hoặc lưu dữ liệu..."
+              placeholder="Hỏi về OCR, chỉnh món, lưu dữ liệu hoặc xem lịch sử..."
             />
             <button type="submit" className="primary-button">
               Gửi
@@ -167,7 +166,7 @@ function AssistantWidget() {
 
 function App() {
   const [activePage, setActivePage] = useState("ocr");
-  const [historyEntries, setHistoryEntries] = useState(() => readHistory());
+  const [historyEntries] = useState([]);
 
   useScrollGrow(activePage);
 
@@ -182,11 +181,11 @@ function App() {
           <div className="brand-mark">DVX</div>
           <div>
             <p className="brand-title">Menu OCR Studio</p>
-            <p className="brand-subtitle">Nhận diện và ảnh nhanh chóng, giúp tiếp kiệm thời gian</p>
+            <p className="brand-subtitle">Nhận diện ảnh nhanh chóng, giúp tiết kiệm thời gian</p>
           </div>
         </div>
 
-        <nav className="nav-links nav-tabs" aria-label="Dieu huong chuc nang">
+        <nav className="nav-links nav-tabs" aria-label="Điều hướng chức năng">
           <button
             type="button"
             className={`nav-tab ${activePage === "ocr" ? "nav-tab-active" : ""}`}
@@ -208,9 +207,10 @@ function App() {
         <section className="hero scroll-grow">
           <div>
             <p className="eyebrow">Frontend OCR</p>
-            <h1>Đọc hiểu ảnh nhanh chóng & xem lại dễ dàng.</h1>
+            <h1>Đọc hiểu ảnh nhanh chóng.</h1>
             <p className="hero-text">
-              Hệ thống được xử dụng cho việc thêm menu món ăn. Thay vì phải nhập tay thì giờ đây có thể chụp ảnh sau đó hệ thống tự động điền cho bạn
+              Hệ thống được sử dụng cho việc thêm menu món ăn. Thay vì phải nhập tay thì giờ đây có thể chụp ảnh, sau
+              đó hệ thống tự động điền dữ liệu cho bạn.
             </p>
 
             <div className="hero-actions">
@@ -218,7 +218,7 @@ function App() {
                 Mở OCR
               </button>
               <button className="ghost-button" type="button" onClick={() => setActivePage("history")}>
-                Mở lịch sử
+                Xem lịch sử
               </button>
             </div>
           </div>
@@ -229,8 +229,8 @@ function App() {
               <strong>{activePage === "ocr" ? "OCR workspace" : "OCR history"}</strong>
             </article>
             <article className="stat-card">
-              <span>Số bản đã lưu</span>
-              <strong>{historyEntries.length} Mục lịch sử</strong>
+              <span>Bản ghi hiện có</span>
+              <strong>{historyEntries.length} phiên</strong>
             </article>
             <article className="stat-card">
               <span>Hiệu năng</span>
@@ -240,17 +240,9 @@ function App() {
         </section>
 
         {activePage === "ocr" ? (
-          <OcrPage
-            historyEntries={historyEntries}
-            setHistoryEntries={setHistoryEntries}
-            onOpenHistory={() => setActivePage("history")}
-          />
+          <OcrPage />
         ) : (
-          <HistoryPage
-            historyEntries={historyEntries}
-            setHistoryEntries={setHistoryEntries}
-            onBackToOcr={() => setActivePage("ocr")}
-          />
+          <HistoryPage historyEntries={historyEntries} onBackToOcr={() => setActivePage("ocr")} />
         )}
       </main>
 

@@ -1,49 +1,48 @@
 export const OCR_API_URL = "http://localhost:8000/extract-menu";
-export const HISTORY_KEY = "dvx_ocr_history";
 
 export const sampleMenuData = {
   categories: [
     {
       id: 1,
-      name: "Banh Mi",
+      name: "Bánh Mì",
       items: [
         {
           id: 10,
-          name: "Banh mi Bamboo dac biet",
+          name: "Bánh mì Bamboo đặc biệt",
           descriptions: [
             {
               id: 100,
               size: "min",
               price: 50000,
               optional: null,
-              description: "Gia thap nhat theo set",
+              description: "Giá thấp nhất theo set",
             },
             {
               id: 101,
               size: "max",
               price: 70000,
               optional: null,
-              description: "Gia cao nhat theo set",
+              description: "Giá cao nhất theo set",
             },
           ],
         },
         {
           id: 11,
-          name: "Banh mi Hoi An dac biet",
+          name: "Bánh mì Hội An đặc biệt",
           descriptions: [
             {
               id: 102,
               size: "min",
               price: 40000,
               optional: null,
-              description: "Gia thap nhat theo set",
+              description: "Giá thấp nhất theo set",
             },
             {
               id: 103,
               size: "max",
               price: 60000,
               optional: null,
-              description: "Gia cao nhat theo set",
+              description: "Giá cao nhất theo set",
             },
           ],
         },
@@ -77,16 +76,15 @@ function normalizeDescriptionEntry(rawDescription) {
 function normalizeItemEntry(rawItem) {
   const descriptionSource = Array.isArray(rawItem?.descriptions)
     ? rawItem.descriptions
-    : rawItem && (
-          rawItem.size !== undefined ||
+    : rawItem &&
+        (rawItem.size !== undefined ||
           rawItem.size_item !== undefined ||
           rawItem.price !== undefined ||
           rawItem.price_item !== undefined ||
           rawItem.optional !== undefined ||
           rawItem.optional_item !== undefined ||
           rawItem.description !== undefined ||
-          rawItem.description_item !== undefined
-        )
+          rawItem.description_item !== undefined)
       ? [rawItem]
       : [];
 
@@ -223,16 +221,4 @@ export function defaultCategory() {
     name: "",
     items: [defaultItem()],
   };
-}
-
-export function readHistory() {
-  try {
-    return JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]");
-  } catch {
-    return [];
-  }
-}
-
-export function writeHistory(entries) {
-  localStorage.setItem(HISTORY_KEY, JSON.stringify(entries));
 }

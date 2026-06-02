@@ -1215,6 +1215,56 @@ input {
   margin-top: 22px;
 }
 
+.history-overview {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.history-overview-copy {
+  display: grid;
+  gap: 14px;
+}
+
+.history-badge {
+  width: fit-content;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(232, 116, 59, 0.1);
+  border: 1px solid rgba(232, 116, 59, 0.18);
+  color: #6f3f28;
+}
+
+.history-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.history-kpi,
+.history-detail-card {
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 244, 235, 0.96));
+  border: 1px solid rgba(214, 127, 84, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86);
+}
+
+.history-kpi span,
+.history-detail-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.history-kpi strong,
+.history-detail-card strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.25rem;
+}
+
 .history-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1250,10 +1300,29 @@ input {
   margin: 8px 0 10px;
 }
 
+.history-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.history-meta-row span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(125, 104, 95, 0.08);
+  color: #6a5248;
+  font-size: 0.9rem;
+}
+
 .history-empty {
   min-height: 160px;
   display: flex;
   align-items: center;
+}
+
+.history-empty-copy {
+  max-width: 560px;
 }
 
 .history-card-clickable {
@@ -1310,11 +1379,27 @@ input {
   display: block;
 }
 
+.history-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.history-json-caption {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 @media (max-width: 980px) {
 
   .hero,
   .upload-layout,
-  .preview-grid {
+  .preview-grid,
+  .history-overview,
+  .history-stat-strip,
+  .history-detail-grid {
     grid-template-columns: 1fr;
   }
 

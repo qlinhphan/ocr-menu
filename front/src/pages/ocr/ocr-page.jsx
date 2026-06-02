@@ -1,16 +1,8 @@
 import { startTransition, useEffect, useRef, useState } from "react";
-import {
-  OCR_API_URL,
-  cloneDeep,
-  createId,
-  defaultCategory,
-  defaultItem,
-  normalizeMenuData,
-  sampleMenuData,
-  writeHistory,
-} from "../../lib/ocr-store";
+import { OCR_API_URL, cloneDeep, defaultCategory, defaultItem, normalizeMenuData, sampleMenuData } from "../../lib/ocr-store";
 
 const CREATE_MENU_API_URL = "http://localhost:8081/create-menu";
+const ADD_HISTORY_API_URL = "http://localhost:8081/add-history";
 
 function FieldBlock({ label, hint, children }) {
   return (
@@ -62,6 +54,14 @@ function countMenuItems(menuData) {
   return (menuData?.categories || []).reduce((total, category) => total + (category.items?.length || 0), 0);
 }
 
+function extractImageName(pathImg) {
+  if (!pathImg || typeof pathImg !== "string") {
+    return "";
+  }
+
+  return pathImg.split("/").filter(Boolean).pop() || "";
+}
+
 async function postSingleObjectSave(payloadItem, index) {
   const response = await fetch(CREATE_MENU_API_URL, {
     method: "POST",
@@ -72,7 +72,7 @@ async function postSingleObjectSave(payloadItem, index) {
   });
 
   if (!response.ok) {
-    let errorMessage = `Khong luu duoc object thu ${index + 1}`;
+    let errorMessage = `Không lưu được object thứ ${index + 1}`;
 
     try {
       const errorPayload = await response.json();
@@ -86,17 +86,41 @@ async function postSingleObjectSave(payloadItem, index) {
   }
 }
 
-function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
+async function postImageHistory(nameImg) {
+  const response = await fetch(ADD_HISTORY_API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name_img: nameImg }),
+  });
+
+  if (!response.ok) {
+    let errorMessage = "Không lưu được lịch sử ảnh";
+
+    try {
+      const errorPayload = await response.json();
+      errorMessage = errorPayload?.message || errorPayload?.detail || errorMessage;
+    } catch {
+      const errorText = await response.text();
+      errorMessage = errorText || errorMessage;
+    }
+
+    throw new Error(errorMessage);
+  }
+}
+
+function OcrPage() {
   const fileInputRef = useRef(null);
   const celebrationTimerRef = useRef(null);
-  const saveToastTimerRef = useRef(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [originalImageUrl, setOriginalImageUrl] = useState("");
   const [ocrImageUrl, setOcrImageUrl] = useState("");
+  const [ocrImagePath, setOcrImagePath] = useState("");
   const [menuData, setMenuData] = useState(null);
   const [uploadStatus, setUploadStatus] = useState("Chưa có ảnh nào được chọn.");
   const [saveStatus, setSaveStatus] = useState("");
-  const [saveToast, setSaveToast] = useState({ visible: false, itemCount: 0 });
+  const [saveSuccessModal, setSaveSuccessModal] = useState({ visible: false, itemCount: 0 });
   const [showDetail, setShowDetail] = useState(false);
   const [isExtracting, setIsExtracting] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
@@ -111,24 +135,8 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
       if (celebrationTimerRef.current) {
         clearTimeout(celebrationTimerRef.current);
       }
-
-      if (saveToastTimerRef.current) {
-        clearTimeout(saveToastTimerRef.current);
-      }
     };
   }, [originalImageUrl]);
-
-  function showSaveToast(itemCount) {
-    setSaveToast({ visible: true, itemCount });
-
-    if (saveToastTimerRef.current) {
-      clearTimeout(saveToastTimerRef.current);
-    }
-
-    saveToastTimerRef.current = setTimeout(() => {
-      setSaveToast((current) => ({ ...current, visible: false }));
-    }, 3600);
-  }
 
   function updateMenuData(updater) {
     startTransition(() => {
@@ -140,19 +148,48 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
     });
   }
 
+  function resetWorkspace() {
+    setSelectedFile(null);
+    setOriginalImageUrl((prev) => {
+      if (prev) {
+        URL.revokeObjectURL(prev);
+      }
+
+      return "";
+    });
+    setOcrImageUrl("");
+    setOcrImagePath("");
+    setMenuData(null);
+    setUploadStatus("Chưa có ảnh nào được chọn.");
+    setSaveStatus("");
+    setShowDetail(false);
+    setShowCelebration(false);
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  }
+
   function handleChooseFile(file) {
-    if (!file) return;
+    if (!file) {
+      return;
+    }
 
     setSelectedFile(file);
     const nextUrl = URL.createObjectURL(file);
     setOriginalImageUrl((prev) => {
-      if (prev) URL.revokeObjectURL(prev);
+      if (prev) {
+        URL.revokeObjectURL(prev);
+      }
+
       return nextUrl;
     });
     setOcrImageUrl("");
+    setOcrImagePath("");
     setMenuData(null);
     setShowDetail(false);
     setSaveStatus("");
+    setSaveSuccessModal({ visible: false, itemCount: 0 });
     setUploadStatus(`Đã chọn ảnh: ${file.name}`);
   }
 
@@ -168,6 +205,7 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
 
     setIsExtracting(true);
     setShowCelebration(false);
+    setSaveSuccessModal({ visible: false, itemCount: 0 });
     setUploadStatus("Đang đọc ảnh...");
 
     const formData = new FormData();
@@ -180,7 +218,7 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
       });
 
       if (!response.ok) {
-        let errorMessage = "API Lỗi";
+        let errorMessage = "API lỗi";
 
         try {
           const errorPayload = await response.json();
@@ -199,6 +237,7 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
       const extractedItemCount = countMenuItems(normalizedMenuData);
 
       setOcrImageUrl(nextOcrImageUrl);
+      setOcrImagePath(result.path_img || "");
       setMenuData(normalizedMenuData);
       setUploadStatus(`Hoàn tất, đã trích xuất ${extractedItemCount} món. Bạn có thể xem và chỉnh kết quả bên dưới.`);
       setShowCelebration(true);
@@ -212,6 +251,7 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
       }, 5000);
     } catch (error) {
       setOcrImageUrl("");
+      setOcrImagePath("");
       setMenuData(null);
       setUploadStatus(error instanceof Error ? `OCR thất bại: ${error.message}` : "OCR thất bại.");
     } finally {
@@ -225,14 +265,14 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
     }
 
     if (!menuData) {
-      setSaveStatus("chưa có dữ liệu để lưu.");
+      setSaveStatus("Chưa có dữ liệu để lưu.");
       return;
     }
 
     const payload = buildObjectSavePayload(menuData);
 
     if (!payload.length) {
-      setSaveStatus("Khong co du lieu hop le de gui.");
+      setSaveStatus("Không có dữ liệu hợp lệ để gửi.");
       return;
     }
 
@@ -248,23 +288,25 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
       return;
     }
 
-    const firstCategory = menuData.categories?.[0];
-    const nextEntry = {
-      id: createId(),
-      imageUrl: ocrImageUrl || originalImageUrl,
-      createdAt: new Date().toLocaleString("vi-VN"),
-      title: firstCategory?.name || "OCR Menu",
-      summary: `${payload.length} Dữ liệu đã được lưu`,
-      data: menuData,
-    };
+    const historyImageName = extractImageName(ocrImagePath);
 
-    const nextHistory = [nextEntry, ...historyEntries].slice(0, 12);
+    if (historyImageName) {
+      try {
+        await postImageHistory(historyImageName);
+      } catch (error) {
+        setIsSaving(false);
+        setSaveStatus(
+          error instanceof Error
+            ? `Đã lưu món ăn nhưng lưu lịch sử ảnh thất bại: ${error.message}`
+            : "Đã lưu món ăn nhưng lưu lịch sử ảnh thất bại."
+        );
+        return;
+      }
+    }
+
     const savedItemCount = countMenuItems(menuData);
-    writeHistory(nextHistory);
-    setHistoryEntries(nextHistory);
-    showSaveToast(savedItemCount);
-    setSaveStatus(`Đã lưu ${payload.length} món ăn nhaaa.`);
-    setSaveStatus(`Đã lưu ${savedItemCount} món ăn thành công.`);
+    setSaveSuccessModal({ visible: true, itemCount: savedItemCount });
+    setSaveStatus("");
     setIsSaving(false);
   }
 
@@ -312,13 +354,6 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
 
   return (
     <>
-      {saveToast.visible ? (
-        <div className="save-toast" role="status" aria-live="polite">
-          <div className="save-toast-badge">Thành công</div>
-          <strong>Đã lưu {saveToast.itemCount} món ăn thành công</strong>
-        </div>
-      ) : null}
-
       {showCelebration ? (
         <div className="celebration-layer" aria-hidden="true">
           <span className="spark-trail spark-trail-one" />
@@ -368,12 +403,6 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
               {isExtracting ? "Đang đọc ảnh..." : "Đọc ảnh"}
             </button>
             <p className="status-text">{uploadStatus}</p>
-
-            {/* <div className="mini-action-row">
-              <button className="ghost-button full-width" type="button" onClick={onOpenHistory}>
-                Mo trang lich su
-              </button>
-            </div> */}
           </div>
 
           <div className="preview-grid">
@@ -383,7 +412,7 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
                 <h3>Ảnh ban đầu</h3>
               </div>
               <div className={`image-frame ${originalImageUrl ? "has-image" : ""}`}>
-                {originalImageUrl ? <img src={originalImageUrl} alt="Anh menu goc" /> : null}
+                {originalImageUrl ? <img src={originalImageUrl} alt="Ảnh menu gốc" /> : null}
                 {!originalImageUrl ? <div className="empty-state">Ảnh gốc sẽ hiện ở đây</div> : null}
               </div>
             </article>
@@ -433,7 +462,7 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
               {menuData.categories.map((category, categoryIndex) => (
                 <article key={category.id ?? categoryIndex} className="category-card">
                   <div className="category-top">
-                    <FieldBlock label="Tên nhóm món" hint="Vi du: Mon chinh, Do uong, Trang mieng.">
+                    <FieldBlock label="Tên nhóm món" hint="Ví dụ: Món chính, Đồ uống, Tráng miệng.">
                       <input
                         className="category-name-input"
                         value={category.name ?? ""}
@@ -547,11 +576,37 @@ function OcrPage({ historyEntries, setHistoryEntries, onOpenHistory }) {
         ) : null}
       </section>
 
+      {saveSuccessModal.visible ? (
+        <div className="modal" role="dialog" aria-modal="true">
+          <div className="modal-card">
+            <div className="modal-header">
+              <div>
+                <h3>Thêm thành công</h3>
+                <p className="status-text">Thêm thành công {saveSuccessModal.itemCount} món</p>
+              </div>
+            </div>
+
+            <div className="action-cluster" style={{ justifyContent: "flex-end", marginTop: 20 }}>
+              <button
+                className="primary-button"
+                type="button"
+                onClick={() => {
+                  setSaveSuccessModal({ visible: false, itemCount: 0 });
+                  resetWorkspace();
+                }}
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
       {showDetail ? (
         <div className="modal" role="dialog" aria-modal="true" onClick={() => setShowDetail(false)}>
           <div className="modal-card" onClick={(event) => event.stopPropagation()}>
             <div className="modal-header">
-              <h3>Chi tiet JSON OCR</h3>
+              <h3>Chi tiết JSON OCR</h3>
               <button className="modal-close" type="button" onClick={() => setShowDetail(false)}>
                 Đóng
               </button>

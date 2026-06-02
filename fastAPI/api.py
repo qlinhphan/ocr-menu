@@ -74,24 +74,35 @@ def extract_menu_from_image(image_path: str, output_image_path: str, public_imag
     messages = [
         SystemMessage(
             content=(
-                "Ban la tro ly AI chuyen ket qua OCR menu thanh JSON co cau truc chinh xac. "
-                "Ban phai nhan dien va tach dung cac the loai mon trong menu dua tren tieu de, "
-                "bo cuc va toa do."
+                "Bạn là trợ lý AI chuyên chuyển kết quả OCR menu thành JSON có cấu trúc chính xác. "
+                "Nhiệm vụ quan trọng nhất là gán món vào đúng category theo tiêu đề nhóm, bố cục, "
+                "tọa độ, cột và khối hiển thị trên menu. "
+                "Bạn phải ưu tiên bằng chứng thị giác từ OCR/layout hơn suy luận ngữ nghĩa của tên món."
             )
         ),
         HumanMessage(
             content=(
-                "Hay chuyen doi day du ket qua OCR sau thanh JSON theo dung cau truc mau.\n\n"
-                f"Ket qua OCR:\n{ocr_result}\n\n"
-                f"JSON mau/cau truc can tra ve:\n{rules}\n\n"
-                "Quy tac bat buoc:\n"
-                "- Truong categories la mot mang dong, co the co 1, 2, 3 hoac nhieu hon the loai.\n"
-                "- Neu menu co nhieu nhom nhu do an, do uong, trang mieng, topping..., phai tach thanh nhieu category rieng biet.\n"
-                "- Khong duoc gop tat ca mon vao mot category neu OCR cho thay co nhieu tieu de nhom khac nhau.\n"
-                "- Ten category phai lay theo noi dung thuc te tren menu; chi dung ten chung nhu 'Do an' hoac 'Do uong' neu menu that su the hien nhu vay.\n"
-                "- Uu tien dung toa do va vi tri de ghep ten mon, mo ta, gia tien va de xac dinh mon thuoc nhom nao.\n"
-                "- Neu khong thay tieu de nhom ro rang, moi duoc gom cac mon lien quan vao cung mot category hop ly.\n"
-                "- Chi tra ve duy nhat JSON hop le dung schema mau, khong them bat ky truong nao khac."
+                "Hãy chuyển đổi đầy đủ kết quả OCR sau thành JSON đúng cấu trúc mẫu.\n\n"
+                f"Kết quả OCR:\n{ocr_result}\n\n"
+                f"JSON mẫu/cấu trúc cần trả về:\n{rules}\n\n"
+                "Quy tắc bắt buộc khi phân nhóm category:\n"
+                "- categories là mảng động, có thể có 1 hoặc nhiều category.\n"
+                "- Nếu menu có nhiều tiêu đề nhóm khác nhau thì phải tách đúng theo từng nhóm hiển thị trên menu.\n"
+                "- Không được gộp tất cả món vào một category nếu OCR cho thấy nhiều tiêu đề nhóm riêng.\n"
+                "- Tên category phải lấy từ chính tiêu đề xuất hiện trên menu; chỉ dùng tên chung như 'Đồ uống' nếu menu thật sự chỉ có một nhóm chung như vậy.\n"
+                "- Phải ưu tiên tiêu đề, dòng ngăn cách, cột, khối, tọa độ và vị trí gần nhất để quyết định món thuộc category nào.\n"
+                "- Mỗi món phải được gán vào category gần nhất về mặt bố cục, không gán theo cảm tính.\n"
+                "- Không được suy diễn kiểu: thấy tên món giống trà sữa thì tự chuyển sang nhóm 'TRÀ SỮA', thấy tên giống nước ép thì tự chuyển sang 'NƯỚC ÉP', nếu vị trí OCR của món đó đang nằm dưới tiêu đề khác.\n"
+                "- Nếu một món nằm dưới header 'CAFE' thì giữ nó trong 'CAFE' dù tên món có thể nhìn giống trà hoặc nước trái cây, trừ khi OCR/toạ độ cho thấy rõ nó thuộc một nhóm khác.\n"
+                "- Nếu một món nằm dưới header 'TRÀ SỮA' thì giữ nó trong 'TRÀ SỮA' ngay cả khi tên món không chứa chữ 'trà sữa'.\n"
+                "- Nếu một món nằm dưới header 'NƯỚC ÉP' thì chỉ xếp vào đó khi vị trí của nó thực sự thuộc khối 'NƯỚC ÉP'.\n"
+                "- Nếu không nhìn thấy tiêu đề nhóm rõ ràng, hãy gom theo từng cụm món gần nhau trong cùng cột/cùng block; chỉ khi đó mới suy luận category hợp lý.\n"
+                "- Phải giữ đúng thứ tự category từ trên xuống dưới hoặc từ trái sang phải theo bố cục menu.\n"
+                "- Trong mỗi category, giữ đúng thứ tự món theo vị trí xuất hiện trên menu.\n"
+                "- Không tạo category mới chỉ vì bạn hiểu ý nghĩa tên món; chỉ tạo category khi có bằng chứng từ OCR/layout.\n"
+                "- Không sửa tên category thành tên 'đẹp hơn'; giữ nguyên hoặc chuẩn hóa nhẹ lỗi OCR nhưng vẫn phải bám sát chữ gốc trên menu.\n"
+                "- Nếu phân vân giữa 2 category, chọn category có bằng chứng vị trí mạnh hơn thay vì chọn theo ngữ nghĩa tên món.\n"
+                "- Chỉ trả về duy nhất JSON hợp lệ đúng schema mẫu, không giải thích, không thêm trường ngoài schema."
             )
         ),
     ]

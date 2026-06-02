@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Category;
+import com.example.demo.model.ImgHist;
 import com.example.demo.model.ItemDescription;
 import com.example.demo.model.MenuItem;
 import com.example.demo.model.dto.ObjectSave;
 import com.example.demo.repo.CategoryRepository;
+import com.example.demo.repo.ImgHistRepository;
 import com.example.demo.repo.ItemDescriptionRepository;
 import com.example.demo.repo.MenuItemRepository;
 
@@ -24,6 +26,9 @@ public class CreateMenuService {
 
     @Autowired
     private ItemDescriptionRepository itemDescriptionRepository;
+
+    @Autowired
+    private ImgHistRepository imgHistRepository;
 
     public ObjectSave createMenu(ObjectSave objectSave) {
         Category category = new Category();
@@ -65,7 +70,10 @@ public class CreateMenuService {
 
             return objectSave;
         }
+    }
 
+    public void saveImgHistory(ImgHist imgHist) {
+        this.imgHistRepository.save(imgHist);
     }
 
 }
