@@ -1,0 +1,30 @@
+{
+  "runs": [
+    {
+      "run_name": "smoke_test",
+      "field_accuracy_name": 0.0,
+      "field_accuracy_price": 0.0,
+      "field_accuracy_category": 0.0,
+      "item_recall": 0.0,
+      "item_precision": 0.0,
+      "hallucination_rate": 0.0,
+      "structure_correctness": 0.0,
+      "latency_ms": 0.0,
+      "auto_publish_acceptance": 0.0,
+      "auto_publish_accuracy": 0.0,
+      "guardrail_threshold": 1.0
+    }
+  ],
+  "main_metrics": [
+    "field_accuracy_name",
+    "field_accuracy_price",
+    "field_accuracy_category",
+    "item_recall",
+    "item_precision",
+    "hallucination_rate",
+    "structure_correctness",
+    "latency_ms",
+    "auto_publish_acceptance",
+    "auto_publish_accuracy"
+  ]
+}

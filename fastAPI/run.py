@@ -184,7 +184,7 @@ def OCR(img_path, output_image_path=None):
             os.makedirs(output_dir, exist_ok=True)
         cv2.imwrite(output_image_path, draw_img)
 
-    safe_log("\nSaved: output_vietocr.jpg")
+    # safe_log("\nSaved: output_vietocr.jpg")
 
     return final_result
 

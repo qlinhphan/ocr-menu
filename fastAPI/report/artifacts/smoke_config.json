@@ -1,0 +1,18 @@
+{
+  "recorded_at_utc": "2026-06-02T14:28:08.320398+00:00",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python_version": "3.12.2",
+  "config": {
+    "run_name": "traditional_ocr_llm_v1",
+    "method_family": "traditional_ocr_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "prompt_v1",
+    "schema_version": "schema_v1",
+    "seed": 42,
+    "preprocessing": {
+      "deskew": false,
+      "contrast": false,
+      "split_long_menu": false
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "seed": 42,
+  "dev_ratio": 0.4,
+  "min_labeled_per_group_for_test": 2
+}

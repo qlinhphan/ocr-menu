@@ -1,0 +1,873 @@
+{
+  "dataset_root": "dataset",
+  "total_images": 120,
+  "total_labeled_images": 37,
+  "groups": {
+    "a_lot_of_noise": {
+      "images": 21,
+      "labels": 7
+    },
+    "angled_shot": {
+      "images": 28,
+      "labels": 4
+    },
+    "beautiful_photos": {
+      "images": 20,
+      "labels": 7
+    },
+    "long_image": {
+      "images": 20,
+      "labels": 7
+    },
+    "multiple_languages": {
+      "images": 16,
+      "labels": 7
+    },
+    "white_text_dark_background": {
+      "images": 15,
+      "labels": 5
+    }
+  },
+  "records": [
+    {
+      "id": "a_lot_of_noise/menu_01",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_01.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "a_lot_of_noise/menu_02",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_02.png",
+      "label_path": "dataset/labels/a_lot_of_noise/menu_02.json",
+      "has_label": true
+    },
+    {
+      "id": "a_lot_of_noise/menu_03",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_03.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "a_lot_of_noise/menu_04",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_04.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "a_lot_of_noise/menu_05",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_05.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "a_lot_of_noise/menu_06",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_06.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "a_lot_of_noise/menu_07",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_07.png",
+      "label_path": "dataset/labels/a_lot_of_noise/menu_07.json",
+      "has_label": true
+    },
+    {
+      "id": "a_lot_of_noise/menu_08",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_08.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "a_lot_of_noise/menu_09",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_09.png",
+      "label_path": "dataset/labels/a_lot_of_noise/menu_09.json",
+      "has_label": true
+    },
+    {
+      "id": "a_lot_of_noise/menu_10",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_10.png",
+      "label_path": "dataset/labels/a_lot_of_noise/menu_10.json",
+      "has_label": true
+    },
+    {
+      "id": "a_lot_of_noise/menu_11",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_11.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "a_lot_of_noise/menu_12",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_12.png",
+      "label_path": "dataset/labels/a_lot_of_noise/menu_12.json",
+      "has_label": true
+    },
+    {
+      "id": "a_lot_of_noise/menu_13",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_13.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "a_lot_of_noise/menu_14",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_14.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "a_lot_of_noise/menu_15",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_15.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "a_lot_of_noise/menu_16",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_16.png",
+      "label_path": "dataset/labels/a_lot_of_noise/menu_16.json",
+      "has_label": true
+    },
+    {
+      "id": "a_lot_of_noise/menu_17",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_17.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "a_lot_of_noise/menu_18",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_18.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "a_lot_of_noise/menu_19",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_19.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "a_lot_of_noise/menu_20",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_20.png",
+      "label_path": "dataset/labels/a_lot_of_noise/menu_20.json",
+      "has_label": true
+    },
+    {
+      "id": "a_lot_of_noise/menu_21",
+      "group": "a_lot_of_noise",
+      "image_path": "dataset/images/a_lot_of_noise/menu_21.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_01",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_01.png",
+      "label_path": "dataset/labels/angled_shot/menu_01.json",
+      "has_label": true
+    },
+    {
+      "id": "angled_shot/menu_02",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_02.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_03",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_03.jpg",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_04",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_04.jpg",
+      "label_path": "dataset/labels/angled_shot/menu_04.json",
+      "has_label": true
+    },
+    {
+      "id": "angled_shot/menu_05",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_05.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_06",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_06.jpg",
+      "label_path": "dataset/labels/angled_shot/menu_06.json",
+      "has_label": true
+    },
+    {
+      "id": "angled_shot/menu_07",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_07.jpg",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_08",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_08.jpg",
+      "label_path": "dataset/labels/angled_shot/menu_08.json",
+      "has_label": true
+    },
+    {
+      "id": "angled_shot/menu_09",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_09.jpg",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_10",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_10.jpg",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_11",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_11.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_12",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_12.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_13",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_13.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_14",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_14.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_15",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_15.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_16",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_16.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_17",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_17.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_18",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_18.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_19",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_19.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_20",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_20.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_21",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_21.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_22",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_22.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_23",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_23.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_24",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_24.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_25",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_25.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_26",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_26.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_27",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_27.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "angled_shot/menu_28",
+      "group": "angled_shot",
+      "image_path": "dataset/images/angled_shot/menu_28.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "beautiful_photos/menu_01",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_01.jpg",
+      "label_path": "dataset/labels/beautiful_photos/menu_01.json",
+      "has_label": true
+    },
+    {
+      "id": "beautiful_photos/menu_02",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_02.jpg",
+      "label_path": "dataset/labels/beautiful_photos/menu_02.json",
+      "has_label": true
+    },
+    {
+      "id": "beautiful_photos/menu_03",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_03.jpg",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "beautiful_photos/menu_04",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_04.jpg",
+      "label_path": "dataset/labels/beautiful_photos/menu_04.json",
+      "has_label": true
+    },
+    {
+      "id": "beautiful_photos/menu_05",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_05.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "beautiful_photos/menu_06",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_06.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "beautiful_photos/menu_07",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_07.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "beautiful_photos/menu_08",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_08.png",
+      "label_path": "dataset/labels/beautiful_photos/menu_08.json",
+      "has_label": true
+    },
+    {
+      "id": "beautiful_photos/menu_09",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_09.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "beautiful_photos/menu_10",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_10.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "beautiful_photos/menu_11",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_11.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "beautiful_photos/menu_12",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_12.png",
+      "label_path": "dataset/labels/beautiful_photos/menu_12.json",
+      "has_label": true
+    },
+    {
+      "id": "beautiful_photos/menu_13",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_13.png",
+      "label_path": "dataset/labels/beautiful_photos/menu_13.json",
+      "has_label": true
+    },
+    {
+      "id": "beautiful_photos/menu_14",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_14.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "beautiful_photos/menu_15",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_15.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "beautiful_photos/menu_16",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_16.png",
+      "label_path": "dataset/labels/beautiful_photos/menu_16.json",
+      "has_label": true
+    },
+    {
+      "id": "beautiful_photos/menu_17",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_17.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "beautiful_photos/menu_18",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_18.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "beautiful_photos/menu_19",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_19.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "beautiful_photos/menu_20",
+      "group": "beautiful_photos",
+      "image_path": "dataset/images/beautiful_photos/menu_20.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_01",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_01.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_02",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_02.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_03",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_03.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_04",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_04.png",
+      "label_path": "dataset/labels/long_image/menu_04.json",
+      "has_label": true
+    },
+    {
+      "id": "long_image/menu_05",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_05.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_06",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_06.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_07",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_07.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_08",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_08.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_09",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_09.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_10",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_10.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_11",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_11.png",
+      "label_path": "dataset/labels/long_image/menu_11.json",
+      "has_label": true
+    },
+    {
+      "id": "long_image/menu_12",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_12.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_13",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_13.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_14",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_14.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_15",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_15.png",
+      "label_path": "dataset/labels/long_image/menu_15.json",
+      "has_label": true
+    },
+    {
+      "id": "long_image/menu_16",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_16.png",
+      "label_path": "dataset/labels/long_image/menu_16.json",
+      "has_label": true
+    },
+    {
+      "id": "long_image/menu_17",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_17.png",
+      "label_path": "dataset/labels/long_image/menu_17.json",
+      "has_label": true
+    },
+    {
+      "id": "long_image/menu_18",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_18.png",
+      "label_path": "dataset/labels/long_image/menu_18.json",
+      "has_label": true
+    },
+    {
+      "id": "long_image/menu_19",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_19.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "long_image/menu_20",
+      "group": "long_image",
+      "image_path": "dataset/images/long_image/menu_20.png",
+      "label_path": "dataset/labels/long_image/menu_20.json",
+      "has_label": true
+    },
+    {
+      "id": "multiple_languages/menu_01",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_01.jpg",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "multiple_languages/menu_02",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_02.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "multiple_languages/menu_03",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_03.png",
+      "label_path": "dataset/labels/multiple_languages/menu_03.json",
+      "has_label": true
+    },
+    {
+      "id": "multiple_languages/menu_04",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_04.png",
+      "label_path": "dataset/labels/multiple_languages/menu_04.json",
+      "has_label": true
+    },
+    {
+      "id": "multiple_languages/menu_05",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_05.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "multiple_languages/menu_06",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_06.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "multiple_languages/menu_07",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_07.png",
+      "label_path": "dataset/labels/multiple_languages/menu_07.json",
+      "has_label": true
+    },
+    {
+      "id": "multiple_languages/menu_08",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_08.png",
+      "label_path": "dataset/labels/multiple_languages/menu_08.json",
+      "has_label": true
+    },
+    {
+      "id": "multiple_languages/menu_09",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_09.png",
+      "label_path": "dataset/labels/multiple_languages/menu_09.json",
+      "has_label": true
+    },
+    {
+      "id": "multiple_languages/menu_10",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_10.png",
+      "label_path": "dataset/labels/multiple_languages/menu_10.json",
+      "has_label": true
+    },
+    {
+      "id": "multiple_languages/menu_11",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_11.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "multiple_languages/menu_12",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_12.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "multiple_languages/menu_13",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_13.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "multiple_languages/menu_14",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_14.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "multiple_languages/menu_15",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_15.png",
+      "label_path": "dataset/labels/multiple_languages/menu_15.json",
+      "has_label": true
+    },
+    {
+      "id": "multiple_languages/menu_16",
+      "group": "multiple_languages",
+      "image_path": "dataset/images/multiple_languages/menu_16.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "white_text_dark_background/menu_01",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_01.jpg",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "white_text_dark_background/menu_02",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_02.jpg",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "white_text_dark_background/menu_03",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_03.png",
+      "label_path": "dataset/labels/white_text_dark_background/menu_03.json",
+      "has_label": true
+    },
+    {
+      "id": "white_text_dark_background/menu_04",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_04.png",
+      "label_path": "dataset/labels/white_text_dark_background/menu_04.json",
+      "has_label": true
+    },
+    {
+      "id": "white_text_dark_background/menu_05",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_05.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "white_text_dark_background/menu_06",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_06.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "white_text_dark_background/menu_07",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_07.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "white_text_dark_background/menu_08",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_08.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "white_text_dark_background/menu_09",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_09.png",
+      "label_path": "dataset/labels/white_text_dark_background/menu_09.json",
+      "has_label": true
+    },
+    {
+      "id": "white_text_dark_background/menu_10",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_10.png",
+      "label_path": "dataset/labels/white_text_dark_background/menu_10.json",
+      "has_label": true
+    },
+    {
+      "id": "white_text_dark_background/menu_11",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_11.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "white_text_dark_background/menu_12",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_12.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "white_text_dark_background/menu_13",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_13.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "white_text_dark_background/menu_14",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_14.png",
+      "label_path": null,
+      "has_label": false
+    },
+    {
+      "id": "white_text_dark_background/menu_15",
+      "group": "white_text_dark_background",
+      "image_path": "dataset/images/white_text_dark_background/menu_15.png",
+      "label_path": "dataset/labels/white_text_dark_background/menu_15.json",
+      "has_label": true
+    }
+  ]
+}
