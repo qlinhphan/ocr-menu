@@ -1,12 +1,18 @@
 # chốc nữa cho viết cái api theo flow này
-from typing import TypedDict
+from typing import Any, TypedDict
 from langgraph.graph import StateGraph, START, END
-from agent_ocr import OCRTool
-from agent_rag import agent_rags
-from agent_route import agent_routes
+
+try:
+    from .agent_ocr import agent_ocrs
+    from .agent_rag import agent_rags
+    from .agent_route import agent_routes
+except ImportError:
+    from agent_ocr import agent_ocrs
+    from agent_rag import agent_rags
+    from agent_route import agent_routes
 
 class DictSys(TypedDict):
-    inp: str
+    inp: Any
     check: str
     # go: str
     rag_rs : str
@@ -19,6 +25,7 @@ def node_check(state: DictSys):
     }
 
 def route_node(state: DictSys):
+    print("AT ROUTE: ", state)
     if state['check']['classifi'] == "RAG":
         return 'r'
     else:
@@ -31,8 +38,8 @@ def node_rag(state: DictSys):
     }
 
 def node_ocr(state: DictSys):
-    path_img = state['inp']
-    result = OCRTool.invoke({"img_path": path_img})
+    # path_img = state['inp']
+    result = agent_ocrs(state['inp'])
     return {
         'ocr_rs': result
     }
@@ -62,18 +69,16 @@ app = graph.compile()
 
 # D:/ttsVin/DVX-OCR/fastAPI/dataset/images/a_lot_of_noise/menu_01.png
 
-while True:
-    inp = input("Bạn: ")
+if __name__ == "__main__":
+    while True:
+        inp = input("Bạn: ")
 
-    if inp =='bye':
-        print("AI: bye nhaaa!")
-        break;
+        if inp =='bye':
+            print("AI: bye nhaaa!")
+            break;
 
-    rs = app.invoke({"inp": inp})
-    if 'rag_rs' in rs.keys():
-        print("AI: ", rs['rag_rs'])
-    if 'ocr_rs' in rs.keys():
-        print("AI: ", rs['ocr_rs'])
-
-# if __name__ == "__main__":
-#     pass
+        rs = app.invoke({"inp": inp})
+        if 'rag_rs' in rs.keys():
+            print("AI: ", rs['rag_rs'])
+        if 'ocr_rs' in rs.keys():
+            print("AI: ", rs['ocr_rs'])

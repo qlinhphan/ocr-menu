@@ -5,7 +5,8 @@ import re
 import sys
 import tempfile
 from pathlib import Path
-
+from typing import Any
+from langgraph.checkpoint.memory import MemorySaver
 import cv2
 import numpy as np
 from dotenv import load_dotenv
@@ -298,7 +299,47 @@ def OCRTool(
 
 # agent = 
 
+memory = MemorySaver()
+config = {'configurable': {"thread_id": 'user-123'}}
+
+
+def _extract_ocr_payload(q: Any) -> tuple[str, dict[str, Any] | None]:
+    if isinstance(q, dict):
+        payload = {
+            "img_path": q.get("img_path"),
+            "image_base64": q.get("image_base64"),
+            "output_image_path": q.get("output_image_path"),
+            "include_raw_ocr": q.get("include_raw_ocr", False),
+        }
+        prompt = q.get("text") or q.get("prompt") or "Trich xuat noi dung tu anh menu nay"
+        return prompt, payload
+
+    return str(q), None
+
+
+def agent_ocrs(q):
+    prompt_text, ocr_payload = _extract_ocr_payload(q)
+
+    if ocr_payload and (ocr_payload.get("img_path") or ocr_payload.get("image_base64")):
+        return OCRTool.invoke(ocr_payload)
+
+    model = ChatOpenAI(model=os.getenv("MODEL_CHAT"), base_url=os.getenv("BASE_URL"))
+
+    prompt = f"""
+    Bạn là trợ lý AI chuyên hỗ trợ người dùng trong việc OCR - TRÍCH XUẤT MENU NHÀ HÀNG
+    QUY TẮC:
+    - LẤY RA ĐƯỜNG LINK ẢNH HOẶC ẢNH BASE64 HOẶC ẢNH NHỊ PHÂN từ câu nói của người dùng nếu có
+    - PHẢI TRẢ RA KẾT QUẢ JSON DỰA VÀO TOOL
+"""
+    agent = create_agent(model, [OCRTool], system_prompt=prompt, checkpointer=memory)
+    
+    rs = agent.invoke({'messages': [HumanMessage(content=prompt_text)]}, config=config)['messages'][-1].content
+    return rs
+
+
 
 if __name__ == "__main__":
     path_img = "D:/ttsVin/DVX-OCR/fastAPI/dataset/images/a_lot_of_noise/menu_01.png"
     result = OCRTool.invoke({"img_path": path_img})
+    
+

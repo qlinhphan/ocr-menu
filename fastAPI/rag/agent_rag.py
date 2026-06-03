@@ -4,12 +4,17 @@ load_dotenv()
 from langchain_openai import OpenAIEmbeddings
 import os
 from langchain_openai import ChatOpenAI
-from connect_mg import connect_mg
 from langchain_core.tools import tool
 from pydantic import BaseModel
-from rag import searchRAG
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from langgraph.checkpoint.memory import MemorySaver
+
+try:
+    from .connect_mg import connect_mg
+    from .rag import searchRAG
+except ImportError:
+    from connect_mg import connect_mg
+    from rag import searchRAG
 memory = MemorySaver()
 config = {"configurable": {"thread_id": "user-123"}}
 class BaseInput(BaseModel):
