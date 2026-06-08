@@ -57,7 +57,7 @@ public class CreateMenuService {
 
             MenuItem menuItem = new MenuItem();
             menuItem.setName(objectSave.getName_menu());
-            menuItem.setCategory(this.categoryRepository.findByName(objectSave.getName_cate()));
+            menuItem.setCategory(this.categoryRepository.findFirstByName(objectSave.getName_cate()));
             MenuItem menuItemSaved = this.menuItemRepository.save(menuItem);
 
             ItemDescription itemDescription = new ItemDescription();

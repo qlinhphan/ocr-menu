@@ -1,39 +1,48 @@
 import { useMemo, useState } from "react";
 
-function countItemsFromEntry(entry) {
-  return (entry?.data?.categories || []).reduce((total, category) => total + (category.items?.length || 0), 0);
-}
-
-function countCategoriesFromEntry(entry) {
-  return entry?.data?.categories?.length || 0;
-}
-
 function formatEntrySummary(entry) {
-  const itemCount = countItemsFromEntry(entry);
-
-  if (entry?.summary) {
-    return entry.summary;
-  }
-
-  if (itemCount > 0) {
-    return `${itemCount} món đã được nhận diện và lưu trong phiên này.`;
+  if (entry?.rawName) {
+    // return `Ảnh OCR đã lưu với tên ${entry.rawName}.`;
+    return ""
   }
 
   return "Bản ghi OCR đã được lưu để bạn xem lại khi cần.";
 }
 
-function buildHistoryStats(historyEntries) {
-  const totalSessions = historyEntries.length;
-  const totalItems = historyEntries.reduce((sum, entry) => sum + countItemsFromEntry(entry), 0);
-  const totalCategories = historyEntries.reduce((sum, entry) => sum + countCategoriesFromEntry(entry), 0);
+function buildHistoryStats(historyEntries, historyMeta) {
+  const totalSessions = historyMeta?.sumTotal || historyEntries.length;
+  const totalPages = historyMeta?.sumPage || 0;
+  const currentItems = historyEntries.length;
 
-  return { totalSessions, totalItems, totalCategories };
+  return { totalSessions, totalPages, currentItems };
 }
 
-function HistoryPage({ historyEntries = [], onBackToOcr, onClearHistory }) {
+function buildPageWindow(currentPage, totalPages) {
+  if (!totalPages) {
+    return [];
+  }
+
+  const pages = new Set([1, totalPages, currentPage - 1, currentPage, currentPage + 1]);
+
+  return Array.from(pages)
+    .filter((page) => page >= 1 && page <= totalPages)
+    .sort((a, b) => a - b);
+}
+
+function HistoryPage({
+  historyEntries = [],
+  historyLoading = false,
+  historyError = "",
+  historyMeta,
+  currentPage = 1,
+  onBackToOcr,
+  onClearHistory,
+  onPageChange,
+}) {
   const [selectedEntry, setSelectedEntry] = useState(null);
-  const stats = useMemo(() => buildHistoryStats(historyEntries), [historyEntries]);
+  const stats = useMemo(() => buildHistoryStats(historyEntries, historyMeta), [historyEntries, historyMeta]);
   const latestEntry = historyEntries[0] || null;
+  const pageButtons = useMemo(() => buildPageWindow(currentPage, stats.totalPages), [currentPage, stats.totalPages]);
 
   return (
     <>
@@ -62,7 +71,7 @@ function HistoryPage({ historyEntries = [], onBackToOcr, onClearHistory }) {
         <div className="history-overview">
           <div className="history-overview-copy">
             <p className="status-text">
-              Trang này giúp người dùng mở lại nhanh những lần OCR trước đó, đối chiếu ảnh và xem dữ liệu JSON đã lưu.
+              Trang này lấy dữ liệu trực tiếp từ API lịch sử OCR và hiển thị ảnh đã lưu trong thư mục public cùng thời gian xử lý.
             </p>
 
             {latestEntry ? (
@@ -80,18 +89,21 @@ function HistoryPage({ historyEntries = [], onBackToOcr, onClearHistory }) {
               <strong>{stats.totalSessions}</strong>
             </article>
             <article className="history-kpi">
-              <span>Tổng số món</span>
-              <strong>{stats.totalItems}</strong>
+              <span>Tổng số trang</span>
+              <strong>{stats.totalPages}</strong>
             </article>
             <article className="history-kpi">
-              <span>Tổng nhóm món</span>
-              <strong>{stats.totalCategories}</strong>
+              <span>Bản ghi đang hiển thị</span>
+              <strong>{stats.currentItems}</strong>
             </article>
           </div>
         </div>
 
+        {historyLoading ? <p className="status-text">Đang tải lịch sử OCR...</p> : null}
+        {historyError ? <p className="status-text">{historyError}</p> : null}
+
         <div className="history-grid">
-          {historyEntries.length ? (
+          {!historyLoading && historyEntries.length ? (
             historyEntries.map((entry) => (
               <article
                 key={entry.id}
@@ -109,26 +121,25 @@ function HistoryPage({ historyEntries = [], onBackToOcr, onClearHistory }) {
                 {entry.imageUrl ? <img src={entry.imageUrl} alt={entry.title || "Ảnh lịch sử OCR"} /> : null}
 
                 <div className="history-copy">
-                  <p>{entry.createdAt || "Không rõ thời gian"}</p>
-                  <h3>{entry.title || "Phiên OCR đã lưu"}</h3>
-                  <p>{formatEntrySummary(entry)}</p>
+                  <p className="history-card-time">{entry.createdAt || "Không rõ thời gian"}</p>
+                  <h3 className="history-card-title">{entry.title || `Ảnh #${entry.id}`}</h3>
+                  <p className="history-card-summary">{formatEntrySummary(entry)}</p>
 
                   <div className="history-meta-row">
-                    <span>{countCategoriesFromEntry(entry)} nhóm</span>
-                    <span>{countItemsFromEntry(entry)} món</span>
+                    <span className="history-meta-chip history-meta-chip-name">{entry.rawName || "Không rõ tên ảnh"}</span>
+                    <span className="history-meta-chip">{entry.createdAt || "Không rõ thời gian"}</span>
                     <span>Xem chi tiết</span>
                   </div>
                 </div>
               </article>
             ))
-          ) : (
+          ) : !historyLoading ? (
             <article className="history-card history-empty">
               <div className="history-copy history-empty-copy">
                 <p className="eyebrow">Chưa có dữ liệu</p>
                 <h3>Chưa có lịch sử OCR nào để hiển thị</h3>
                 <p>
-                  Sau khi người dùng hoàn tất OCR và lưu kết quả, các bản ghi sẽ xuất hiện ở đây để mở lại, kiểm tra và
-                  đối chiếu nhanh.
+                  Sau khi người dùng hoàn tất OCR và lưu lịch sử ảnh, các bản ghi sẽ xuất hiện ở đây để mở lại và đối chiếu nhanh.
                 </p>
                 {onBackToOcr ? (
                   <button className="ghost-button slim-button" type="button" onClick={onBackToOcr}>
@@ -137,8 +148,43 @@ function HistoryPage({ historyEntries = [], onBackToOcr, onClearHistory }) {
                 ) : null}
               </div>
             </article>
-          )}
+          ) : null}
         </div>
+
+        {stats.totalPages > 1 ? (
+          <div className="history-pagination" aria-label="Phân trang lịch sử OCR">
+            <button
+              type="button"
+              className="pagination-button"
+              onClick={() => onPageChange?.(Math.max(1, currentPage - 1))}
+              disabled={historyLoading || currentPage <= 1}
+            >
+              Trước
+            </button>
+
+            {pageButtons.map((page) => (
+              <button
+                key={page}
+                type="button"
+                className={`pagination-button ${page === currentPage ? "pagination-button-active" : ""}`}
+                onClick={() => onPageChange?.(page)}
+                disabled={historyLoading}
+                aria-current={page === currentPage ? "page" : undefined}
+              >
+                {page}
+              </button>
+            ))}
+
+            <button
+              type="button"
+              className="pagination-button"
+              onClick={() => onPageChange?.(Math.min(stats.totalPages, currentPage + 1))}
+              disabled={historyLoading || currentPage >= stats.totalPages}
+            >
+              Sau
+            </button>
+          </div>
+        ) : null}
       </section>
 
       {selectedEntry ? (
@@ -157,16 +203,16 @@ function HistoryPage({ historyEntries = [], onBackToOcr, onClearHistory }) {
 
             <div className="history-detail-grid">
               <article className="history-detail-card">
-                <span>Nhóm món</span>
-                <strong>{countCategoriesFromEntry(selectedEntry)}</strong>
+                <span>Mã lịch sử</span>
+                <strong>{selectedEntry.id}</strong>
               </article>
               <article className="history-detail-card">
-                <span>Số món</span>
-                <strong>{countItemsFromEntry(selectedEntry)}</strong>
+                <span>Thời gian</span>
+                <strong>{selectedEntry.createdAt || "Không rõ"}</strong>
               </article>
               <article className="history-detail-card">
-                <span>Mô tả</span>
-                <strong>{selectedEntry.summary || "Bản ghi OCR đã lưu"}</strong>
+                <span>Tên ảnh</span>
+                <strong>{selectedEntry.rawName || "Không rõ"}</strong>
               </article>
             </div>
 
@@ -176,8 +222,8 @@ function HistoryPage({ historyEntries = [], onBackToOcr, onClearHistory }) {
               </div>
             ) : null}
 
-            <p className="history-json-caption">Dữ liệu chi tiết của phiên OCR</p>
-            <pre className="modal-json">{JSON.stringify(selectedEntry.data, null, 2)}</pre>
+            <p className="history-json-caption">Dữ liệu trả về từ API lịch sử OCR</p>
+            <pre className="modal-json">{JSON.stringify(selectedEntry, null, 2)}</pre>
           </div>
         </div>
       ) : null}

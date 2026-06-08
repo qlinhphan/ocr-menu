@@ -2,6 +2,19 @@ import { useEffect, useState } from "react";
 import HistoryPage from "./pages/history/history-page";
 import OcrPage from "./pages/ocr/ocr-page";
 
+const HISTORY_LIMIT = 5;
+const HISTORY_API_URL = "http://localhost:8081/hist-extract";
+
+function mapHistoryEntry(entry) {
+  return {
+    id: entry.id,
+    title: entry.name_img || `Phiên OCR #${entry.id}`,
+    imageUrl: entry.name_img ? `/${entry.name_img}` : "",
+    createdAt: entry.thisMoment || "",
+    rawName: entry.name_img || "",
+  };
+}
+
 function useScrollGrow(pageKey) {
   useEffect(() => {
     const nodes = document.querySelectorAll(".scroll-grow");
@@ -166,9 +179,60 @@ function AssistantWidget() {
 
 function App() {
   const [activePage, setActivePage] = useState("ocr");
-  const [historyEntries] = useState([]);
+  const [historyEntries, setHistoryEntries] = useState([]);
+  const [historyMeta, setHistoryMeta] = useState({ sumPage: 0, sumTotal: 0 });
+  const [historyLoading, setHistoryLoading] = useState(false);
+  const [historyError, setHistoryError] = useState("");
+  const [historyPage, setHistoryPage] = useState(1);
 
   useScrollGrow(activePage);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function fetchHistory() {
+      setHistoryLoading(true);
+      setHistoryError("");
+
+      try {
+        const response = await fetch(`${HISTORY_API_URL}?limit=${HISTORY_LIMIT}&page=${historyPage}`);
+
+        if (!response.ok) {
+          throw new Error("Không tải được lịch sử OCR.");
+        }
+
+        const result = await response.json();
+
+        if (!isMounted) {
+          return;
+        }
+
+        setHistoryEntries(Array.isArray(result?.hists) ? result.hists.map(mapHistoryEntry) : []);
+        setHistoryMeta({
+          sumPage: Number(result?.sumPage || 0),
+          sumTotal: Number(result?.sumTotal || 0),
+        });
+      } catch (error) {
+        if (!isMounted) {
+          return;
+        }
+
+        setHistoryEntries([]);
+        setHistoryMeta({ sumPage: 0, sumTotal: 0 });
+        setHistoryError(error instanceof Error ? error.message : "Không tải được lịch sử OCR.");
+      } finally {
+        if (isMounted) {
+          setHistoryLoading(false);
+        }
+      }
+    }
+
+    fetchHistory();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [historyPage]);
 
   return (
     <div className="app-shell">
@@ -230,7 +294,7 @@ function App() {
             </article>
             <article className="stat-card">
               <span>Bản ghi hiện có</span>
-              <strong>{historyEntries.length} phiên</strong>
+              <strong>{historyMeta.sumTotal || historyEntries.length} phiên</strong>
             </article>
             <article className="stat-card">
               <span>Hiệu năng</span>
@@ -242,7 +306,15 @@ function App() {
         {activePage === "ocr" ? (
           <OcrPage />
         ) : (
-          <HistoryPage historyEntries={historyEntries} onBackToOcr={() => setActivePage("ocr")} />
+          <HistoryPage
+            historyEntries={historyEntries}
+            historyLoading={historyLoading}
+            historyError={historyError}
+            historyMeta={historyMeta}
+            currentPage={historyPage}
+            onBackToOcr={() => setActivePage("ocr")}
+            onPageChange={setHistoryPage}
+          />
         )}
       </main>
 
