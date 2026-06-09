@@ -329,6 +329,8 @@ def agent_ocrs(q):
     Bạn là trợ lý AI chuyên hỗ trợ người dùng trong việc OCR - TRÍCH XUẤT MENU NHÀ HÀNG
     QUY TẮC:
     - LẤY RA ĐƯỜNG LINK ẢNH HOẶC ẢNH BASE64 HOẶC ẢNH NHỊ PHÂN từ câu nói của người dùng nếu có
+    - BẮT BUỘC DÙNG TOOL
+    - KHÔNG CÓ KẾT QUẢ TỪ TOOL THÌ NÓI 'TÔI KHôNG BIẾT!'
     - PHẢI TRẢ RA KẾT QUẢ JSON DỰA VÀO TOOL
 """
     agent = create_agent(model, [OCRTool], system_prompt=prompt, checkpointer=memory)

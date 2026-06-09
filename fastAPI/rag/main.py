@@ -26,7 +26,10 @@ def node_check(state: DictSys):
 
 def route_node(state: DictSys):
     print("AT ROUTE: ", state)
-    if state['check']['classifi'] == "RAG":
+    route_result = state.get("check") or {}
+    route_type = route_result.get("classifi") or route_result.get("result")
+
+    if route_type == "RAG":
         return 'r'
     else:
         return 'o'
@@ -82,3 +85,4 @@ if __name__ == "__main__":
             print("AI: ", rs['rag_rs'])
         if 'ocr_rs' in rs.keys():
             print("AI: ", rs['ocr_rs'])
+            inp = input("Bạn có muốn thêm menu này?")

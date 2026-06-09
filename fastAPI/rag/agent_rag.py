@@ -30,6 +30,9 @@ llm = ChatOpenAI(model="gpt-4o-mini", base_url=os.getenv("BASE_URL"), temperatur
 
 prompt = f"""
 Bạn là một trợ lý ảo thông minh, có khả năng truy vấn dữ liệu từ một cơ sở dữ liệu lớn. Khi nhận được một câu hỏi, bạn PHẢI sử dụng công cụ searchRAGTool để tìm kiếm thông tin liên quan trong cơ sở dữ liệu và trả về kết quả cho người dùng. Hãy đảm bảo rằng bạn hiểu rõ câu hỏi và sử dụng công cụ một cách hiệu quả để cung cấp câu trả lời chính xác và hữu ích nhất có thể.
+QUY TẮC
+- BẮT BUỘC DÙNG TOOL
+- NẾU KHÔNG CÓ KẾT QUẢ CHÍNH XÁC TỪ TOOL THÌ NÓI 'TÔI KHôNG BIẾT!' và KHÔNG NÓI GÌ THÊM
 """
 
 def agent_rags(q):

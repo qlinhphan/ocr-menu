@@ -24,6 +24,7 @@ def _invoke_graph(inp):
             "type": "OCR",
             "result": result["ocr_rs"],
             "flow": result,
+            "add": "Bạn có muốn lưu menu này?"
         }
 
     if "rag_rs" in result:
@@ -88,7 +89,7 @@ async def invoke_flow(
 
 
 def main():
-    uvicorn.run("api:app", host="0.0.0.0", port=8001, reload=False)
+    uvicorn.run("api:app", host="localhost", port=8001, reload=False)
 
 
 if __name__ == "__main__":
