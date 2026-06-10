@@ -1,54 +1,79 @@
-from langchain.agents import create_agent
-from dotenv import load_dotenv
-load_dotenv()
-from langchain_openai import OpenAIEmbeddings
 import os
+import re
+
+from dotenv import load_dotenv
+from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
-from langchain_core.tools import tool
-from pydantic import BaseModel
-from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
-from langgraph.checkpoint.memory import MemorySaver
 
 try:
-    from .connect_mg import connect_mg
     from .rag import searchRAG
 except ImportError:
-    from connect_mg import connect_mg
     from rag import searchRAG
-memory = MemorySaver()
-config = {"configurable": {"thread_id": "user-123"}}
-class BaseInput(BaseModel):
-    query: str
-@tool(args_schema=BaseInput)
-def searchRAGTool(query: str) -> str:
-    """Tool dùng để truy vấn dễ liệu"""
-    print("<<<<< SEARCH RAG >>>>>")
-    result = searchRAG(query)
-    return result
 
-llm = ChatOpenAI(model="gpt-4o-mini", base_url=os.getenv("BASE_URL"), temperature=0.1)
-
-prompt = f"""
-Bạn là một trợ lý ảo thông minh, có khả năng truy vấn dữ liệu từ một cơ sở dữ liệu lớn. Khi nhận được một câu hỏi, bạn PHẢI sử dụng công cụ searchRAGTool để tìm kiếm thông tin liên quan trong cơ sở dữ liệu và trả về kết quả cho người dùng. Hãy đảm bảo rằng bạn hiểu rõ câu hỏi và sử dụng công cụ một cách hiệu quả để cung cấp câu trả lời chính xác và hữu ích nhất có thể.
-QUY TẮC
-- BẮT BUỘC DÙNG TOOL
-- NẾU KHÔNG CÓ KẾT QUẢ CHÍNH XÁC TỪ TOOL THÌ NÓI 'TÔI KHôNG BIẾT!' và KHÔNG NÓI GÌ THÊM
-"""
-
-def agent_rags(q):
-    agent = create_agent(llm, tools=[searchRAGTool], system_prompt=prompt, checkpointer=memory)
-    rs = agent.invoke({"messages": [HumanMessage(content=q)]}, config=config)['messages'][-1].content
-    return rs
-
-# while True:
-#     q = input("Bạn: ")
-#     if q == "bye":
-#         print("AI: bye!!")
-#         break
-#     rs = agent.invoke({"messages": [HumanMessage(content=q)]}, config=config)['messages'][-1].content
-#     print("AI: ", rs)
+load_dotenv()
 
 
+def _build_model() -> ChatOpenAI:
+    return ChatOpenAI(
+        model=os.getenv("MODEL_CHAT") or "gpt-4o-mini",
+        base_url=os.getenv("BASE_URL"),
+    )
 
 
-# mg = connect_mg(os.getenv("MONGODB_URI"))
+def _format_context(chunks: list[str]) -> str:
+    return "\n\n".join(f"[Ngữ cảnh {idx}] {chunk}" for idx, chunk in enumerate(chunks, start=1))
+
+
+def _rule_based_answer(contexts: list[str]) -> str:
+    text = " ".join(contexts)
+    markers = [
+        r"(?:được\s+)?(?:làm|xây dựng|tạo ra|phát triển)\s+bởi\s+",
+        r"bởi\s+",
+    ]
+    for marker in markers:
+        match = re.search(marker, text, re.IGNORECASE)
+        if match:
+            tail = text[match.end():]
+            name_match = re.match(r"([A-ZĐ][\wÀ-ỹ]+(?:\s+[A-ZĐ][\wÀ-ỹ]+){1,5})", tail)
+            if name_match:
+                author = name_match.group(1).strip().rstrip(".")
+                return f"Hệ thống này được làm bởi {author}."
+    return "TÔI KHÔNG BIẾT!"
+
+
+def agent_rags(q: str) -> str:
+    contexts = searchRAG(q)
+    if not contexts:
+        return "TÔI KHÔNG BIẾT!"
+
+    model = _build_model()
+    messages = [
+        SystemMessage(
+            content=(
+                "Bạn là trợ lý AI trả lời câu hỏi về hệ thống OCR menu này. "
+                "Chỉ được dùng thông tin trong phần ngữ cảnh. "
+                "Nếu ngữ cảnh không đủ để kết luận thì trả về đúng chuỗi 'TÔI KHÔNG BIẾT!'. "
+                "Nếu có đủ thông tin thì trả lời ngắn gọn, trực tiếp và bằng tiếng Việt."
+            )
+        ),
+        HumanMessage(
+            content=(
+                f"Câu hỏi: {q}\n\n"
+                f"Ngữ cảnh:\n{_format_context(contexts)}"
+            )
+        ),
+    ]
+    try:
+        response = model.invoke(messages)
+        return (response.content or "").strip() or _rule_based_answer(contexts)
+    except Exception:
+        return _rule_based_answer(contexts)
+
+
+if __name__ == "__main__":
+    while True:
+        q = input("Bạn: ")
+        if q == "bye":
+            print("AI: bye!!")
+            break
+        print("AI: ", agent_rags(q))

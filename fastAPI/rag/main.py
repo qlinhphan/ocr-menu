@@ -18,6 +18,12 @@ class DictSys(TypedDict):
     rag_rs : str
     ocr_rs: str
 
+
+def _extract_rag_input(inp: Any) -> str:
+    if isinstance(inp, dict):
+        return (inp.get("text") or inp.get("prompt") or "").strip()
+    return str(inp)
+
 def node_check(state: DictSys):
     rs = agent_routes(state['inp'])
     return {
@@ -29,13 +35,12 @@ def route_node(state: DictSys):
     route_result = state.get("check") or {}
     route_type = route_result.get("classifi") or route_result.get("result")
 
-    if route_type == "RAG":
-        return 'r'
-    else:
+    if route_type == "OCR":
         return 'o'
+    return 'r'
 
 def node_rag(state: DictSys):
-    rag = agent_rags(state['inp'])
+    rag = agent_rags(_extract_rag_input(state['inp']))
     return {
         'rag_rs': rag
     }

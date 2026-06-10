@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import HistoryPage from "./pages/history/history-page";
 import OcrPage from "./pages/ocr/ocr-page";
+import { normalizeMenuData } from "./lib/ocr-store";
 
 const HISTORY_LIMIT = 5;
 const HISTORY_API_URL = "http://localhost:8081/hist-extract";
+const AI_ASSISTANT_API_URL = "/api/rag/invoke";
+const CREATE_MENU_API_URL = "http://localhost:8081/create-menu";
+const ADD_HISTORY_API_URL = "http://localhost:8081/add-history";
 
 function mapHistoryEntry(entry) {
   return {
@@ -38,64 +42,289 @@ function useScrollGrow(pageKey) {
   }, [pageKey]);
 }
 
-const assistantQuickActions = [
-  "Hướng dẫn OCR ảnh",
-  "Cách sửa món sau khi trích xuất",
-  "Lưu menu như thế nào",
-];
+const assistantQuickActions = ["Tôi là ai?", "Ai tạo ra hệ thống này?", "Trích xuất nội dung từ ảnh này"];
 
-function buildAssistantReply(input) {
-  const normalizedInput = input.trim().toLowerCase();
-
-  if (!normalizedInput) {
-    return "Mình đang ở đây để hỗ trợ OCR menu, chỉnh dữ liệu món và lưu kết quả. Bạn cứ hỏi ngắn gọn là được.";
-  }
-
-  if (normalizedInput.includes("ocr") || normalizedInput.includes("ảnh") || normalizedInput.includes("anh") || normalizedInput.includes("trích")) {
-    return "Bạn chỉ cần chọn ảnh, bấm 'Đọc ảnh', rồi kiểm tra lại tên nhóm, tên món và từng dòng giá trước khi lưu.";
-  }
-
-  if (normalizedInput.includes("sửa") || normalizedInput.includes("sua") || normalizedInput.includes("mô tả") || normalizedInput.includes("mo ta") || normalizedInput.includes("giá") || normalizedInput.includes("gia")) {
-    return "Sau khi OCR xong, bạn có thể sửa trực tiếp từng ô tên món, size, giá, tùy chọn thêm và mô tả ngay trong form kết quả.";
-  }
-
-  if (normalizedInput.includes("lưu") || normalizedInput.includes("luu")) {
-    return "Khi dữ liệu đã ổn, bấm nút lưu ở cuối form. Hệ thống sẽ lưu theo số món hiện đang có trên màn hình.";
-  }
-
-  if (normalizedInput.includes("lịch sử") || normalizedInput.includes("lich su")) {
-    return "Bạn có thể mở tab Lịch sử để xem lại các phiên OCR đã lưu và kiểm tra nhanh dữ liệu chi tiết.";
-  }
-
-  return "Mình có thể hỗ trợ bạn ở các bước OCR ảnh, chỉnh dữ liệu món, kiểm tra mô tả hoặc xem lịch sử. Bạn muốn làm bước nào?";
+function countMenuItems(menuData) {
+  return (menuData?.categories || []).reduce((total, category) => total + (category.items?.length || 0), 0);
 }
 
-function AssistantWidget() {
+function buildObjectSavePayload(menuData) {
+  if (!menuData?.categories?.length) {
+    return [];
+  }
+
+  return menuData.categories.flatMap((category) =>
+    (category.items || []).flatMap((item) =>
+      (item.descriptions || []).map((description) => ({
+        name_cate: category.name ?? "",
+        name_menu: item.name ?? "",
+        description_item: description.description ?? "",
+        optional_item: description.optional ?? null,
+        price_item: Number(description.price ?? 0) || 0,
+        size_item: description.size ?? "",
+      }))
+    )
+  );
+}
+
+function extractImageName(pathImg) {
+  if (!pathImg || typeof pathImg !== "string") {
+    return "";
+  }
+
+  return pathImg.split("/").filter(Boolean).pop() || "";
+}
+
+async function postSingleObjectSave(payloadItem, index) {
+  const response = await fetch(CREATE_MENU_API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payloadItem),
+  });
+
+  if (!response.ok) {
+    let errorMessage = `Không lưu được object thứ ${index + 1}`;
+
+    try {
+      const errorPayload = await response.json();
+      errorMessage = errorPayload?.message || errorPayload?.detail || errorMessage;
+    } catch {
+      const errorText = await response.text();
+      errorMessage = errorText || errorMessage;
+    }
+
+    throw new Error(errorMessage);
+  }
+}
+
+async function postImageHistory(nameImg) {
+  const response = await fetch(ADD_HISTORY_API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name_img: nameImg }),
+  });
+
+  if (!response.ok) {
+    let errorMessage = "Không lưu được lịch sử ảnh";
+
+    try {
+      const errorPayload = await response.json();
+      errorMessage = errorPayload?.message || errorPayload?.detail || errorMessage;
+    } catch {
+      const errorText = await response.text();
+      errorMessage = errorText || errorMessage;
+    }
+
+    throw new Error(errorMessage);
+  }
+}
+
+function resolveAssistantOcrMenuData(raw) {
+  const candidate = raw?.result ?? raw?.flow?.ocr_rs ?? raw?.flow ?? null;
+
+  if (!candidate) {
+    return null;
+  }
+
+  if (typeof candidate === "string") {
+    try {
+      return normalizeMenuData(JSON.parse(candidate));
+    } catch {
+      return null;
+    }
+  }
+
+  return normalizeMenuData(candidate);
+}
+
+async function saveAssistantOcrToJava(raw) {
+  const menuData = resolveAssistantOcrMenuData(raw);
+  if (!menuData?.categories?.length) {
+    throw new Error("Không có dữ liệu OCR hợp lệ để lưu.");
+  }
+
+  const payload = buildObjectSavePayload(menuData);
+  if (!payload.length) {
+    throw new Error("Không có dữ liệu hợp lệ để gửi.");
+  }
+
+  for (let index = 0; index < payload.length; index += 1) {
+    await postSingleObjectSave(payload[index], index);
+  }
+
+  const historyImageName = extractImageName(raw?.path_img || raw?.result?.path_img || "");
+  if (historyImageName) {
+    await postImageHistory(historyImageName);
+  }
+
+  return countMenuItems(menuData);
+}
+
+function formatAssistantResponse(payload) {
+  if (!payload) {
+    return "Không nhận được dữ liệu từ API.";
+  }
+
+  const resultValue = payload.result;
+
+  if (typeof resultValue === "string") {
+    const trimmed = resultValue.trim();
+
+    if ((trimmed.startsWith("{") && trimmed.endsWith("}")) || (trimmed.startsWith("[") && trimmed.endsWith("]"))) {
+      try {
+        return JSON.stringify(JSON.parse(trimmed), null, 2);
+      } catch {
+        return resultValue;
+      }
+    }
+
+    return resultValue;
+  }
+
+  if (Array.isArray(resultValue) || typeof resultValue === "object") {
+    return JSON.stringify(resultValue, null, 2);
+  }
+
+  return String(resultValue);
+}
+
+function AssistantWidget({ onConfirmOcrSave, onSaveSuccess }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [draftMessage, setDraftMessage] = useState("");
+  const [draftFile, setDraftFile] = useState(null);
+  const [isSending, setIsSending] = useState(false);
   const [messages, setMessages] = useState([
     {
       id: 1,
       role: "assistant",
-      content: "Mình là trợ lý AI của Menu OCR Studio. Bạn có thể hỏi cách OCR, sửa dữ liệu món, lưu kết quả hoặc xem lịch sử.",
+      content: "Mình là trợ lý AI của Menu OCR Studio. Bạn có thể hỏi câu hỏi hệ thống hoặc gửi ảnh để OCR.",
     },
   ]);
+  const fileInputRef = useRef(null);
 
-  function sendMessage(rawMessage) {
-    const content = rawMessage.trim();
+  async function resolveAddPrompt(message, choice) {
+    setMessages((current) =>
+      current.map((currentMessage) =>
+        currentMessage.id === message.id
+          ? {
+              ...currentMessage,
+              addResolved: true,
+              addChoice: choice,
+            }
+          : currentMessage
+      )
+    );
 
-    if (!content) {
+    if (choice === "yes") {
+      try {
+        const savedCount = await onConfirmOcrSave?.(message.raw);
+        if (savedCount) {
+          onSaveSuccess?.(savedCount);
+        }
+      } catch (error) {
+        setMessages((current) => [
+          ...current,
+          {
+            id: Date.now() + 2,
+            role: "assistant",
+            content: error instanceof Error ? `Lỗi lưu: ${error.message}` : "Lỗi lưu không xác định.",
+          },
+        ]);
+      }
       return;
     }
 
     setMessages((current) => [
       ...current,
-      { id: Date.now(), role: "user", content },
-      { id: Date.now() + 1, role: "assistant", content: buildAssistantReply(content) },
+      {
+        id: Date.now() + 2,
+        role: "assistant",
+        content: "Không sao, mình sẽ không tiếp tục nhắc lưu menu này. Bạn có thể hỏi tiếp hoặc gửi ảnh khác.",
+      },
     ]);
+  }
+
+  async function sendMessage(rawMessage, file = draftFile) {
+    const content = rawMessage.trim();
+
+    if (!content && !file) {
+      return;
+    }
+
+    const userMessageId = Date.now();
+    const assistantMessageId = userMessageId + 1;
+
+    setMessages((current) => [
+      ...current,
+      { id: userMessageId, role: "user", content: content || "Đã gửi ảnh đính kèm", fileName: file?.name || "" },
+    ]);
+
     setDraftMessage("");
+    setDraftFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+
     setIsOpen(true);
+    setIsSending(true);
+
+    try {
+      const formData = new FormData();
+      if (content) {
+        formData.append("text", content);
+      }
+      if (file) {
+        formData.append("file", file);
+      }
+
+      const response = await fetch(AI_ASSISTANT_API_URL, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        let errorMessage = "Gọi API thất bại";
+
+        try {
+          const errorPayload = await response.json();
+          errorMessage = errorPayload?.detail || errorPayload?.message || errorMessage;
+        } catch {
+          const errorText = await response.text();
+          errorMessage = errorText || errorMessage;
+        }
+
+        throw new Error(errorMessage);
+      }
+
+      const result = await response.json();
+      setMessages((current) => [
+        ...current,
+        {
+          id: assistantMessageId,
+          role: "assistant",
+          content: formatAssistantResponse(result),
+          raw: result,
+          addPrompt: result?.add || "",
+          addResolved: false,
+        },
+      ]);
+    } catch (error) {
+      setMessages((current) => [
+        ...current,
+        {
+          id: assistantMessageId,
+          role: "assistant",
+          content: error instanceof Error ? `Lỗi: ${error.message}` : "Lỗi không xác định.",
+        },
+      ]);
+    } finally {
+      setIsSending(false);
+    }
   }
 
   return (
@@ -115,7 +344,7 @@ function AssistantWidget() {
           <div className="ai-panel-header">
             <div>
               <p className="ai-panel-eyebrow">Trợ lý AI</p>
-              <strong>Hỗ trợ nhanh cho người dùng</strong>
+              <strong>Hỗ trợ RAG / OCR</strong>
             </div>
 
             <div className="ai-panel-actions">
@@ -137,7 +366,7 @@ function AssistantWidget() {
 
           <div className="ai-quick-actions">
             {assistantQuickActions.map((action) => (
-              <button key={action} type="button" className="ai-chip" onClick={() => sendMessage(action)}>
+              <button key={action} type="button" className="ai-chip" onClick={() => sendMessage(action, null)}>
                 {action}
               </button>
             ))}
@@ -150,7 +379,36 @@ function AssistantWidget() {
                 className={`ai-message ${message.role === "user" ? "ai-message-user" : "ai-message-assistant"}`}
               >
                 <span className="ai-message-role">{message.role === "user" ? "Bạn" : "AI"}</span>
-                <p>{message.content}</p>
+                {message.fileName ? <p className="ai-message-file">{message.fileName}</p> : null}
+                <pre className="ai-message-content">{message.content}</pre>
+                {message.addPrompt ? (
+                  <div className={`ai-add-card ${message.addResolved ? "ai-add-card-muted" : ""}`}>
+                    <p className="ai-add-label">Gợi ý tiếp theo</p>
+                    <strong>{message.addPrompt}</strong>
+                    {!message.addResolved ? (
+                      <div className="ai-add-actions">
+                        <button
+                          type="button"
+                          className="ai-add-yes"
+                          onClick={() => resolveAddPrompt(message, "yes")}
+                        >
+                          Có
+                        </button>
+                        <button
+                          type="button"
+                          className="ai-add-no"
+                          onClick={() => resolveAddPrompt(message, "no")}
+                        >
+                          Không
+                        </button>
+                      </div>
+                    ) : (
+                      <span className="ai-add-choice">
+                        Bạn đã chọn: {message.addChoice === "yes" ? "Có" : "Không"}
+                      </span>
+                    )}
+                  </div>
+                ) : null}
               </article>
             ))}
           </div>
@@ -165,10 +423,20 @@ function AssistantWidget() {
             <input
               value={draftMessage}
               onChange={(event) => setDraftMessage(event.target.value)}
-              placeholder="Hỏi về OCR, chỉnh món, lưu dữ liệu hoặc xem lịch sử..."
+              placeholder="Hỏi về RAG, OCR hoặc gửi ảnh..."
             />
-            <button type="submit" className="primary-button">
-              Gửi
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              hidden
+              onChange={(event) => setDraftFile(event.target.files?.[0] || null)}
+            />
+            <button type="button" className="ai-panel-icon" onClick={() => fileInputRef.current?.click()}>
+              {draftFile?.name || "Chọn ảnh"}
+            </button>
+            <button type="submit" className="primary-button" disabled={isSending}>
+              {isSending ? "Đang gửi..." : "Gửi"}
             </button>
           </form>
         </section>
@@ -184,8 +452,30 @@ function App() {
   const [historyLoading, setHistoryLoading] = useState(false);
   const [historyError, setHistoryError] = useState("");
   const [historyPage, setHistoryPage] = useState(1);
+  const [saveToast, setSaveToast] = useState(null);
+  const saveToastTimerRef = useRef(null);
 
   useScrollGrow(activePage);
+
+  useEffect(() => {
+    return () => {
+      if (saveToastTimerRef.current) {
+        clearTimeout(saveToastTimerRef.current);
+      }
+    };
+  }, []);
+
+  function showSaveToast(itemCount) {
+    setSaveToast({ count: itemCount });
+
+    if (saveToastTimerRef.current) {
+      clearTimeout(saveToastTimerRef.current);
+    }
+
+    saveToastTimerRef.current = setTimeout(() => {
+      setSaveToast(null);
+    }, 3200);
+  }
 
   useEffect(() => {
     let isMounted = true;
@@ -236,6 +526,12 @@ function App() {
 
   return (
     <div className="app-shell">
+      {saveToast ? (
+        <div className="save-toast" role="status" aria-live="polite">
+          <span className="save-toast-badge">Thành công</span>
+          <strong>Lưu thành công {saveToast.count} món</strong>
+        </div>
+      ) : null}
       <div className="background-orb orb-one" />
       <div className="background-orb orb-two" />
       <div className="noise-layer" />
@@ -273,8 +569,7 @@ function App() {
             <p className="eyebrow">Frontend OCR</p>
             <h1>Đọc hiểu ảnh nhanh chóng.</h1>
             <p className="hero-text">
-              Hệ thống được sử dụng cho việc thêm menu món ăn. Thay vì phải nhập tay thì giờ đây có thể chụp ảnh, sau
-              đó hệ thống tự động điền dữ liệu cho bạn.
+              Hệ thống dùng để nhập menu món ăn từ ảnh. Bạn có thể chụp ảnh, rồi hệ thống tự động điền dữ liệu cho bạn.
             </p>
 
             <div className="hero-actions">
@@ -318,7 +613,13 @@ function App() {
         )}
       </main>
 
-      <AssistantWidget />
+      <AssistantWidget
+        onConfirmOcrSave={async (raw) => {
+          const savedCount = await saveAssistantOcrToJava(raw);
+          return savedCount;
+        }}
+        onSaveSuccess={(itemCount) => showSaveToast(itemCount)}
+      />
     </div>
   );
 }

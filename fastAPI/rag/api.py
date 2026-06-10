@@ -1,6 +1,8 @@
 import json
 import os
+import shutil
 import tempfile
+import uuid
 from pathlib import Path
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
@@ -14,18 +16,22 @@ except ImportError:
 
 
 app = FastAPI(title="RAG OCR Flow API", version="1.0.0")
+FRONT_PUBLIC_DIR = Path(__file__).resolve().parents[2] / "front" / "public"
 
 
 def _invoke_graph(inp):
     result = graph_app.invoke({"inp": inp})
+    has_image_input = isinstance(inp, dict) and bool(inp.get("img_path") or inp.get("image_base64"))
 
     if "ocr_rs" in result:
-        return {
+        response = {
             "type": "OCR",
             "result": result["ocr_rs"],
             "flow": result,
-            "add": "Bạn có muốn lưu menu này?"
         }
+        if has_image_input:
+            response["add"] = "Bạn có muốn lưu menu này không?"
+        return response
 
     if "rag_rs" in result:
         return {
@@ -39,6 +45,14 @@ def _invoke_graph(inp):
         "result": result,
         "flow": result,
     }
+
+
+def _copy_public_image(temp_path: str, suffix: str) -> str:
+    public_image_name = f"{uuid.uuid4().hex}{suffix}"
+    public_image_path = FRONT_PUBLIC_DIR / public_image_name
+    public_image_path.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(temp_path, public_image_path)
+    return f"/{public_image_name}"
 
 
 @app.get("/")
@@ -55,6 +69,7 @@ async def invoke_flow(
         raise HTTPException(status_code=400, detail="Can gui it nhat mot trong 2 truong: text hoac file")
 
     temp_path = None
+    public_path = None
 
     try:
         if file is not None:
@@ -67,7 +82,11 @@ async def invoke_flow(
                 "text": text or "Trich xuat noi dung tu anh menu nay",
                 "img_path": temp_path,
             }
-            return await run_in_threadpool(_invoke_graph, payload)
+            result = await run_in_threadpool(_invoke_graph, payload)
+            if result.get("type") == "OCR" and temp_path:
+                public_path = _copy_public_image(temp_path, suffix)
+                result["path_img"] = public_path
+            return result
 
         return await run_in_threadpool(_invoke_graph, text)
     except json.JSONDecodeError as exc:

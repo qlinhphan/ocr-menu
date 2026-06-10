@@ -1,31 +1,33 @@
-
-from langchain_openai import ChatOpenAI
-from langchain.agents import create_agent
-from dotenv import load_dotenv
-from langchain_core.tools import tool
-load_dotenv()
-import os
-from pydantic import BaseModel, Field
-import re
-import json
 import ast
+import json
+import os
+import re
+
+from dotenv import load_dotenv
+from langchain.agents import create_agent
 from langchain.messages import HumanMessage
-from langgraph.checkpoint.memory import MemorySaver
+from langchain_core.tools import tool
+from langchain_openai import ChatOpenAI
+from pydantic import BaseModel, Field
 
-memory = MemorySaver()
-config = {"configurable": {"thread_id": 'user-123'}}
-
+load_dotenv()
 
 rules = {
     "classifi": "RAG/OCR"
 }
 
+
 class BaseInp(BaseModel):
     exp: str = Field(description="Câu đầu vào của người dùng")
+
+
 @tool(args_schema=BaseInp)
 def toolCheckInp(exp: str):
     """Tool phân loại đầu vào"""
-    llm = ChatOpenAI(model = os.getenv("MODEL_CHAT"), base_url=os.getenv("BASE_URL"))
+    llm = ChatOpenAI(
+        model=os.getenv("MODEL_CHAT") or "gpt-4o-mini",
+        base_url=os.getenv("BASE_URL"),
+    )
     messages = [
         (
             "system",
@@ -35,19 +37,17 @@ def toolCheckInp(exp: str):
             - Phải trả về dạng JSON theo {rules}
             """,
         ),
-        ("human", exp)
+        ("human", exp),
     ]
-    rs = llm.invoke(messages)
-    return rs
+    return llm.invoke(messages)
+
 
 def convertSTR(text):
-    match = re.search(r'\{.*\}', text, re.DOTALL)
-
+    match = re.search(r"\{.*\}", text, re.DOTALL)
     if not match:
         return None
 
     content = match.group()
-
     try:
         return json.loads(content)
     except json.JSONDecodeError:
@@ -56,10 +56,40 @@ def convertSTR(text):
 
 def _extract_route_text(q):
     if isinstance(q, dict):
+        text_value = (q.get("text") or q.get("prompt") or "").strip()
+        if text_value:
+            return text_value
         if q.get("img_path") or q.get("image_base64"):
             return None
-        return q.get("text") or q.get("prompt") or ""
+        return ""
     return q
+
+
+def _heuristic_route(route_text):
+    normalized = (route_text or "").strip().lower()
+    if not normalized:
+        return {"classifi": "RAG"}
+
+    ocr_keywords = (
+        "ocr",
+        "trich xuat",
+        "trích xuất",
+        "doc anh",
+        "đọc ảnh",
+        "doc menu",
+        "đọc menu",
+        "anh menu",
+        "ảnh menu",
+        "base64",
+        "hinh anh",
+        "hình ảnh",
+        "image",
+        "img",
+    )
+    if any(keyword in normalized for keyword in ocr_keywords):
+        return {"classifi": "OCR"}
+
+    return {"classifi": "RAG"}
 
 
 def agent_routes(q):
@@ -67,17 +97,23 @@ def agent_routes(q):
     if route_text is None:
         return {"classifi": "OCR"}
 
-    llm = ChatOpenAI(model = os.getenv("MODEL_CHAT"), base_url=os.getenv("BASE_URL"))
-    prompt = f"""
-    Bạn là trợ AI, có nhiệm vụ chính là đưa ra kết luận là "RAG" hoặc "OCR"
+    llm = ChatOpenAI(
+        model=os.getenv("MODEL_CHAT") or "gpt-4o-mini",
+        base_url=os.getenv("BASE_URL"),
+    )
+    prompt = """
+    Bạn là trợ lý AI, có nhiệm vụ chính là đưa ra kết luận là "RAG" hoặc "OCR"
     QUY TẮC:
     - BẮT BUỘC TRẢ VỀ JSON DỰA VÀO TOOL
-"""
-    agent = create_agent(llm, [toolCheckInp], system_prompt=prompt, checkpointer=memory)
-    
-    rs = agent.invoke({'messages': [HumanMessage(content=route_text)]}, config=config)['messages'][-1].content
+    """
+    agent = create_agent(llm, [toolCheckInp], system_prompt=prompt)
+
+    rs = agent.invoke({"messages": [HumanMessage(content=route_text)]})["messages"][-1].content
     rs = convertSTR(rs)
-    return rs
+    if isinstance(rs, dict) and rs.get("classifi") in {"RAG", "OCR"}:
+        return rs
+    return _heuristic_route(route_text)
+
 
 if __name__ == "__main__":
     q = "Tôi có cái ảnh này cần nhờ bạn giúp đỡ trích xuất"
