@@ -1,0 +1,210 @@
+{
+  "categories": [
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "Thịt Xiên Nướng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 14000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh ML Thường",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 4000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh Mì Bơ Mật Ong",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 12000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sữa Đậu Nanh",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Chè Khúc Bạch",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Chè Khoai Dèo",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Chờ Bưởi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sữa Chua Phomai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Caramen",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 101000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "Tra Đá",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 5000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Quất",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nước Ngọt",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bia",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Đào",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Dừa Dàm",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 37777.04,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 71.00048396289063,
+        "enhanced": 60.95291025567373,
+        "binary": 38.71811858069952
+      },
+      "detected_boxes": 35,
+      "latency_ms": 27881.84
+    }
+  }
+}

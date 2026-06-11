@@ -1,0 +1,216 @@
+{
+  "categories": [
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "COCACOLA",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 17000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Fanta",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 17000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "SPRITE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 17000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BIA CHAI SÀI GÒN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CAM SPI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BIA CHA TIGER",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 17000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ 3 MÀU",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nước suối chai P",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BIA SÀI GÓ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BIA TRỨC BẠCH",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BIA HÀ NỘI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BIA TIGER",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BIA 333",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BIA HENEIKEN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "RƯỢU BA KÍCH",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 100000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "RƯỢU MƠ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 100000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 50226.92,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 81.00599244981528,
+        "enhanced": 80.99750517088032,
+        "binary": 70.8434864583059
+      },
+      "detected_boxes": 40,
+      "latency_ms": 40994.49
+    }
+  }
+}

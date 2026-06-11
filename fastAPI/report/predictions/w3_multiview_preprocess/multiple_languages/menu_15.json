@@ -1,0 +1,172 @@
+{
+  "categories": [
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "Cafe Đen",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Espressor",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cafe Nâu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cafe Nâu Lắc",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Robusta Espresso",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Americano",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cafe Bạc Xiu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cafe Sữa Tươi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cappuccino",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 60000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cafe Cốt Dừa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Latte",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 60000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cafe Muối",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 45391.5,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 73.01540123407523,
+        "enhanced": 61.07502327260971,
+        "binary": 55.07314419523493
+      },
+      "detected_boxes": 36,
+      "latency_ms": 21767.17
+    }
+  }
+}

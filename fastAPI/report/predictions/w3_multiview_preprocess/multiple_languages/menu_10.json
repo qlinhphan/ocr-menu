@@ -1,0 +1,9 @@
+{
+  "categories": [],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "latency_ms": 70368.24,
+    "error": "Expecting value: line 117 column 7 (char 2946)"
+  }
+}

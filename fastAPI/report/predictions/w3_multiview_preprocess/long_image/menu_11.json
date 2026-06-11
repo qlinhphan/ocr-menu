@@ -1,0 +1,144 @@
+{
+  "categories": [
+    {
+      "name": "MÓN CANH",
+      "items": [
+        {
+          "name": "CANH CUA MÙNG TƠI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 99000,
+              "optional": "(Kèm Cà Muối)",
+              "description": "Crab E malabar spinach soup (with pickled eggplant)"
+            }
+          ]
+        },
+        {
+          "name": "CANH NGAO CHUA",
+          "descriptions": [
+            {
+              "size": "4",
+              "price": 89000,
+              "optional": null,
+              "description": "In Sour Clam Soup"
+            }
+          ]
+        },
+        {
+          "name": "CANH CHUA THỊT BĂM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 89000,
+              "optional": null,
+              "description": "In Sour Minced Pork Soup"
+            }
+          ]
+        },
+        {
+          "name": "CANH BẦU NẤU TÔM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 89000,
+              "optional": null,
+              "description": "In Bottle Gourd Soup with Shrimp"
+            }
+          ]
+        },
+        {
+          "name": "CANH DƯA TÓP MỞ LÝ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 99000,
+              "optional": null,
+              "description": "Pickled mustard soup with crispy pork fat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MÓN RAU",
+      "items": [
+        {
+          "name": "TRAU MUỐNG XÀO TỎI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 69000,
+              "optional": null,
+              "description": "Stir-fried morning glory with garlic"
+            }
+          ]
+        },
+        {
+          "name": "TRAU MÙNG TƠI XÀO TỎI THỊ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 69000,
+              "optional": null,
+              "description": "A Stir-fried malabar spinach with garlic"
+            }
+          ]
+        },
+        {
+          "name": "TRAU CẢI SỐT NẤM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 79000,
+              "optional": null,
+              "description": "Stir-fried mustard greens with mushrooms"
+            }
+          ]
+        },
+        {
+          "name": "BẤP CẢI LUỘC CHẤM TRỨNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 69000,
+              "optional": null,
+              "description": "It is a Boiled cabbage with dipping egg & fish sauce"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 51917.5,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 71.03472961183984,
+        "enhanced": 59.02258574898121,
+        "binary": 56.886050467781885
+      },
+      "detected_boxes": 35,
+      "latency_ms": 43249.46
+    }
+  }
+}

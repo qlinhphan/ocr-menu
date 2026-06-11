@@ -1,0 +1,165 @@
+{
+  "categories": [
+    {
+      "name": "FOOD & DRINKS",
+      "items": [
+        {
+          "name": "Mỳ tương đen",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà sữa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mỳ mực",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mỳ cay",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 38000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà sữa thái xanh",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bạch tuộc xào cay",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 80000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cơm trộn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cá viên chiên",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Hamburger",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 33000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Canh kim chi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "Kèm cơm"
+            }
+          ]
+        },
+        {
+          "name": "Nước suối",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ uống",
+      "items": []
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 114697.1,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 221.46449418372848,
+        "enhanced": 193.58564053626253,
+        "binary": 205.50974888987236
+      },
+      "detected_boxes": 110,
+      "latency_ms": 104128.35
+    }
+  }
+}

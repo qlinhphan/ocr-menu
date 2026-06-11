@@ -1,0 +1,205 @@
+{
+  "categories": [
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "Cà Phê",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Rang Mộc - Pha Máy"
+            }
+          ]
+        },
+        {
+          "name": "Cà phê Đen/ Nâu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cà Phê Muối",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cà Phê Trứng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Capuchino",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Latter",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Matchalatter",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Espressor",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Double Espressors",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Caramen Macchiator",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Americano",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bạc Xiu (Nóng %5k)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Và Socola / Socola Trứng Trị",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cacao Kem Muối",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Matcha Kem Muối",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 32583.75,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 60.96384437056732,
+        "enhanced": 34.896247687002294,
+        "binary": 12.787186090333938
+      },
+      "detected_boxes": 30,
+      "latency_ms": 22529.77
+    }
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "categories": [
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "Thai Style Grilled Beef",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 295,
+              "optional": null,
+              "description": "Thịt bò nướng mềm, phong vị đậm chất ẩm thực Thái."
+            }
+          ]
+        },
+        {
+          "name": "Chả Cá Hà Nội",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 195,
+              "optional": null,
+              "description": "Món ăn nổi tiếng của Hà Nội, được du khách quốc tế yêu thích."
+            }
+          ]
+        },
+        {
+          "name": "Prawns",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 375,
+              "optional": null,
+              "description": "Tôm nướng than, chín thơm, ngọt từ vị tươi của tôm."
+            }
+          ]
+        },
+        {
+          "name": "Sizzling Bún Chả",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 210,
+              "optional": null,
+              "description": "Món ăn được yêu thích của mọi gia đình."
+            }
+          ]
+        },
+        {
+          "name": "Duck",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 295,
+              "optional": null,
+              "description": "Vịt quay giòn nguyễn da, hương vị sốt."
+            }
+          ]
+        },
+        {
+          "name": "Cantonese Steamed Tilapia Bar",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 285,
+              "optional": null,
+              "description": "Cá hấp chín mềm, vị ngon, ngọt và tươi."
+            }
+          ]
+        },
+        {
+          "name": "Char Siu Pork",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 225,
+              "optional": null,
+              "description": "Thịt heo nướng mềm với sốt Char siu."
+            }
+          ]
+        },
+        {
+          "name": "Seafood Platter",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 850,
+              "optional": null,
+              "description": "Khay hải sản thông cấm, niềm đam mê chế biến từ đầu bếp."
+            }
+          ]
+        },
+        {
+          "name": "Caramelized Pork Belly",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 275,
+              "optional": null,
+              "description": "Thịt ba chỉ kho trong nồi đất với sốt ngọt mặn."
+            }
+          ]
+        },
+        {
+          "name": "Meat Platters",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 700,
+              "optional": null,
+              "description": "Khay nướng tổng hợp - bữa tiệc vị giác trên bàn ăn."
+            }
+          ]
+        },
+        {
+          "name": "Caramelized Fish",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 290,
+              "optional": null,
+              "description": "Sự kết hợp hài hòa giữa ẩm thực Việt, Hàn, Thái."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mì & Cơm",
+      "items": [
+        {
+          "name": "Pad Thai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 195,
+              "optional": null,
+              "description": "Bánh phở xào kiểu Thái với tôm."
+            }
+          ]
+        },
+        {
+          "name": "Beef Chow Fun",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 195,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Lo Mien",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 225,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Fried Rice",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 185,
+              "optional": null,
+              "description": "Mì xào với rau cũ, lụa chọn, hải sản, thịt gà hoặc thịt bò."
+            }
+          ]
+        },
+        {
+          "name": "Asian Veggies & Noodles",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 155,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Seafood Fried Rice",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 195,
+              "optional": null,
+              "description": "Cơm chiên với trứng, hải sản và rau củ."
+            }
+          ]
+        },
+        {
+          "name": "Steamed Rice",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 126844.92,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 153.07457747109885,
+        "enhanced": 97.01334510946154,
+        "binary": 78.9214132014171
+      },
+      "detected_boxes": 76,
+      "latency_ms": 110257.45
+    }
+  }
+}

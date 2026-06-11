@@ -1,0 +1,326 @@
+{
+  "categories": [
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "TRÀ SỮA TRẦN CHÂU",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 40000,
+              "optional": null,
+              "description": null
+            },
+            {
+              "size": "L",
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Sữa Truyền Thống",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Sữa Cacao",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Sữa Socola",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 57000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Sữa Bạc Hà",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Sứa Việt Quất",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 135000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Sữa Hạnh Nhân",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 48000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cháo Sườn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cháo Sườn, Ngô",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 70000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cháo Sườn, Gan",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 48000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cháo Sườn, Gà, Ngô",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 70000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Đen Mật Ong",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Bạc Hà",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Chanh",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Quất",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Coca Cola",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Pepsi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nước Suối",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "Cháo Sườn, Bò, Ngô",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 90000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bò Xào",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 90000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Dim Sum",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 52000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh bao kim sa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Đĩa hoa quả (S)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Đĩa hoa quả (M)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 23000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Đĩa hoa quả (L)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 108869.45,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "enhanced",
+      "candidate_scores": {
+        "raw": 335.1594955757994,
+        "enhanced": 339.16673123832794,
+        "binary": 299.0702106336564
+      },
+      "detected_boxes": 169,
+      "latency_ms": 91664.45
+    }
+  }
+}

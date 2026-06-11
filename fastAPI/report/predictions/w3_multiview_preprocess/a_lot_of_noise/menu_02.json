@@ -1,0 +1,172 @@
+{
+  "categories": [
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "PHỞ ROLL",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 90000,
+              "optional": null,
+              "description": "Món ăn gồm phở cuốn với thịt và rau củ"
+            }
+          ]
+        },
+        {
+          "name": "Phở cuốn bòn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 90000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở cuốn trứng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 75000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở cuốn bò trứng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 100000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở Chiên 5 Xào",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở chiến phong",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở chiến trứng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phỏ rán gión",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở chiên lần",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 100000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phở xào bò",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 75000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mỹ xào bồ là",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 75000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Phơ trộn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 60000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 35557.56,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 48.95670018868621,
+        "enhanced": 44.94330407466472,
+        "binary": 44.89514809427261
+      },
+      "detected_boxes": 24,
+      "latency_ms": 25590.25
+    }
+  }
+}

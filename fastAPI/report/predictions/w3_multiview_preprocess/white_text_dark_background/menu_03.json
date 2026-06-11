@@ -1,0 +1,281 @@
+{
+  "categories": [
+    {
+      "name": "Món khai vị",
+      "items": [
+        {
+          "name": "Đậu phộng rang muối 8 Bánh vòng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khoai tây chiến và Khoai cát múi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 60000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Da và cánh gà",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 60000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mực Calamari chiên giòn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 60000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Hành tây chiến truyền thống",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 150000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cánh gà và dùi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Gà nướng khói",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 70000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Gà phố mai tỏi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 70000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Gà cay và rất cay",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 70000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nước chấm và sốt",
+      "items": [
+        {
+          "name": "Chấm sốt aioli",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Chấm phô mai xanh",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Chấm sốt ranch",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sốt tỏi cay",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Hành và kem chua",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sốt nóng đặc trưng nhà làm",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ uống và nước ngọt",
+      "items": [
+        {
+          "name": "Bia bản địa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bia vị trái cây",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Rượu tổng hợp",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nước ngọt",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Các Cả phêu nóng hoặc lạnh",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sữa lác truyền thống",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 82870.24,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 107.00398012139706,
+        "enhanced": 78.98544892588993,
+        "binary": 62.754438098961245
+      },
+      "detected_boxes": 53,
+      "latency_ms": 63368.23
+    }
+  }
+}

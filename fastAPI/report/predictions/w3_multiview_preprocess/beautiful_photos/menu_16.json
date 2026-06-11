@@ -1,0 +1,177 @@
+{
+  "categories": [
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "COFFEE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "FRUITTEAU",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CÀ PHÊ ĐEN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "YOGURT-SMOOTHIE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CÀ PHÊ SỮA",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ ĐÀO CAM DÂU",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "SỮA CHUA CAFE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ THẢO MỘC IHOT",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "KIWI NHÀI CHANH LEO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 60000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "SINH TỐ MÃNG CẦU",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CAM ÉP",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CÀ PHÊ MUỐI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 78207.56,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "enhanced",
+      "candidate_scores": {
+        "raw": 209.07571867383606,
+        "enhanced": 209.08376084354828,
+        "binary": 168.8960740751526
+      },
+      "detected_boxes": 104,
+      "latency_ms": 70996.67
+    }
+  }
+}

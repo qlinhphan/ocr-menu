@@ -1,0 +1,166 @@
+{
+  "categories": [
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "BÁNH GIÒ BÚN CHẢ HỒ TÂY",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": "A Grilled pork, rice vermicelli, fresh and herbs, a savory-sweet fish sauce dip"
+            }
+          ]
+        },
+        {
+          "name": "Bánh giò đầy đủ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": "Steamed pyramid-shaped rice flour dumpling filled with savory minced pork, wood ear mushrooms, and shallots"
+            }
+          ]
+        },
+        {
+          "name": "Bánh giò không",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 17000,
+              "optional": null,
+              "description": "Same as above but without Vietnamese pork sausage"
+            }
+          ]
+        },
+        {
+          "name": "Sữa đậu nành",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà đá",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bò húc/Red Bull",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "Coca-Cola",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sting vàng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 12000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà thái",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà chanh",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà quất",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 74040.86,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "enhanced",
+      "candidate_scores": {
+        "raw": 63.07994479944709,
+        "enhanced": 63.10165210779695,
+        "binary": 55.03110704294402
+      },
+      "detected_boxes": 31,
+      "latency_ms": 42125.77
+    }
+  }
+}

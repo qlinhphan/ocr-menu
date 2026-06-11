@@ -1,0 +1,17 @@
+{
+  "run_name": "w3_baseline",
+  "method_family": "traditional_ocr_llm",
+  "model_version": "from_fastAPI_env",
+  "prompt_version": "w3_baseline_prompt_v1",
+  "schema_version": "schema_v1",
+  "seed": 42,
+  "preprocessing": {
+    "deskew": false,
+    "clahe": false,
+    "denoise": false,
+    "adaptive_threshold": false,
+    "views": [
+      "raw"
+    ]
+  }
+}

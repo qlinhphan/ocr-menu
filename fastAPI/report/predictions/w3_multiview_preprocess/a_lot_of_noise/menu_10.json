@@ -1,0 +1,177 @@
+{
+  "categories": [
+    {
+      "name": "Burgers",
+      "items": [
+        {
+          "name": "Gà Rán Lừng Danh Vùng Louisiana",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": "Mg"
+            }
+          ]
+        },
+        {
+          "name": "Burgor Gà Phi Lê",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Burger Tôm",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 52,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Gà Giòn",
+          "descriptions": [
+            {
+              "size": "3 Miếng",
+              "price": 59,
+              "optional": null,
+              "description": "Có Combo Gà Giòn"
+            }
+          ]
+        },
+        {
+          "name": "Burger Cá",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49,
+              "optional": null,
+              "description": "Signature siêu chạy"
+            }
+          ]
+        },
+        {
+          "name": "Combo Burger A 1",
+          "descriptions": [
+            {
+              "size": "1 Gà Giòn",
+              "price": 69,
+              "optional": null,
+              "description": "Thành Combo Gà Tắm Nước Mắm D1 Độ"
+            }
+          ]
+        },
+        {
+          "name": "Combo Gà Không Xương",
+          "descriptions": [
+            {
+              "size": "3 Miếng",
+              "price": 109,
+              "optional": null,
+              "description": "1 Thức Uống"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Món Ăn Kèm",
+      "items": [
+        {
+          "name": "Khoai Tây Chiên (S)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 19,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Snack Cá",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 19,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Thức Uống",
+      "items": [
+        {
+          "name": "Nước Mắm",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nước ngọt",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 30,
+              "optional": "Ít đá",
+              "description": null
+            },
+            {
+              "size": "L",
+              "price": 40,
+              "optional": "Không đường",
+              "description": "Có thể có topping hoặc tuỳ chọn riêng"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 115908.01,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 373.111656363091,
+        "enhanced": 174.9853330950067,
+        "binary": 100.84581840611649
+      },
+      "detected_boxes": 186,
+      "latency_ms": 104373.81
+    }
+  }
+}

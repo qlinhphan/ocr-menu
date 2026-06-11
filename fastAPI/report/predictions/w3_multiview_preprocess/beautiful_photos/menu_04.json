@@ -1,0 +1,254 @@
+{
+  "categories": [
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "TRÀ TRÁI CÂY",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Măng Cầu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Mít Chanh Leo",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Mãng Cầu Chanh Leo La",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ SỮA",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Tắc Dưa Hấu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Chanh Thái Xanh",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Hồng Trà Sữa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Đào Thạch Dừa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Sữa Thái Đỏ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cà Phê",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cà Phê Đen",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cà Phê Sữa Đá / Nóng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "Khô Bò, Khô Ga",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh Tráng Nướng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": "Giá có thể thay đổi",
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Xúc Xích Cp",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 8000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Ném Rán Giòn (10 Cai)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Viên Chiên (10 Cai)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Chân thành cảm ơn quý khách",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 66852.79,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 257.20755654173934,
+        "enhanced": 191.14664603062218,
+        "binary": 153.09448579332806
+      },
+      "detected_boxes": 128,
+      "latency_ms": 53589.66
+    }
+  }
+}

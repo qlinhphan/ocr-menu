@@ -1,0 +1,221 @@
+{
+  "categories": [
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "CÀ PHÊ/COFFEE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Đen (nóng, đá)"
+            },
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "(Hot/Ice Black Coffee)"
+            },
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "Nâu (nóng, đá)"
+            },
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "(Hot/Ice Coffee with milk)"
+            },
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "Bạc xiu (nóng, đá)"
+            },
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "(Coffee with condensed milk fresh milk)"
+            },
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "Cacao (nóng, đá)"
+            },
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "(Hot/Ice Cacao milk)"
+            },
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": "Cafe trứng (Egg Coffee)"
+            },
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Thí Mơ mặn (Salted Apricot)"
+            }
+          ]
+        },
+        {
+          "name": "NƯỚC ÉP/JUICE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Dứa (Pineapple)"
+            },
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Ổi (Guava)"
+            },
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Táo (Apple)"
+            },
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Dưa hấu (Watermelon)"
+            },
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Lê Chanh tươi (Lime)"
+            },
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": "Chanh leo (Passion Fruit)"
+            },
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "Cam tươi (Orange)"
+            },
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Chanh muối (Salted Lime)"
+            }
+          ]
+        },
+        {
+          "name": "SINH TỐ/SMOOTHIE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": "Bơ (Avocado)"
+            },
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": "Xoài (Mango)"
+            }
+          ]
+        },
+        {
+          "name": "SỮA CHUA/YOGURT",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": "Chuối sữa chua (Banana Yogurt)"
+            },
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": "Sữa chua cà phê (Coffee Yogurt)"
+            },
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Sữa chua ca cao (Cacao Yogurt)"
+            },
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Sữa chua đánh đá (Yogurt Ice)"
+            }
+          ]
+        },
+        {
+          "name": "ĐỒ UỐNG KHÁC",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Cocacola"
+            },
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": "Bia Hà Nội (Hanoi beer)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 51629.29,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "enhanced",
+      "candidate_scores": {
+        "raw": 175.11936035951987,
+        "enhanced": 181.11051811018052,
+        "binary": 173.04946889546054
+      },
+      "detected_boxes": 90,
+      "latency_ms": 40072.99
+    }
+  }
+}

@@ -58,7 +58,7 @@ def run_benchmark(predictions_root: Path, run_name: str, precision_target: float
                 "sample_id": sample_id,
                 "group": record["group"],
                 "ground_truth_path": record["label_path"],
-                "prediction_path": str(prediction_path.relative_to(FASTAPI_DIR)) if prediction_path.exists() else None,
+                "prediction_path": str(prediction_path.resolve().relative_to(FASTAPI_DIR.resolve())) if prediction_path.exists() else None,
                 "validation_error_count": len(validation_issues),
                 "validation_issues": [issue.__dict__ for issue in validation_issues],
                 "confidence": float(confidence),

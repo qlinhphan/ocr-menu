@@ -1,0 +1,177 @@
+{
+  "categories": [
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "CÀ PHÊ ĐEN (HOT/COID)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Cà phê đen nóng hoặc lạnh"
+            }
+          ]
+        },
+        {
+          "name": "CÀ PHÊ NÂU (HOT/COLD)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "Cà phê nâu nóng hoặc lạnh"
+            }
+          ]
+        },
+        {
+          "name": "Otira cream - coffee",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 59000,
+              "optional": null,
+              "description": "Cà phê kết hợp với kem Otira"
+            }
+          ]
+        },
+        {
+          "name": "TIRACREAM - MATCHA",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 59000,
+              "optional": null,
+              "description": "Kem matcha"
+            }
+          ]
+        },
+        {
+          "name": "VANI LATTE COFFEE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 59000,
+              "optional": null,
+              "description": "Cà phê với hương vị vani"
+            }
+          ]
+        },
+        {
+          "name": "CARAMEL MACHIATO (HOT/COID)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 59000,
+              "optional": null,
+              "description": "Cà phê caramel"
+            }
+          ]
+        },
+        {
+          "name": "AFFOGATO COFFEE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ ĐẶC BIỆT",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ SỮA ASSAM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Trà sữa với Assam"
+            }
+          ]
+        },
+        {
+          "name": "TRÀ XANH DỨA QUẤT",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Thức ăn",
+      "items": [
+        {
+          "name": "MATCHAKEM MUỐI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "Matcha với vị muối"
+            }
+          ]
+        },
+        {
+          "name": "BÁNH SỪNG BÒ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 125353.13,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 215.07097461201928,
+        "enhanced": 215.06780749264203,
+        "binary": 154.8441091042558
+      },
+      "detected_boxes": 107,
+      "latency_ms": 108213.4
+    }
+  }
+}

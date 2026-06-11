@@ -1,0 +1,274 @@
+{
+  "categories": [
+    {
+      "name": "BUNCHASINH TỪNG",
+      "items": [
+        {
+          "name": "combotietkiêm",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Concultommonions",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CHO CÁC DỊ TỔWEW BÁNH TÔM THỊ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "SUSK",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "goimon",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 90000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kebabricenoodles",
+      "items": [
+        {
+          "name": "DUNSNAP",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mixed KebabricoNoodles",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mixed BeetRiceNooding",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BUNBOTRON",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 110000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spring Rolls Rice Noodles",
+      "items": [
+        {
+          "name": "bunnema",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Stuffed Pancake",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BANH CUỐN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cinseng Braitea Chicken Thigh",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "DÙI CẢ HÁM SÂM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 105000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BÁNH TÔM/SUẤT",
+      "items": [
+        {
+          "name": "NEM HAISAN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BÁNH TÔM/CAI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MON MANGVỀ THÊM 5K",
+      "items": [
+        {
+          "name": "KHOANTÂYCHIEN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Frenchfries",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PHÀNG NHẬN ĐỒN KHÁCH",
+      "items": [
+        {
+          "name": "Google Maps",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 56391.49,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 85.01470829857436,
+        "enhanced": 72.97778032396242,
+        "binary": 42.79881592973873
+      },
+      "detected_boxes": 42,
+      "latency_ms": 43534.72
+    }
+  }
+}

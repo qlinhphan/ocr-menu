@@ -1,7 +1,7 @@
 {
   "runs": [
     {
-      "run_name": "smoke_test",
+      "run_name": "w3_baseline",
       "field_accuracy_name": 0.0,
       "field_accuracy_price": 0.0,
       "field_accuracy_category": 0.0,
@@ -9,7 +9,21 @@
       "item_precision": 0.0,
       "hallucination_rate": 0.0,
       "structure_correctness": 0.0,
-      "latency_ms": 0.0,
+      "latency_ms": 13671.885714285712,
+      "auto_publish_acceptance": 0.0,
+      "auto_publish_accuracy": 0.0,
+      "guardrail_threshold": 1.0
+    },
+    {
+      "run_name": "w3_multiview_preprocess",
+      "field_accuracy_name": 0.5679129928810236,
+      "field_accuracy_price": 0.5592455574735443,
+      "field_accuracy_category": 0.13297075426231436,
+      "item_recall": 0.6397227397592761,
+      "item_precision": 0.8216693672520741,
+      "hallucination_rate": 0.13071158512887834,
+      "structure_correctness": 0.08503401360544217,
+      "latency_ms": 67496.11428571428,
       "auto_publish_acceptance": 0.0,
       "auto_publish_accuracy": 0.0,
       "guardrail_threshold": 1.0

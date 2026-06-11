@@ -1,0 +1,171 @@
+{
+  "categories": [
+    {
+      "name": "Cà phê/ COFFEE",
+      "items": [
+        {
+          "name": "Cà phê đen",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": "Black Coffee"
+            }
+          ]
+        },
+        {
+          "name": "Cà phê sữa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "Cà phê sữa"
+            }
+          ]
+        },
+        {
+          "name": "Cà phê sữa dừa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": "Cà phê sữa dừa"
+            }
+          ]
+        },
+        {
+          "name": "Cà phê muối",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": "Sait Coffee"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sinh tố/ SMOOTHIE",
+      "items": [
+        {
+          "name": "Sinh tố bơ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": "Avocado Smoothie"
+            }
+          ]
+        },
+        {
+          "name": "Sinh tố dâu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": "Strawbery Smoothie"
+            }
+          ]
+        },
+        {
+          "name": "Matcha đá xay",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": "Matcha Smoothie"
+            }
+          ]
+        },
+        {
+          "name": "Sinh tố dừa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": "Coconut Smoothie"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NƯỚC ÉP/ JUICE",
+      "items": [
+        {
+          "name": "Nước ép thơm",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": "Pineapple Juice"
+            }
+          ]
+        },
+        {
+          "name": "Nước ép táo",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": "Apple Juice"
+            }
+          ]
+        },
+        {
+          "name": "Nước ép cam",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": "Orange Juice"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 49454.84,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "enhanced",
+      "candidate_scores": {
+        "raw": 80.98106954551125,
+        "enhanced": 82.97831626349732,
+        "binary": 66.86224722376147
+      },
+      "detected_boxes": 41,
+      "latency_ms": 28577.68
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "categories": [
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "BANHBURRITO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BANHNATCHO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BAG KHOALTAY",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TIỆM BÁNH GÁ CHIÊN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 104000,
+              "optional": null,
+              "description": "theo Ucgh nuog va du den tam Medo, po mai thanh"
+            }
+          ]
+        },
+        {
+          "name": "Ucgà nướng và ton Voke",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": "phó mai Tito"
+            }
+          ]
+        },
+        {
+          "name": "GA FUNKY",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 110000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "THỊT BỐ NƯƠNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 150000,
+              "optional": null,
+              "description": "Suta bỏ up và nướng sét quma phó mai Tito"
+            }
+          ]
+        },
+        {
+          "name": "THỊT LỢN XẾ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 150000,
+              "optional": null,
+              "description": "Thật lợn hìm dù với habanco, sót quisa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "NƯỚC CÓ GAO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "NƯỚC ĐÓNG CHAU",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ ĐÁ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "SODAMEXICO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "SOK",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 128868.05,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 136.96867445380704,
+        "enhanced": 80.85013669834376,
+        "binary": 22.705752489982952
+      },
+      "detected_boxes": 68,
+      "latency_ms": 97746.07
+    }
+  }
+}

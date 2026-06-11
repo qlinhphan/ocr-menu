@@ -1,0 +1,21 @@
+{
+  "run_name": "w3_multiview_preprocess",
+  "method_family": "ocr_multiview_preprocess_llm",
+  "model_version": "from_fastAPI_env",
+  "prompt_version": "w3_multiview_prompt_v1",
+  "schema_version": "schema_v1",
+  "seed": 42,
+  "preprocessing": {
+    "resize_long_side": 1800,
+    "deskew": true,
+    "clahe": true,
+    "denoise": true,
+    "adaptive_threshold": true,
+    "views": [
+      "raw",
+      "enhanced",
+      "binary"
+    ]
+  }
+}
+

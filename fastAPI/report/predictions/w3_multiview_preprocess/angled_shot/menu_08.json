@@ -1,0 +1,177 @@
+{
+  "categories": [
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "BÚN ĐẦU CHAY MINH",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BÚN GIÁCẦY",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CHẢ CỐM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "DỒI SUN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "THỊT LUỘC",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "DUALEO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "PEPSI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "PEPSI KHÔNG ĐƯỜNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": "Không đường vị chanh",
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "STING DÂU/VÀNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ ĐÁ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 5000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ CHANH/TẮC/L",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "NƯỚC SUỐI AQUAFINA",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 52994.58,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "binary",
+      "candidate_scores": {
+        "raw": 87.32020497147785,
+        "enhanced": 81.33164793184329,
+        "binary": 91.23149694076241
+      },
+      "detected_boxes": 45,
+      "latency_ms": 43068.57
+    }
+  }
+}

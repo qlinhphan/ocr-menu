@@ -1,0 +1,188 @@
+{
+  "categories": [
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "Trà Sữa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": "Và Sữa Tươi Trân Châu Đường Đen Thánh"
+            }
+          ]
+        },
+        {
+          "name": "Trà Sữa Trân Châu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Sữa Kem Trứng Dừa Nướng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Olong Sữa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ ăn vặt",
+      "items": [
+        {
+          "name": "Dừa Nướng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 5000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Ô Mai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trân Châu Đen/Trăng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 5000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Kem (Muối/Trứng)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 5000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Hướng Dương",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khô Bò",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khô Heo Cháy Tỏi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bánh Sừng Bò Chẩm Sữa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Thì Bánh Sừng Bò Kem Trứng Trị",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 33534.72,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 60.93011270845286,
+        "enhanced": 40.90493642569256,
+        "binary": 30.6886504503479
+      },
+      "detected_boxes": 30,
+      "latency_ms": 23667.25
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "categories": [
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "trẻ mận nhiệt đôi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": "Mận và cách chế biến"
+            }
+          ]
+        },
+        {
+          "name": "sầu riêng xoài",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 38000,
+              "optional": null,
+              "description": "Sầu riêng và xoài phối hợp"
+            }
+          ]
+        },
+        {
+          "name": "trò sơn vàng metchiete châu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "Trò sơn vàng đặc sản"
+            }
+          ]
+        },
+        {
+          "name": "đều tây",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "Đều tây phủ kem"
+            }
+          ]
+        },
+        {
+          "name": "trẻ đào",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": "Trẻ đào chế biến ngọt"
+            }
+          ]
+        },
+        {
+          "name": "chenh leo",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 28000,
+              "optional": null,
+              "description": "Chen h leo ăn kèm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "trà hoa quả",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Trà hoa quả tươi mới"
+            }
+          ]
+        },
+        {
+          "name": "nước cam",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": "Nước cam vắt tươi"
+            }
+          ]
+        },
+        {
+          "name": "trà chanh",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": "Trà chanh giải khát"
+            }
+          ]
+        },
+        {
+          "name": "café",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": "Café thơm ngon"
+            }
+          ]
+        },
+        {
+          "name": "trà sữa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": "Trà sữa với đường đen"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 79639.97,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "enhanced",
+      "candidate_scores": {
+        "raw": 177.1062202152792,
+        "enhanced": 177.1187982082702,
+        "binary": 171.1093963403437
+      },
+      "detected_boxes": 88,
+      "latency_ms": 70298.55
+    }
+  }
+}

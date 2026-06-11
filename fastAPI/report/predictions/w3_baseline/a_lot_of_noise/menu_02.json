@@ -1,0 +1,9 @@
+{
+  "categories": [],
+  "_meta": {
+    "method": "w3_baseline",
+    "method_family": "traditional_ocr_llm",
+    "latency_ms": 14400.94,
+    "error": "Connection error."
+  }
+}

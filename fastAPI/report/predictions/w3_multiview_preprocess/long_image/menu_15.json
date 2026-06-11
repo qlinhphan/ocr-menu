@@ -1,0 +1,440 @@
+{
+  "categories": [
+    {
+      "name": "CAFE",
+      "items": [
+        {
+          "name": "Đen nóng/đá",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà xoài chanh leo",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nâu nóng/dán",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà đào hoa hoa hồng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 54000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bạc xỉu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà hibiscus ổi đào",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 54000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cafe muối",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà sen vàng lá nếp",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 54000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cafe Waha đặc biệt",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà dưa lưới cam vàng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TRÀ SỮA",
+      "items": [
+        {
+          "name": "Trà đào cam sả",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nhài xanh sữa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà cam quế (nóng)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Anh đào sữa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà gừng mật ong (nóng)",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Đậu biếc sữa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Hồng trà sữa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NƯỚC ÉP",
+      "items": [
+        {
+          "name": "Trà sữa socolar",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà sữa trà xanh",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "ép cam",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Ép Dứa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Ép dưa hấu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cacao nóng/dán",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Ép chanh leo",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cacao cốt dừa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nước chanh vàng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cacao Đặc Biệt",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ĐỒ ĂN VẶT",
+      "items": [
+        {
+          "name": "Chocolate",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "MATCHA",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Khô bò",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 52000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mít sấy",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Matcha latter",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Hướng dương vị thường",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Matcha anh đào",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 49000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Hướng dương vị dừa thị",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 74090.31,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 157.12353661818636,
+        "enhanced": 133.10023536442276,
+        "binary": 133.06900037664593
+      },
+      "detected_boxes": 78,
+      "latency_ms": 50172.47
+    }
+  }
+}

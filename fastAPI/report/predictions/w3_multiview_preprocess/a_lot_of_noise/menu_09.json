@@ -1,0 +1,210 @@
+{
+  "categories": [
+    {
+      "name": "Món ăn",
+      "items": [
+        {
+          "name": "TÔ NGỌN MIỀN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 42000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CÔ HƯƠNG ĐED",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "GIÓ TAI, MỌC GIỐM ĐẦU CHÂU",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 42000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TÔ ĐẦY ĐŨ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 42000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "LẦU RIÊU CUA",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 160000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "ĐÒ NHÚNG LÁU",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "ĐẬU CHIẾN BỎ TÁI LẦN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 58000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "MỌC GIÒN TƯƠI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 73000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Thăn điem bò",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 66000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Báp bò",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 125000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trứng nữ lộn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 9030,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "Trà đá",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nước mơ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 10000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nước khoáng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bia Tiget",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 12000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 54619.67,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 174.92357382593747,
+        "enhanced": 136.87415086033607,
+        "binary": 42.754741050173436
+      },
+      "detected_boxes": 87,
+      "latency_ms": 42681.4
+    }
+  }
+}

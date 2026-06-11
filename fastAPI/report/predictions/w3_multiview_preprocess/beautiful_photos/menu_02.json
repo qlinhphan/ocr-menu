@@ -1,0 +1,287 @@
+{
+  "categories": [
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "It Cafe Phin Tew",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "M - Cafe Máy",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "PHỆ NÂU",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "ESPRESSO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "PHỆ ĐEN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CAPPUCCINO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "PHỆ XÍU",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "AMERICANO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "PHÊ MUỐI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CAFE LATTE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "PHÊ LATTE CARAMEL",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Matcha WD",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "lychee",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "PEACH",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "COLDWHISK",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trà và Sinh Tố",
+      "items": [
+        {
+          "name": "Trà Trái Cây",
+          "descriptions": [
+            {
+              "size": "XL",
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà Sữa",
+          "descriptions": [
+            {
+              "size": "XL",
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sinh tố Nước Ép",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cacao",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ ĐÀO CAM SẢ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ VẢI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ ỔI HỒNG TỪ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 52075.42,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 197.0778260091658,
+        "enhanced": 120.97531275711474,
+        "binary": 104.95475065329867
+      },
+      "detected_boxes": 98,
+      "latency_ms": 42230.05
+    }
+  }
+}

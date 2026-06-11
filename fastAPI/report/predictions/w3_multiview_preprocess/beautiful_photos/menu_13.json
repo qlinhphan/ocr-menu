@@ -1,0 +1,259 @@
+{
+  "categories": [
+    {
+      "name": "Lẩu",
+      "items": [
+        {
+          "name": "Lầu Ếch Măng Cay",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 400000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Lầu Thái Tomyum (to)",
+          "descriptions": [
+            {
+              "size": "To",
+              "price": 500000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Lầu Thái Tomyum (nhỏ)",
+          "descriptions": [
+            {
+              "size": "Nhỏ",
+              "price": 350000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sườn sụn",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 109000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bắp bò Mỹ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 109000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Ba chỉ bò Mỹ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 109000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Dẻ sườn bò mỹ Excella",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 149000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Gà nhúng lầu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 109000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Viên thả lầu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Xúc xích phomai",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Váng đậu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 35000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Rau lầu thêm",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hải sản",
+      "items": [
+        {
+          "name": "Nấm kim châm",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Tôm nướng/lẩu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 110000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Bạch tuộc nướng/lẩu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Mực nướng/lẩu",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 89000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ ăn kèm",
+      "items": [
+        {
+          "name": "Rau củ nướng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Klm chi",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 22000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Dưa chuột",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 63125.02,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "binary",
+      "candidate_scores": {
+        "raw": 83.08076683149636,
+        "enhanced": 83.08232658846535,
+        "binary": 87.06022772406884
+      },
+      "detected_boxes": 43,
+      "latency_ms": 49411.37
+    }
+  }
+}

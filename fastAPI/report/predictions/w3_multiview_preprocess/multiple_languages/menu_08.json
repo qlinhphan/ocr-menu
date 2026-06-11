@@ -1,0 +1,243 @@
+{
+  "categories": [
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "BÙN CHA SINH TƯ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "CƠM CHIẾN DƯA BÒ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "PHỚ CUỐNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 85,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "PHỜ XÀO QUẢNG ĐÔNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 120000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "NGÀ ĐEN HÀM SÂM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 150000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BITTETHOENHAI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BITTETBOMY",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Worksteaknoonham",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "ĐỒ ĂN MANG VỀ THÊM 5.000",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 5000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "NƯỚC UỐNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "TRÀ ĐÁ",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 5000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "NƯỚC SUỐI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "SỮA ĐẦU NÀNH",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "COCA/PEPSIS",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "NƯỚC CHANH LEO",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "DỪA XIÊM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BIA HÀ NỘI",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BIA SÀI GÒN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 32537.52,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 75.00692248142407,
+        "enhanced": 50.99895907878876,
+        "binary": 26.764399248901366
+      },
+      "detected_boxes": 37,
+      "latency_ms": 25535.22
+    }
+  }
+}

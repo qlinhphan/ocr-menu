@@ -1,0 +1,166 @@
+{
+  "categories": [
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "XƯƠNG SÔNG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 75,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "NEM HẢI SẢN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 90,
+              "optional": "1 cái",
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BÁNH TÔM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25,
+              "optional": "1 cái",
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BUN CHÀ QUETRE",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 90,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "BÚN NEM HẢI SẢN",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 90,
+              "optional": "2-3 cái",
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "Bia HN/SG",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà bí đao",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Sữa đậu ?k",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Coca",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Nước suối",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Trà",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 65137.48,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 165.05995588047506,
+        "enhanced": 125.04234370451816,
+        "binary": 110.89137573892802
+      },
+      "detected_boxes": 82,
+      "latency_ms": 56189.25
+    }
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "categories": [
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "THẬP CẨM",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Gồm chè đổ xanh, đổ đen, sen, thạch, dừa tươi, đặc biệt có thêm 1 viên bánh chay"
+            }
+          ]
+        },
+        {
+          "name": "SEN DỪA",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": "Hạt sen với nước sen và dừa tươi"
+            }
+          ]
+        },
+        {
+          "name": "ĐỖ XANH SEN.",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": "Chè đỗ xanh với hạt sen"
+            }
+          ]
+        },
+        {
+          "name": "ĐÔ ĐEN SEN",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": "Chè đỗ đen với hạt sen"
+            }
+          ]
+        },
+        {
+          "name": "ĐỖ XANH ĐEN 1",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": "Trong (Gồm chè đỗ xanh với đỗ đen thêm thạch, dừa tươi)",
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "ĐỖ XANH.",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": "Chè đỗ xanh nghiền, thêm thạch"
+            }
+          ]
+        },
+        {
+          "name": "ĐỖ ĐEN.",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": "Chè đỗ đen thêm thạch"
+            }
+          ]
+        },
+        {
+          "name": "XÔI CHè",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": "Thai (Xôi vò ăn cùng chè đô xanh hoặc chè bột sản)"
+            }
+          ]
+        },
+        {
+          "name": "BÁNH TRÔI.",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": "Thanh (Bánh gạo nếp nhân đường viên, rắc vừng trăng)"
+            }
+          ]
+        },
+        {
+          "name": "BÁNH CHAY.",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": "Bánh gạo nếp nhân đỗ xanh ăn cùng chè bột sản rắc vừng"
+            }
+          ]
+        },
+        {
+          "name": "BÁNH 9 TẦNG MÂY",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 5000,
+              "optional": null,
+              "description": "Trong (Bánh bột sản lọc đủ sắc màu)"
+            }
+          ]
+        },
+        {
+          "name": "CÔM XÀO.",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 25000,
+              "optional": null,
+              "description": "Cốm xào đường dẻo và thơm"
+            }
+          ]
+        },
+        {
+          "name": "CHỀ KHO.",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 30000,
+              "optional": null,
+              "description": "Đỗ xanh xào đường, ngọt quyện"
+            }
+          ]
+        },
+        {
+          "name": "XÔI VÒ.",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 70000,
+              "optional": null,
+              "description": "Thế (Xôi thổi cùng đỗ xanh tơi, mềm xốp)"
+            }
+          ]
+        },
+        {
+          "name": "XÔI VÒ GẤC",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 100000,
+              "optional": null,
+              "description": "Thế (Xôi thổi cùng gấc và đỗ xanh, tơi mềm xốp)"
+            }
+          ]
+        },
+        {
+          "name": "CHè Đỗ ĐEN ĐẶC",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 15000,
+              "optional": null,
+              "description": "Thự (Chè đỗ đen nấu đặc ăn nóng)"
+            }
+          ]
+        },
+        {
+          "name": "BÁNH TRÔI TÀU",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 20000,
+              "optional": null,
+              "description": "Thay tháng (Bánh gạo nếp nhân đồ xanh, vừng đen ăn cùng nước đường nóng có gừng)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 106415.54,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 113.04370821349927,
+        "enhanced": 46.94279822562342,
+        "binary": 84.91045991226132
+      },
+      "detected_boxes": 56,
+      "latency_ms": 85419.75
+    }
+  }
+}

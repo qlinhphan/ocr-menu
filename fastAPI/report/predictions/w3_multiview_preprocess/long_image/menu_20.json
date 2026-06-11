@@ -1,0 +1,166 @@
+{
+  "categories": [
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "CÀ PHÊ Ý",
+          "descriptions": [
+            {
+              "size": null,
+              "price": null,
+              "optional": null,
+              "description": "Cả phê Y do nguời Vin cho nguời Vinh"
+            }
+          ]
+        },
+        {
+          "name": "Espresso",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Americano",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Latte",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cappuccino",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cà phê Cốt Dừa",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "Cà phê muối",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "cold brew",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 50000,
+              "optional": null,
+              "description": "các cả phê ứ lạnh kết hợp cùng hoa quả nhiệt đời nhiều"
+            }
+          ]
+        },
+        {
+          "name": "The Cold Brew Chanh Đào",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": "Must try"
+            }
+          ]
+        },
+        {
+          "name": "Cold Brew Cam Vàng",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 55000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SCHOCO DRINKS",
+      "items": [
+        {
+          "name": "Chocolate",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 57279.57,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 93.00206068766643,
+        "enhanced": 56.92202537169729,
+        "binary": 38.76485919796512
+      },
+      "detected_boxes": 46,
+      "latency_ms": 48471.41
+    }
+  }
+}

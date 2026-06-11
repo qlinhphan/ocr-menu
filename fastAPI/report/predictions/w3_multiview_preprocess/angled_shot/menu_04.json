@@ -1,0 +1,111 @@
+{
+  "categories": [
+    {
+      "name": "Đồ ăn",
+      "items": [
+        {
+          "name": "E1",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 45000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "LL",
+          "descriptions": [
+            {
+              "size": "L",
+              "price": 65000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "I",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 30000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "F",
+          "descriptions": [
+            {
+              "size": "M",
+              "price": 25000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Đồ uống",
+      "items": [
+        {
+          "name": "Gi",
+          "descriptions": [
+            {
+              "size": "L",
+              "price": 50000,
+              "optional": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "E5",
+          "descriptions": [
+            {
+              "size": null,
+              "price": 40000,
+              "optional": "Ít đá",
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "method": "w3_multiview_preprocess",
+    "method_family": "ocr_multiview_preprocess_llm",
+    "model_version": "gpt-4o-mini",
+    "prompt_version": "w3_multiview_prompt_v1",
+    "schema_version": "schema_v1",
+    "confidence": 0.75,
+    "latency_ms": 41860.86,
+    "preprocessing": {
+      "resize_long_side": 1800,
+      "deskew": true,
+      "clahe": true,
+      "denoise": true,
+      "adaptive_threshold": true,
+      "views": [
+        "raw",
+        "enhanced",
+        "binary"
+      ]
+    },
+    "ocr_debug": {
+      "selected_view": "raw",
+      "candidate_scores": {
+        "raw": 163.3654305468839,
+        "enhanced": 131.18158367023585,
+        "binary": 125.07194449583453
+      },
+      "detected_boxes": 81,
+      "latency_ms": 34403.27
+    }
+  }
+}
